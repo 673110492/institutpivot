@@ -18,26 +18,31 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/favicons/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicons/favicon-16x16.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicons/favicon.ico')}}">
+    <link rel="manifest" href="{{asset('assets/img/favicons/manifest.json')}}">
+    <link rel="stylesheet" href="{{asset('assets/richtexteditor/rte_theme_default.css')}}">
+    <meta name="msapplication-TileImage" content="{{asset('assets/img/favicons/mstile-150x150.png')}}">
     <meta name="theme-color" content="#ffffff">
-    <script src="assets/js/config.js"></script>
-    <script src="vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+    <script src="{{asset('assets/js/config.js')}}"></script>
+    <script src="{{asset('vendors/overlayscrollbars/OverlayScrollbars.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/richtexteditor/rte.js')}}"></script>
+    <script>
+        RTE_DefaultConfig.url_base = 'richtexteditor'
+    </script>
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
-    <link href="assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
-    <link href="assets/css/theme.min.css" rel="stylesheet" id="style-default">
-    <link href="assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
-    <link href="assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+    <link href="{{asset('vendors/overlayscrollbars/OverlayScrollbars.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/theme-rtl.min.css')}}" rel="stylesheet" id="style-rtl">
+    <link href="{{asset('assets/css/theme.min.css')}}" rel="stylesheet" id="style-default">
+    <link href="{{asset('assets/css/user-rtl.min.css')}}" rel="stylesheet" id="user-style-rtl">
+    <link href="{{asset('assets/css/user.min.css')}}" rel="stylesheet" id="user-style-default">
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
@@ -72,6 +77,14 @@
             @include('admin.layouts.partials.sidebar')
             @include('admin.layouts.partials.header')
             @yield('content')
+            @if (Session::has('message'))
+                <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
+                    <div class="toast hide" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="toast-header bg-success text-white"><strong class="me-auto">Notification</strong><small>1 S ago</small><button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close"></button></div>
+                      <div class="toast-body bg-success text-white">{{Session::get('message')}}</div>
+                    </div>
+                  </div>
+                @endif
             @include('admin.layouts.partials.footer')
         </div>
     </main>
@@ -79,16 +92,20 @@
                 <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="vendors/popper/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/anchorjs/anchor.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="vendors/echarts/echarts.min.js"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
-    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="{{asset('vendors/popper/popper.min.js')}}"></script>
+    <script src="{{asset('vendors/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{asset('vendors/anchorjs/anchor.min.js')}}"></script>
+    <script src="{{asset('vendors/is/is.min.js')}}"></script>
+    <script src="{{asset('vendors/echarts/echarts.min.js')}}"></script>
+    <script src="{{asset('vendors/fontawesome/all.min.js')}}"></script>
+    <script src="{{asset('vendors/lodash/lodash.min.js')}}"></script>
     <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
-    <script src="vendors/list.js/list.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
+    <script src="{{asset('assets/js/theme.js')}}"></script>
+    <script>
+        var editor1 = new RichTextEditor("#div_editor1");
+    </script>
+
   </body>
 
 
