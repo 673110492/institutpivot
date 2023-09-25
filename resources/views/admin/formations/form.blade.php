@@ -7,7 +7,13 @@
                     <label for="nom">{{ __('Nom de la formation') }} <span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('nom', '<p class="help-block">:message</p>') !!}</span>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <input accept=".jpeg,.png,.jpg" class="form-control" id="photo" name="photo" type="file"
+                        value="{{ isset($formation->photo) ? $formation->photo : old('photo') }}"
+                        placeholder="(237) XXX XX XX XX" />
+                    <label for="photo">Photo descriptive<span style="color:red">*</span></label>
+                    <span style="color: red">{!! $errors->first('photo', '<p class="help-block">:message</p>') !!}</span>
+                </div>
                 <div class="form-floating mb-3">
                     <input class="form-control" id="duree" name="duree" required type="duree"
                         value="{{ isset($formation->duree) ? $formation->duree : old('duree') }}"
@@ -33,7 +39,7 @@
                         </option>
                         @endforeach
                     </select>
-                    <label for="user_id" class="control-label">{{ 'Formateur responsable' }}<span style="color:red">*</span></label>
+                    <label for="user_id" class="control-label">{{ 'Formateur responsable' }}</label>
                     {!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}
                 </div>
                 <div class="mb-3">

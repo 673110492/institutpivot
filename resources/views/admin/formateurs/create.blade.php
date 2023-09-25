@@ -21,9 +21,9 @@
                             {{ csrf_field() }}
                                 @include('admin.formateurs.form')
                                 <center>
-                                    <button class="btn btn-falcon-danger m-3" type="reset"
+                                    <button class="btn btn-danger m-3" type="reset"
                                         data-bs-dismiss="modal">Annuler</button>
-                                    <button class="btn btn-falcon-success m-3" type="submit">Ajouter</button>
+                                    <button class="btn btn-success m-3" type="submit">Ajouter</button>
                                 </center>
                         </form>
 

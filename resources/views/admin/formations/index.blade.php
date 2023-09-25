@@ -92,10 +92,11 @@
                                                         @if ($item->statut == true)
                                                         <small class="badge rounded-pill  bg-success"><i
                                                             class='fa fa-bullseye'></i>Afficher</small>
-                                                   @else
-                                                   <small class="badge rounded-pill  bg-danger"><i
-                                                    class='fa fa-low-vision'></i>Cacher</small>
-                                                   @endif</td>
+                                                        @else
+                                                        <small class="badge rounded-pill  bg-danger"><i
+                                                            class='fa fa-low-vision'></i>Cacher</small>
+                                                        @endif
+                                                    </td>
                                                     <td class="align-middle mr-20">
                                                         <a class="btn btn-falcon-info me-1 mb-1"
                                                             title="Détail d'une formation" href="{{route('formation.show',$item->id)}}"><i

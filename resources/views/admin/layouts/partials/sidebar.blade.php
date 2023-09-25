@@ -9,7 +9,7 @@
       <div class="toggle-icon-wrapper">
         <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
       </div><a class="navbar-brand" href="index.html">
-        <div class="d-flex align-items-center py-3"><img class="me-2" src="assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span></div>
+        <div class="d-flex align-items-center py-3"><img class="me-2" src="assets/img/icons/spot-illustrations/3ia logo-01.png" alt="" width="150" /></div>
       </a>
     </div>
     <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
@@ -29,26 +29,18 @@
                 <hr class="mb-0 navbar-vertical-divider" />
               </div>
             </div>
-            <a class="nav-link" href="app/calendar.html" role="button" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Calendar</span></div>
+            <a class="nav-link" href="{{route('tete.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">En tete</span></div>
             </a>
-            <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Email</span></div>
+            <a class="nav-link" href="{{route('video.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Section video</span></div>
             </a>
-            <ul class="nav collapse false" id="email">
-              <li class="nav-item"><a class="nav-link" href="app/email/inbox.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Inbox</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/email-detail.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Email detail</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/compose.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Compose</span></div>
-                </a><!-- more inner pages-->
-              </li>
-            </ul>
+            <a class="nav-link" href="{{route('temoignage.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Temoignages Etudiant</span></div>
+            </a>
+            <a class="nav-link" href="{{route('autre.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Autres Temoignages</span></div>
+            </a>
           </li>
           <!-- a propos-->
           <li class="nav-item">
@@ -59,26 +51,9 @@
                 <hr class="mb-0 navbar-vertical-divider" />
               </div>
             </div>
-            <a class="nav-link" href="app/calendar.html" role="button" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Calendar</span></div>
+            <a class="nav-link" href="{{route('apropos.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">A propos</span></div>
             </a>
-            <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Email</span></div>
-            </a>
-            <ul class="nav collapse false" id="email">
-              <li class="nav-item"><a class="nav-link" href="app/email/inbox.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Inbox</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/email-detail.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Email detail</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/compose.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Compose</span></div>
-                </a><!-- more inner pages-->
-              </li>
-            </ul>
           </li>
           <!-- formations-->
           <li class="nav-item">
@@ -209,26 +184,12 @@
                 <hr class="mb-0 navbar-vertical-divider" />
               </div>
             </div>
-            <a class="nav-link" href="app/calendar.html" role="button" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Calendar</span></div>
+            <a class="nav-link" href="{{route('contact.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Informations du contact</span></div>
             </a>
-            <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Email</span></div>
+            <a class="nav-link" href="{{route('message.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Liste des messages</span></div>
             </a>
-            <ul class="nav collapse false" id="email">
-              <li class="nav-item"><a class="nav-link" href="app/email/inbox.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Inbox</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/email-detail.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Email detail</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/compose.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Compose</span></div>
-                </a><!-- more inner pages-->
-              </li>
-            </ul>
           </li>
       </div>
     </div>

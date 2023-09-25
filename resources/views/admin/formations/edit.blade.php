@@ -37,7 +37,8 @@
         </div>
     </div>
 </div>
-<form action="{{route('formation.update',$formation->id)}}" method="POST">
+<form action="{{route('formation.update',$formation->id)}}" method="POST" accept-charset="UTF-8"
+    class="form-horizontal" enctype="multipart/form-data">
     @csrf
  @include('admin.formations.form')
 

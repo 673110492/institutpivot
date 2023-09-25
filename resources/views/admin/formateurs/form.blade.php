@@ -46,7 +46,7 @@
             <div class="col">
 
                 <div class="form-floating mb-3">
-                    <input class="form-control" required id="tel1" name="tel1" type="tel"
+                    <input class="form-control" required id="tel1" name="tel1" type="tel" maxlength="9" minlength="9"
                         value="{{ isset($formateur->tel1) ? $formateur->tel1 : old('tel1') }}"
                         placeholder="(237) XXX XX XX XX" />
                     <label for="tel1">{{ __('Téléphone 1') }} <span style="color:red">*</span></label>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="photocopie_cni" name="photocopie_cni" type="file"
+                    <input class="form-control" accept=".jpeg,.png,.jpg,.pdf" id="photocopie_cni" name="photocopie_cni" type="file"
                         value="{{ isset($formateur->photocopie_cni) ? $formateur->photocopie_cni : old('photocopie_cni') }}"
                         placeholder="Douala" />
                     <label for="photocopie_cni">{{ __('Photocopie de la CNI') }}</label>
@@ -70,7 +70,7 @@
                         !!}</span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="cv" name="cv" type="file"
+                    <input accept=".jpeg,.png,.jpg,.pdf"  class="form-control" id="cv" name="cv" type="file"
                         value="{{ isset($formateur->cv) ? $formateur->cv : old('cv') }}"
                         placeholder="Bonanjo" />
                     <label for="cv">{{ __('CV du formateur') }}</label>
@@ -82,13 +82,13 @@
             </div>
         </div>
         <div class="form-floating mb-3">
-            <input class="form-control" id="avatar" name="avatar" type="file"
+            <input class="form-control" accept=".jpeg,.png,.jpg" id="avatar" name="avatar" type="file"
                  />
             <label for="avatar">{{ __('Photo de profile') }}</label>
             <span style="color: red">{!! $errors->first('avatar', '<p class="help-block">:message</p>')
                 !!}</span>
         </div>
-        
+
     </div>
 </div>
 
