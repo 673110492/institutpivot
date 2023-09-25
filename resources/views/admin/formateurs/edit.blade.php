@@ -20,8 +20,8 @@
 
                     @include('admin.formateurs.form')
                     <center>
-                        <button class="btn btn-falcon-danger m-3" type="reset" data-bs-dismiss="modal">Annuler</button>
-                        <button class="btn btn-falcon-success m-3" type="submit">Modifier</button>
+                        <button class="btn btn-danger m-3" type="reset" data-bs-dismiss="modal">Annuler</button>
+                        <button class="btn btn-success m-3" type="submit">Modifier</button>
                     </center>
                 </form>
 

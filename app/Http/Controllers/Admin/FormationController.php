@@ -32,13 +32,17 @@ class FormationController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+
         $request->validate([
             'nom' => 'required|string|max:255',
             'prix' => 'required',
             'duree'  => 'required'
         ]);
         $requestData = $request->except('token');
+        if ($request->hasFile('photo')) {
+            $requestData['photo'] = $request->file('photo')
+            ->store('uploads', 'public');
+        }
         $formation = Formation::create($requestData);
         return to_route('formation.index')->with('message', 'Formation ajoutée avec succès');
     }
@@ -68,6 +72,7 @@ class FormationController extends Controller
      */
     public function update(Request $request,$id)
     {
+        // dd($request);
         $request->validate([
             'nom' => 'required|string|max:255',
             'prix' => 'required',
@@ -76,6 +81,10 @@ class FormationController extends Controller
         ]);
         $formation = Formation::findOrFail($id);
         $requestData = $request->except('token');
+        if ($request->hasFile('photo')) {
+            $requestData['photo'] = $request->file('photo')
+            ->store('uploads', 'public');
+        }
         $formation->update($requestData);
         return to_route('formation.index')->with('message', 'Formation modifiée avec succès');
     }

@@ -1,81 +1,72 @@
 @extends('layouts.apps')
 @section('content')
-<div class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg'); background-attachment:fixed;">
+@php
+if(isset($contact)){
+  $style = "background-image:url(storage/$contact->photo); background-attachment:fixed;";
+}
+@endphp
+@if(isset($contact))
+    <div class="hero-wrap hero-wrap-2" style="{{$style}}">
+@else
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('images/IMG_5430.jpg'); background-attachment:fixed;">
+@endif
     <div class="overlay"></div>
     <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
     <div class="col-md-8 ftco-animate text-center">
-    <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Accueil</a></span> <span>Contact</span></p>
+    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('accueil.index')}}">Accueil</a></span> <span>Contact</span></p>
     <h1 class="mb-3 bread">Contact</h1>
     </div>
     </div>
     </div>
     </div>
     <section class="ftco-section contact-section ftco-degree-bg">
-    <div class="container">
-    <div class="row d-flex mb-5 contact-info">
-    <div class="col-md-12 mb-4">
-    <h2 class="h4">Contact Information</h2>
-    </div>
-    <div class="w-100"></div>
-    <div class="col-md-3">
-    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-    </div>
-    <div class="col-md-3">
-    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-    </div>
-    <div class="col-md-3">
-    <p><span>Email:</span> <a href="https://preview.colorlib.com/cdn-cgi/l/email-protection#3d54535b527d4452484f4e544958135e5250"><span class="__cf_email__" data-cfemail="6d04030b022d1402181f1e041908430e0200">[email&#160;protected]</span></a></p>
-    </div>
-    <div class="col-md-3">
-    <p><span>Website</span> <a href="#">yoursite.com</a></p>
-    </div>
-    </div>
-    <div class="row block-9">
-    <div class="col-md-6 pr-md-5">
-    <h4 class="mb-4">Do you have any questions?</h4>
-    <form action="#">
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Your Name">
-    </div>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Your Email">
-    </div>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Subject">
-    </div>
-    <div class="form-group">
-    <textarea name id cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-    </div>
-    <div class="form-group">
-    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-    </div>
-    </form>
-    </div>
-    <div class="col-md-6" id="map"></div>
-    </div>
-    </div>
-    </section>
-    <section class="ftco-section-parallax">
-    <div class="parallax-img d-flex align-items-center">
-    <div class="container">
-    <div class="row d-flex justify-content-center">
-    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-    <h2>Subcribe to our Newsletter</h2>
-    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-    <div class="row d-flex justify-content-center mt-5">
-    <div class="col-md-8">
-    <form action="#" class="subscribe-form">
-    <div class="form-group d-flex">
-    <input type="text" class="form-control" placeholder="Enter email address">
-    <input type="submit" value="Subscribe" class="submit px-3">
-    </div>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
+            <div class="container bg-primary card" >
+            <div class="row block-9">
+            <div class="col-md-7 pr-md-5" style="background-color: rgb(222, 222, 226)">
+                <h4 class="mb-4 card-header">Vous avez une question?</h4>
+                <form method="POST" action="{{ route('message.store') }}" accept-charset="UTF-8"
+                            class="form-horizontal" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                <div class="form-group">
+                <input type="text" class="form-control" name="noms" placeholder="Votre nom complet">
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" name="email" placeholder="Votre adresse email">
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" name="sujet" placeholder="Sujet">
+                </div>
+                <div class="form-group">
+                <textarea cols="30" rows="7" name="message" class="form-control" placeholder="Votre message"></textarea>
+                </div>
+                <div class="form-group">
+                <input type="submit" value="Envoyer le Message" class="btn btn-primary py-3 px-5">
+                </div>
+                </form>
+            </div>
+            <div class="col-md-1 ml-5" style="background-color: rgb(255, 255, 255);color:white">
+              nouscontacter
+            </div>
+            <div class="col-md-4  ml-5" style="background-color: rgb(222, 222, 226)">
+                <h4 class="mb-4 block-9">Information de contact</h4>
+                <div class="block-9" style="background-color: rgb(255, 255, 255); hight:2% ;">
+hjyukuiiliu
+                </div>
+                <div class="block-9 bg-white">
+                    dfhgkhj
+                </div>
+                <div class="block-9 bg-white">
+                    dfhgkhj
+                </div>
+                <div class="block-9 bg-white">
+                    dfhgkhj
+                </div>
+
+            </div>
+            </div>
+            </div>
+            </section>
+
 @endsection
+

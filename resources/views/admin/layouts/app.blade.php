@@ -18,12 +18,13 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/favicons/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicons/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicons/favicon-16x16.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicons/favicon.ico')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicons/3iA logo-10')}}">
     <link rel="manifest" href="{{asset('assets/img/favicons/manifest.json')}}">
     <link rel="stylesheet" href="{{asset('assets/richtexteditor/rte_theme_default.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/glightbox.css') }}" />
     <meta name="msapplication-TileImage" content="{{asset('assets/img/favicons/mstile-150x150.png')}}">
     <meta name="theme-color" content="#ffffff">
     <script src="{{asset('assets/js/config.js')}}"></script>
@@ -76,15 +77,24 @@
         </script>
             @include('admin.layouts.partials.sidebar')
             @include('admin.layouts.partials.header')
+            @if (\Session::has('message'))
+            <div class="alert alert-success">
+                <p>{{ \Session::get('message') }}</p>
+            </div><br />
+            @endif
             @yield('content')
-            @if (Session::has('message'))
-                <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
-                    <div class="toast hide" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-                      <div class="toast-header bg-success text-white"><strong class="me-auto">Notification</strong><small>1 S ago</small><button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close"></button></div>
-                      <div class="toast-body bg-success text-white">{{Session::get('message')}}</div>
-                    </div>
-                  </div>
-                @endif
+
+            @if (Session::get('message'))
+            <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
+                <div class="toast hide" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white"><strong
+                            class="me-auto">Notification</strong><small>1 S ago</small><button
+                            class="btn-close btn-close-white" type="button" data-bs-dismiss="toast"
+                            aria-label="Close"></button></div>
+                    <div class="toast-body bg-success text-white">{{ Session::get('message') }}</div>
+                </div>
+            </div>
+        @endif
             @include('admin.layouts.partials.footer')
         </div>
     </main>
@@ -96,16 +106,87 @@
     <script src="{{asset('vendors/bootstrap/bootstrap.min.js')}}"></script>
     <script src="{{asset('vendors/anchorjs/anchor.min.js')}}"></script>
     <script src="{{asset('vendors/is/is.min.js')}}"></script>
+    <script src="{{asset('vendors/prism/prism.js')}}"></script>
     <script src="{{asset('vendors/echarts/echarts.min.js')}}"></script>
     <script src="{{asset('vendors/fontawesome/all.min.js')}}"></script>
     <script src="{{asset('vendors/lodash/lodash.min.js')}}"></script>
     <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
     <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
     <script src="{{asset('assets/js/theme.js')}}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/toast.js') }}"></script>
+    <script src="{{ asset('assets/js/search.js') }}"></script>
     <script>
         var editor1 = new RichTextEditor("#div_editor1");
     </script>
+    <script>
+        var lightbox = GLightbox();
+        lightbox.on('open', (target) => {
+            console.log('lightbox opened');
+        });
+        var lightboxDescription = GLightbox({
+            selector: '.glightbox2'
+        });
+        var lightboxVideo = GLightbox({
+            selector: '.glightbox3'
+        });
+        lightboxVideo.on('slide_changed', ({
+            prev,
+            current
+        }) => {
+            console.log('Prev slide', prev);
+            console.log('Current slide', current);
 
+            const {
+                slideIndex,
+                slideNode,
+                slideConfig,
+                player
+            } = current;
+
+            if (player) {
+                if (!player.ready) {
+                    // If player is not ready
+                    player.on('ready', (event) => {
+                        // Do something when video is ready
+                    });
+                }
+
+                player.on('play', (event) => {
+                    console.log('Started play');
+                });
+
+                player.on('volumechange', (event) => {
+                    console.log('Volume change');
+                });
+
+                player.on('ended', (event) => {
+                    console.log('Video ended');
+                });
+            }
+        });
+
+        var lightboxInlineIframe = GLightbox({
+            selector: '.glightbox4'
+        });
+
+        /* var exampleApi = GLightbox({ selector: null });
+        exampleApi.insertSlide({
+            href: 'https://picsum.photos/1200/800',
+        });
+        exampleApi.insertSlide({
+            width: '500px',
+            content: '<p>Example</p>'
+        });
+        exampleApi.insertSlide({
+            href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+        });
+        exampleApi.insertSlide({
+            width: '200vw',
+            content: document.getElementById('inline-example')
+        });
+        exampleApi.open(); */
+    </script>
   </body>
 
 

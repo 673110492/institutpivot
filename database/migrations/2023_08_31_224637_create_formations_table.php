@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->longText('description')->nullable();
             $table->integer('prix')->nullable();
+            $table->text('photo');
             $table->string('duree')->nullable();
             $table->boolean('statut')->default(1);
             $table->integer('user_id')->unsigned();

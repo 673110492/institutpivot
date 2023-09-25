@@ -5,7 +5,7 @@
     <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
     <div class="col-md-8 ftco-animate text-center">
-    <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Accueil</a></span> <span>Formateur</span></p>
+    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('accueil.index')}}">Accueil</a></span> <span>Formateur</span></p>
     <h1 class="mb-3 bread">Formateur</h1>
     </div>
     </div>
