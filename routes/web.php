@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\AproposController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\ConctactController;
+use App\Http\Controllers\Admin\AuthAdminController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Site\AcceuilController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\CoursController;
@@ -29,9 +31,19 @@ use App\Http\Controllers\Site\ContacterController;
 Route::get('/', function () {
     return to_route('accueil.index');
 });
-Route::get('/home', function () {
-    return view('admin.dashboard');
+
+Route::controller(AuthAdminController::class)->name('auth.')->prefix('auth')->group(function () {
+    Route::get('/', 'loginPage')->name('loginPage');
+    Route::post('/', 'login')->name('login');
 });
+Route::middleware('auth-admin')->group(function () {
+    Route::controller(AuthAdminController::class)->name('auth.')->prefix('auth')->group(function () {
+        Route::get('/logout', 'logout')->name('logout');
+    });
+    Route::controller(HomeController::class)->name('home.')->prefix('home')->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
+
 Route::controller(FormationController::class)->name('formation.')->prefix('formation')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/edit/{id}', 'edit')->name('edit');
@@ -105,7 +117,7 @@ Route::controller(ConctactController::class)->name('contact.')->prefix('contact'
     Route::post('statut/{id}', 'statut')->name('statut');
 });
 
-
+});
 
 /*
 |--------------------------------------------------------------------------

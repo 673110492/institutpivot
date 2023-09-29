@@ -32,9 +32,9 @@
     @endif</h5>
     <div class="card-body">
         <div class="d-flex align-items-start align-items-sm-center gap-4">
-            <a href="{{ url('storage/' . $formation->photo) }}" class="glightbox2"
+            <a href="{{ url('name/' . $formation->photo) }}" class="glightbox2"
                 data-glightbox='title:Description Bottom; description: You can set the position of the description &lt;a href="http://google.com"&gt;with a link to Google&lt;/a&gt;'>
-            <img src="{{ url('storage/' . $formation->photo) }}" alt="user-avatar" class="d-block rounded" height="200"
+            <img src="{{ url('name/' . $formation->photo) }}" alt="user-avatar" class="d-block rounded" height="200"
                 width="200" id="uploadedAvatar" />
             </a>
             <div class="button-wrapper">

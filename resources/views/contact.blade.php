@@ -2,7 +2,7 @@
 @section('content')
 @php
 if(isset($contact)){
-  $style = "background-image:url(storage/$contact->photo); background-attachment:fixed;";
+  $style = "background-image:url(name/$contact->photo); background-attachment:fixed;";
 }
 @endphp
 @if(isset($contact))
@@ -51,7 +51,7 @@ if(isset($contact)){
             <div class="col-md-4  ml-5" style="background-color: rgb(222, 222, 226)">
                 <h4 class="mb-4 block-9">Information de contact</h4>
                 <div class="block-9" style="background-color: rgb(255, 255, 255); hight:2% ;">
-hjyukuiiliu
+                    hjyukuiiliu
                 </div>
                 <div class="block-9 bg-white">
                     dfhgkhj

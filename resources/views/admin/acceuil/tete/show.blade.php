@@ -20,9 +20,9 @@
                     @endif</h5>
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <a href="{{ url('storage/' . $tete->photo) }}" class="glightbox2"
+                            <a href="{{ url('name/' . $tete->photo) }}" class="glightbox2"
                                 data-glightbox='title:Description Bottom; description: You can set the position of the description &lt;a href="http://google.com"&gt;with a link to Google&lt;/a&gt;'>
-                            <img src="{{ url('storage/' . $tete->photo) }}" alt="user-avatar" class="d-block rounded" height="200"
+                            <img src="{{ url('name/' . $tete->photo) }}" alt="user-avatar" class="d-block rounded" height="200"
                                 width="200" id="uploadedAvatar" />
                             </a>
                             <div class="button-wrapper">
