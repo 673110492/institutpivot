@@ -3,13 +3,13 @@
   @php
     if(isset($about)){
         // background-image: url(images/bg_3.jpg); width: 100%;
-        $style = "background-image:url(storage/$about->photo); background-attachment:fixed;";
-        $style1 = "background-image:url(storage/$about->photo2); width: 100%;";
+        $style = "background-image:url(name/$about->photo); background-attachment:fixed;";
+        $style1 = "background-image:url(name/$about->photo2); width: 100%;";
     }
   @endphp
 @php
 if(isset($video)){
-    $style2 = "background-image:url(storage/$video->photo);";
+    $style2 = "background-image:url(name/$video->photo);";
 }
 @endphp
   @if(isset($about))
@@ -56,7 +56,7 @@ if(isset($video)){
     <div class="col-md-9 about-video text-center">
     <h2 class="ftco-animate">{{isset($video) ? $video->titre : "3iA est la meilleure structure de formation dant la ville de Dschang"}}</h2>
     <div class="video d-flex justify-content-center">
-    <a href="{{isset($video) ? url('storage/' . $video->video) : "#"}}" class="button popup-vimeo d-flex justify-content-center align-items-center"><span class="ion-ios-play"></span></a>
+    <a href="{{isset($video) ? url('name/' . $video->video) : "#"}}" class="button popup-vimeo d-flex justify-content-center align-items-center"><span class="ion-ios-play"></span></a>
     </div>
     </div>
     </div>
@@ -118,7 +118,7 @@ if(isset($video)){
     @foreach($temoignages as $item)
     {{-- @dd($item) --}}
         @php
-            $styl = "background-image:url(storage/$item->photo);";
+            $styl = "background-image:url(name/$item->photo);";
         @endphp
         <div class="item">
         <div class="testimony-wrap text-center">

@@ -16,7 +16,7 @@
     <div class="row">
     <div class="col-md-8 ftco-animate">
     <h1 class="mb-3">{{$formation->nom}}</h1><p>
-    <img src="{{ url('storage/' . $formation->photo) }}" alt class="img-fluid">
+    <img src="{{ url('name/' . $formation->photo) }}" alt class="img-fluid">
     </p>
     <p>
         {!!$formation->description !!}

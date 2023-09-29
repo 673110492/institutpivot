@@ -3,12 +3,12 @@
 @php
 if(isset($tete)){
     // background-image: url(images/bg_3.jpg); width: 100%;
-    $style = "background-image:url(storage/$tete->photo); background-attachment:fixed;";
+    $style = "background-image:url(name/$tete->photo); background-attachment:fixed;";
 }
 @endphp
 @php
 if(isset($video)){
-    $style2 = "background-image:url(storage/$video->photo);";
+    $style2 = "background-image:url(name/$video->photo);";
 }
 @endphp
 @if(isset($tete))
@@ -108,7 +108,7 @@ if(isset($video)){
         <div class="col-md-9 about-video text-center">
         <h2 class="ftco-animate">{{isset($video) ? $video->titre : "3iA est la meilleure structure de formation dant la ville de Dschang"}}</h2>
         <div class="video d-flex justify-content-center">
-        <a href="{{isset($video) ? url('storage/' . $video->video) : "#"}}" class="button popup-vimeo d-flex justify-content-center align-items-center"><span class="ion-ios-play"></span></a>
+        <a href="{{isset($video) ? url('name/' . $video->video) : "#"}}" class="button popup-vimeo d-flex justify-content-center align-items-center"><span class="ion-ios-play"></span></a>
         </div>
         </div>
         </div>
@@ -170,7 +170,7 @@ if(isset($video)){
         @foreach($temoignages as $item)
         {{-- @dd($item) --}}
             @php
-                $styl = "background-image:url(storage/$item->photo);";
+                $styl = "background-image:url(name/$item->photo);";
             @endphp
             <div class="item">
             <div class="testimony-wrap text-center">
@@ -203,7 +203,7 @@ if(isset($video)){
             <div class="row">
             @foreach ($autres as $item)
                 @php
-                    $sty = "background-image:url(storage/$item->photo);";
+                    $sty = "background-image:url(name/$item->photo);";
                 @endphp
             <div class="col-lg-4 mb-sm-4 ftco-animate">
             <div class="staff">
@@ -257,7 +257,7 @@ if(isset($video)){
         <div class="row">
             @foreach ($formations->take(3) as $item)
             @php
-                    $st = "background-image:url(storage/$item->photo);";
+                    $st = "background-image:url(name/$item->photo);";
                 @endphp
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="course align-self-stretch">

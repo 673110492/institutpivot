@@ -16,7 +16,7 @@
         <div class="row">
         @foreach ($formations->take(3) as $item)
             @php
-                    $st = "background-image:url(storage/$item->photo);";
+                    $st = "background-image:url(name/$item->photo);";
                 @endphp
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="course align-self-stretch">
