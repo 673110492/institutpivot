@@ -1588,7 +1588,7 @@ h1, h2, h3, h4,
 
 .ftco-navbar-light {
   z-index: 3;
-  background: #fff !important;
+  background: #f8faff !important;
   position: relative; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {

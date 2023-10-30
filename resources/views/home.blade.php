@@ -33,29 +33,35 @@ if(isset($video)){
         <div class="courseSearch-wrap d-md-flex flex-column-reverse">
         <div class="full-wrap d-flex ftco-animate">
         <div class="one-third order-last p-5">
-        <span>Know what you're after?</span>
-        <h3>I want to study</h3>
-        <form action="#" class="course-search-form">
+        <span>Connaitre de quoi vous etes capable?</span>
+        <h3>Je veux suivre...</h3>
+        <form action="" class="course-search-form">
         <div class="form-group d-flex">
-        <input type="text" class="form-control" placeholder="Type a course you want to study">
-        <input type="submit" value="Search" class="submit">
+        <input type="text" class="form-control" placeholder="Entrez la formation que vous souhaitez suivre">
+        <input type="submit" value="Chercher" class="submit">
         </div>
         </form>
-        <p>Just Browsing? <a href="#"> See all courses</a></p>
+        <p>Pas de correspondance? <a href="{{route('cours.index')}}">Voir toutes les informations</a></p>
         </div>
-        <div class="one-forth order-first img" style="background-image: url(images/image_1.jpg);"></div>
+        <div class="one-forth order-first img" style="background-image: url(images/IMG_5444.jpg);"></div>
         </div>
         <div class="full-wrap ftco-animate">
         <div class="one-half">
         <div class="featured-blog d-md-flex">
+        @if(isset($formations))
+        @foreach ($formations->take(1) as $item)
+        @php
+                $stl = "background-image:url(name/$item->photo);";
+        @endphp
         <div class="image d-flex order-last">
-        <a href="#" class="img" style="background: url(images/image_2.jpg);"></a>
+        <a href="{{route('cours.show',$item->id)}}" class="img" style="{{$stl}}"></a>
         </div>
         <div class="text order-first">
-        <span class="date">Aug 20, 2018</span>
-        <h3><a href="#">We Conduct Workshop 2018</a></h3>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        <h3><a href="{{route('cours.show',$item->id)}}">{{$item->nom}}</a></h3>
+        <p>{!! Str::limit($item->description, 150, '...')  !!}</p>
         </div>
+        @endforeach
+        @endif
         </div>
         </div>
         </div>
@@ -72,7 +78,7 @@ if(isset($video)){
         <div class="icon d-flex justify-content-center align-items-center mb-3"><span class="flaticon-exam"></span></div>
         <div class="media-body px-3">
         <h3 class="heading">Admission</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <p>Nous offrons des formations flexibles et accessibles par toutes les categories sociales.</p>
         </div>
         </div>
         </div>
@@ -80,8 +86,8 @@ if(isset($video)){
         <div class="media block-6 services p-3 py-4 d-block text-center">
         <div class="icon d-flex justify-content-center align-items-center mb-3"><span class="flaticon-blackboard"></span></div>
         <div class="media-body px-3">
-        <h3 class="heading">Notice Board</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <h3 class="heading">Tableau de bord</h3>
+        <p>Nous proposons à nos étudiants un programme taillé sur les exigences du terrain à des périodes définies </p>
         </div>
         </div>
         </div>
@@ -89,8 +95,8 @@ if(isset($video)){
         <div class="media block-6 services p-3 py-4 d-block text-center">
         <div class="icon d-flex justify-content-center align-items-center mb-3"><span class="flaticon-books"></span></div>
         <div class="media-body px-3">
-        <h3 class="heading">Our Library</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <h3 class="heading">Notre librairie</h3>
+        <p>Nous mettons à la disposition nos étudiants une plétore de documents liéé ou pas à leur formation.</p>
         </div>
         </div>
         </div>
@@ -157,8 +163,8 @@ if(isset($video)){
         </div>
         </section>
         @if(isset($temoignages))
-        <section class="ftco-section testimony-section">
-        <div class="container">
+        <section class="ftco-section testimony-section" style="background-color: rgb(228, 225, 225)" >
+        <div class="container" >
         <div class="row justify-content-center mb-5 pb-3">
         <div class="col-md-7 heading-section ftco-animate text-center">
         <h2 class="mb-4">Témoignages de nos etudaints</h2>
@@ -235,11 +241,11 @@ if(isset($video)){
         <div class="col-md-12">
         <div class="d-flex align-items-center">
         <div class="free-trial ftco-animate">
-        <h3>Try our free trial course</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+        <h3>Essayer nos cours de remise à niveau gratuit</h3>
+        <p>Instruisons-nous et donnons-nous le maximum de chance d'avoir un avenir mérité dont on est fière!!!</p>
         </div>
         <div class="btn-join ftco-animate">
-        <p><a href="#" class="btn btn-primary py-3 px-4">Join now!</a></p>
+        <p><a href="{{route('contacter.index')}}" class="btn btn-primary py-3 px-4">Suivre maintenant!</a></p>
         </div>
         </div>
         </div>
@@ -271,7 +277,7 @@ if(isset($video)){
                 </div>
                 </div>
             @endforeach
-         <p style="margin: auto;"><a href="{{route('cours.index')}}" class="btn btn-primary">Voir toutes les formation</a></p>
+         <p style="margin: auto;"><a href="{{route('cours.index')}}" class="btn btn-primary">Voir toutes les formations</a></p>
 
         </div>
         </section>
