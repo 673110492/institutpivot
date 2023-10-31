@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  ftco_navbar ftco-navbar-light" id="ftco-navbar" style="background-color: red">
     <div class="container">
-    <img class="navbar-brand" src="{{asset('images/3ia logo-01.png')}}" alt="" height="100px" width="240px">
+    <a href="{{route('accueil.index')}}"><img class="navbar-brand" src="{{asset('images/3ia logo-01.png')}}" alt="" height="100px" width="240px"></a>
     {{-- <a class="navbar-brand" href="index-2.html"><i class="flaticon-university"></i>Genius <br><small>University</small></a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oi oi-menu"></span> Menu

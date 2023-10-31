@@ -21,7 +21,7 @@ if(isset($video)){
     <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
     <div class="col-md-8 ftco-animate text-center">
     <h1 class="mb-4">{{isset($tete) ? $tete->titre : "AUCUNE NATION NE PEUT PROSPERER SANS EDUCATION"}}</h1>
-    <p><a href="{{route('contacter.index')}}" class="btn btn-primary px-4 py-3">Appliquer maintenant</a> <a href="{{route('cours.index')}}" class="btn btn-secondary px-4 py-3">Voir les formations</a></p>
+    <p><a href="{{route('contacter.index')}}" class="btn btn-primary px-4 py-3">Nous contacter</a> <a href="{{route('cours.index')}}" class="btn btn-secondary px-4 py-3">Voir les formations</a></p>
     </div>
     </div>
     </div>
@@ -43,7 +43,7 @@ if(isset($video)){
         </form>
         <p>Pas de correspondance? <a href="{{route('cours.index')}}">Voir toutes les informations</a></p>
         </div>
-        <div class="one-forth order-first img" style="background-image: url(images/IMG_5444.jpg);"></div>
+        <div class="one-forth order-first img" style="background-image: url(images/IMG_5430.jpg);"></div>
         </div>
         <div class="full-wrap ftco-animate">
         <div class="one-half">
