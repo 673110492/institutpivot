@@ -87,11 +87,17 @@
                             <form action="{{ route('auth.login') }}" method="POST">
                                 @csrf
 
-                                @error('login')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-                                @enderror
+                                @if (Session::get('message'))
+                                    <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
+                                        <div class="toast hide" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                                            <div class="toast-header bg-danger text-white"><strong
+                                                    class="me-auto">Notification</strong><small>1 S ago</small><button
+                                                    class="btn-close btn-close-white" type="button" data-bs-dismiss="toast"
+                                                    aria-label="Close"></button></div>
+                                            <div class="toast-body bg-danger text-white">{{ Session::get('message') }}</div>
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="mb-3">
                                     <input class="form-control" type="email" placeholder="email" name="email" />
                                 </div>
@@ -125,14 +131,19 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="{{ asset('vendors/popper/popper.min..js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap/bootstrap.min..js') }}"></script>
-    <script src="{{ asset('vendors/anchorjs/anchor.min..js') }}"></script>
-    <script src="{{ asset('vendors/is/is.min..js') }}"></script>
-    <script src="{{ asset('vendors/fontawesome/all.min..js') }}"></script>
-    <script src="{{ asset('vendors/lodash/lodash.min..js') }}"></script>
-    <script src="{{ asset('vendors/list.js/list.min..js') }}"></script>
-    <script src="{{ asset('assets/js/theme..js') }}"></script>
+    <script src="{{asset('vendors/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{asset('vendors/anchorjs/anchor.min.js')}}"></script>
+    <script src="{{asset('vendors/is/is.min.js')}}"></script>
+    <script src="{{asset('vendors/prism/prism.js')}}"></script>
+    <script src="{{asset('vendors/echarts/echarts.min.js')}}"></script>
+    <script src="{{asset('vendors/fontawesome/all.min.js')}}"></script>
+    <script src="{{asset('vendors/lodash/lodash.min.js')}}"></script>
+    <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
+    <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
+    <script src="{{asset('assets/js/theme.js')}}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/toast.js') }}"></script>
+    <script src="{{ asset('assets/js/search.js') }}"></script>
 </body>
 
 

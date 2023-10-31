@@ -14,7 +14,7 @@
     <section class="ftco-section">
     <div class="container">
         <div class="row">
-        @foreach ($formations->take(3) as $item)
+        @foreach ($formations as $item)
             @php
                     $st = "background-image:url(name/$item->photo);";
                 @endphp

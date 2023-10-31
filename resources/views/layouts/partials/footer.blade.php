@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-4">
     <div class="ftco-footer-widget mb-4">
-    <h2 class="ftco-heading-2">Recent Blog</h2>
+    <h2 class="ftco-heading-2">Blog récent</h2>
     <div class="block-21 mb-4 d-flex">
     <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
     <div class="text">
@@ -70,7 +70,7 @@
     <div class="row">
     <div class="col-md-12 text-center">
     <p>
-    Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Tous les droits reservés | Ce site esT fait avec <i class="icon-heart" aria-hidden="true"></i> par <a href="3">la structure 3iA</a>
+    Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Tous les droits reservés | Ce site est fait avec <a href="mailto:lucrecenanfack@gmail.com"><i class="icon-heart" aria-hidden="true"></i></a> par <a href="3">la structure 3iA</a>
     </p>
     </div>
     </div>

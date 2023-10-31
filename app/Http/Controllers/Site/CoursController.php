@@ -15,6 +15,7 @@ class CoursController extends Controller
     public function show($id)
     {
        $formation = Formation::findOrFail($id);
-       return view('formation_detail',compact('formation'));
+       $formations = Formation::where('statut',true)->get();
+       return view('formation_detail',compact('formation','formations'));
     }
 }

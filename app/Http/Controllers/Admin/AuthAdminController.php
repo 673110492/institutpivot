@@ -59,7 +59,6 @@ class AuthAdminController extends Controller
     {
         return redirect()
             ->back()
-            ->withInput()
-            ->with('error_message', 'Utilisateur, Impossible de vous identifier! Verifier votre email et votre mot de passe!');
+            ->with('message', 'Utilisateur, Impossible de vous identifier! Verifier votre email et votre mot de passe!');
     }
 }

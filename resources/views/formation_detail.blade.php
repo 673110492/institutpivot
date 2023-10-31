@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('content')
-<div class="hero-wrap hero-wrap-2" style="background-image: url({{asset('images/bg_2.jpg')}}); background-attachment:fixed;">
+<div class="hero-wrap hero-wrap-2" style="background-image: url({{asset('images/IMG_5430.jpg')}}); background-attachment:fixed;">
     <div class="overlay"></div>
     <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -18,31 +18,28 @@
     <h1 class="mb-3">{{$formation->nom}}</h1><p>
     <img src="{{ url('name/' . $formation->photo) }}" alt class="img-fluid">
     </p>
-    <p>
-        {!!$formation->description !!}
-    </p>
+        <span style="color: black">{!!$formation->description !!}</span>
+    
     </div>
     <div class="col-md-4 sidebar ftco-animate">
     <div class="sidebar-box">
     <form action="#" class="search-form">
     <div class="form-group">
     <span class="icon fa fa-search"></span>
-    <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+    <input type="text" class="form-control" placeholder="Faire une recherche">
     </div>
     </form>
     </div>
     <div class="sidebar-box ftco-animate">
     <div class="categories">
-    <h3>Categories</h3>
-    <li><a href="#">Departments <span>(12)</span></a></li>
-    <li><a href="#">Doctors <span>(22)</span></a></li>
-    <li><a href="#">Medicine <span>(37)</span></a></li>
-    <li><a href="#">Hospital <span>(42)</span></a></li>
-    <li><a href="#">Cure <span>(14)</span></a></li>
-    <li><a href="#">Health <span>(140)</span></a></li>
+    <h3>Formations</h3>
+    @foreach ($formations as $item)
+    <li><a href="#">{{$item->nom}} <span>(Disponible)</span></a></li>
+    @endforeach
+
     </div>
     </div>
-    <div class="sidebar-box ftco-animate">
+    {{-- <div class="sidebar-box ftco-animate">
     <h3>Recent Blog</h3>
     <div class="block-21 mb-4 d-flex">
     <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
@@ -90,11 +87,15 @@
     <a href="#" class="tag-cloud-link">doctor</a>
     <a href="#" class="tag-cloud-link">medic</a>
     </div>
+    </div> --}}
+    <div class="sidebar-box ftco-animate">
+    <h3>Nos brochures</h3>
+    <a href="" class="btn btn-primary"><span class="icon-"></span>Télécharger le fichier PDF</a>
     </div>
     <div class="sidebar-box ftco-animate">
-    <h3>Paragraph</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-    </div>
+        <h3>Pourquoi nou choisir ?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+        </div>
     </div>
     </div>
     </div>
