@@ -19,8 +19,6 @@ return new class extends Migration
             $table->text('photo');
             $table->string('duree')->nullable();
             $table->boolean('statut')->default(1);
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->nullable();
              $table->timestamps();
         });
     }
