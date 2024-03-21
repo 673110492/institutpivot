@@ -11,10 +11,12 @@ use App\Http\Controllers\Admin\AproposController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\ConctactController;
 use App\Http\Controllers\Admin\AuthAdminController;
+use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Site\AcceuilController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\CoursController;
+use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\ContacterController;
 
 /*
@@ -116,6 +118,16 @@ Route::controller(ConctactController::class)->name('contact.')->prefix('contact'
     Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
 });
+Route::controller(ActualiteController::class)->name('blog.')->prefix('blog')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::post('/', 'store')->name('store');
+    Route::get('/create', 'create')->name('create');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::delete('/{id}', 'destroy')->name('delete');
+    Route::post('statut/{id}', 'statut')->name('statut');
+});
 
 });
 
@@ -139,4 +151,8 @@ Route::controller(CoursController::class)->name('cours.')->prefix('cours')->grou
 });
 Route::controller(ContacterController::class)->name('contacter.')->prefix('contacter')->group(function () {
     Route::get('/', 'index')->name('index');
+});
+Route::controller(BlogController::class)->name('actu.')->prefix('actu')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{id}', 'show')->name('show');
 });

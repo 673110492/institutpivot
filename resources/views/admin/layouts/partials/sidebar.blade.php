@@ -124,26 +124,9 @@
                 <hr class="mb-0 navbar-vertical-divider" />
               </div>
             </div>
-            <a class="nav-link" href="app/calendar.html" role="button" aria-expanded="false">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Calendar</span></div>
+            <a class="nav-link" href="{{route('blog.index')}}" role="button" aria-expanded="false">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Actualités</span></div>
             </a>
-            <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Email</span></div>
-            </a>
-            <ul class="nav collapse false" id="email">
-              <li class="nav-item"><a class="nav-link" href="app/email/inbox.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Inbox</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/email-detail.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Email detail</span></div>
-                </a><!-- more inner pages-->
-              </li>
-              <li class="nav-item"><a class="nav-link" href="app/email/compose.html" aria-expanded="false">
-                  <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Compose</span></div>
-                </a><!-- more inner pages-->
-              </li>
-            </ul>
           </li>
            <!-- evenements-->
            <li class="nav-item">
