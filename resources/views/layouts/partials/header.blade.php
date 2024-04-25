@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  ftco_navbar ftco-navbar-light" id="ftco-navbar" style="background-color: red">
+<nav class="navbar navbar-expand-lg  ftco_navbar ftco-navbar-light" id="ftco-navbar">
     <div class="container">
     <a href="{{route('accueil.index')}}"><img class="navbar-brand" src="{{asset('images/3ia logo-01.png')}}" alt="" height="100px" width="240px"></a>
     {{-- <a class="navbar-brand" href="index-2.html"><i class="flaticon-university"></i>Genius <br><small>University</small></a> --}}
@@ -12,7 +12,7 @@
     <li class="nav-item"><a href="{{route('cours.index')}}" class="nav-link">Formations</a></li>
     {{-- <li class="nav-item"><a href="teacher.html" class="nav-link">Formateurs</a></li> --}}
     {{-- <li class="nav-item"><a href="event.html" class="nav-link">Evènements</a></li> --}}
-    {{-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> --}}
+    <li class="nav-item"><a href="{{route('actu.index')}}" class="nav-link">Blog</a></li>
     <li class="nav-item"><a href="{{route('contacter.index')}}" class="nav-link">Contact</a></li>
     <li class="nav-item cta"><a href="{{route('contacter.index')}}" class="nav-link"><span>Appliquer maintenant!</span></a></li>
     </ul>

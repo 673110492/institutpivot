@@ -36,8 +36,9 @@ class MessageController extends Controller
             'sujet' => 'required',
             'message' => 'required'
         ]);
-        $requestData = $request->except('token');
+        $requestData = $request->except('_token');
         $message = Message::create($requestData);
+        // dd($message);
         return back()->with('message', 'Ajouté avec succès');
     }
 

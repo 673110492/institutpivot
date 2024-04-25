@@ -25,8 +25,8 @@ if(isset($contact)){
             <div class="row block-9">
             <div class="col-md-7 pr-md-5" style="background-color: rgb(222, 222, 226)">
                 <h4 class="mb-4 card-header">Vous avez une question?</h4>
-                <form method="POST" action="{{ route('message.store') }}" accept-charset="UTF-8"
-                            class="form-horizontal" enctype="multipart/form-data">
+                <form ethod="POST" action="{{ route('message.store') }}" accept-charset="UTF-8"
+                            class="form-horizontal" enctype="multipart/form-data"m>
                             {{ csrf_field() }}
                 <div class="form-group">
                 <input type="text" class="form-control" name="noms" placeholder="Votre nom complet">

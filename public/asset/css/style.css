@@ -1588,7 +1588,7 @@ h1, h2, h3, h4,
 
 .ftco-navbar-light {
   z-index: 3;
-  background: #f8faff !important;
+  background: #ffffff !important;
   position: relative; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
@@ -1742,7 +1742,7 @@ h1, h2, h3, h4,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .7;
+    opacity: .4;
     background: #6a00ff;
     background: -moz-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #6a00ff), color-stop(100%, #ffd900));
@@ -2000,11 +2000,11 @@ h1, h2, h3, h4,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .8;
+    opacity: .4;
     background: #6a00ff;
     background: -moz-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #6a00ff), color-stop(100%, #ffd900));
-    background: -webkit-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+    background: -webit-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -o-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -ms-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -webkit-gradient(linear, left top, right top, from(#6a00ff), to(#ffd900));
@@ -2149,6 +2149,7 @@ h1, h2, h3, h4,
     position: relative;
     padding: 4em 0;
     background: #6a00ff;
+    opacity: .6;
     background: -moz-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #6a00ff), color-stop(100%, #ffd900));
     background: -webkit-linear-gradient(left, #6a00ff 0%, #ffd900 100%);

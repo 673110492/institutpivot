@@ -23,8 +23,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="ville">{{ __('Contenu') }} <span style="color:red">*</span></label>
-                    <textarea class="form-control" id="div_editor1" required name="contenu" type="contenu" value=""
-                        placeholder="Dschang">{{ isset($apropos->contenu) ? $apropos->contenu : old('contenu') }}</textarea>
+                    <textarea class="form-control" rows="10" required name="contenu" type="contenu" value=""
+                        placeholder="Entrer le contenu">{{ isset($apropos->contenu) ? $apropos->contenu : old('contenu') }}</textarea>
                     <span style="color: red">{!! $errors->first('contenu', '<p class="help-block">:message</p>')
                         !!}</span>
                 </div>

@@ -28,7 +28,7 @@
     <meta name="msapplication-TileImage" content="{{asset('assets/img/favicons/mstile-150x150.png')}}">
     <meta name="theme-color" content="#ffffff">
     <script src="{{asset('assets/js/config.js')}}"></script>
-    <script src="{{asset('vendors/overlayscrollbars/OverlayScrollbars.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/overlayscrollbars/OverlayScrollbars.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/richtexteditor/rte.js')}}"></script>
     <script>
         RTE_DefaultConfig.url_base = 'richtexteditor'
@@ -39,7 +39,7 @@
     <!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="{{asset('vendors/overlayscrollbars/OverlayScrollbars.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendors/overlayscrollbars/OverlayScrollbars.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/theme-rtl.min.css')}}" rel="stylesheet" id="style-rtl">
     <link href="{{asset('assets/css/theme.min.css')}}" rel="stylesheet" id="style-default">
     <link href="{{asset('assets/css/user-rtl.min.css')}}" rel="stylesheet" id="user-style-rtl">
@@ -102,16 +102,16 @@
                 <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="{{asset('vendors/popper/popper.min.js')}}"></script>
-    <script src="{{asset('vendors/bootstrap/bootstrap.min.js')}}"></script>
-    <script src="{{asset('vendors/anchorjs/anchor.min.js')}}"></script>
-    <script src="{{asset('vendors/is/is.min.js')}}"></script>
-    <script src="{{asset('vendors/prism/prism.js')}}"></script>
-    <script src="{{asset('vendors/echarts/echarts.min.js')}}"></script>
-    <script src="{{asset('vendors/fontawesome/all.min.js')}}"></script>
-    <script src="{{asset('vendors/lodash/lodash.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/popper/popper.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/anchorjs/anchor.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/is/is.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/prism/prism.js')}}"></script>
+    <script src="{{asset('assets/vendors/echarts/echarts.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/fontawesome/all.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/lodash/lodash.min.js')}}"></script>
     <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
-    <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/list.js/list.min.js')}}"></script>
     <script src="{{asset('assets/js/theme.js')}}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/toast.js') }}"></script>
