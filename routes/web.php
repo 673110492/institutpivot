@@ -33,6 +33,9 @@ use App\Http\Controllers\Site\ContacterController;
 Route::get('/', function () {
     return to_route('accueil.index');
 });
+// Route::get('/', function () {
+//     return view('front.index');
+// });
 
 Route::controller(AuthAdminController::class)->name('auth.')->prefix('auth')->group(function () {
     Route::get('/', 'loginPage')->name('loginPage');

@@ -10,12 +10,12 @@ class CoursController extends Controller
     public function index()
     {
         $formations = Formation::where('statut',true)->get();
-           return view('formation',compact('formations'));
+           return view('front/formation',compact('formations'));
     }
     public function show($id)
     {
        $formation = Formation::findOrFail($id);
-       $formations = Formation::where('statut',true)->get();
-       return view('formation_detail',compact('formation','formations'));
+       $formations = Formation::where('statut',true)->where('id', '!=' ,$id)->get();
+       return view('front/formation_detail',compact('formation','formations'));
     }
 }

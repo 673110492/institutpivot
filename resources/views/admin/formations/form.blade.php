@@ -44,7 +44,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="ville">{{ __('Description de la formation') }} <span style="color:red">*</span></label>
-                    <textarea class="form-control" id="div_editor1" required name="description" type="description" value=""
+                    <textarea class="form-control" required name="description" type="description" value=""
                         placeholder="Dschang">{{ isset($formation->description) ? $formation->description : old('description') }}</textarea>
                     <span style="color: red">{!! $errors->first('description', '<p class="help-block">:message</p>')
                         !!}</span>

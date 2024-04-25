@@ -12,15 +12,11 @@ class AboutController extends Controller
 {
     public function index()
     {
+        $formations = Formation::where('statut',true)->get();
+        $autres = Temoignage::where('statut',true)->where('fonction','!=','code')->get();
         $about = Apropos::where('statut',true)->first();
         $video = Video::where('statut',true)->first();
-        $temoignages = Temoignage::where('statut',true)->where('fonction','code')->get();
-        foreach($temoignages as $item){
-            if(isset($item->formation_id)){
-                $item->formation = Formation::findOrFail($item->formation_id);
-            }
-        }
         // dd($video);
-        return view('about',compact('about','video','temoignages'));
+        return view('front.about',compact('about','video','autres','formations'));
     }
 }
