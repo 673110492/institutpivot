@@ -150,9 +150,9 @@
                 data-aos-easing="linear"
                 data-aos-duration="700">
                     <div class="about_us_details">
-                        <h2>{{$about->titre}}</h2>
+                        <h2>{{isset($about->titre) ? $about->titre}} : "A Propos De Nous"</h2>
                         <h3>20 ans d'experience</h3>
-                        <p style="text-align: justify">{{$about->contenu}}</p>
+                        <p style="text-align: justify">{{isset($about->contenu) ? $about->contenu : "Notre vison"}}</p>
                             <h3><span>Conatacter nous</span> +237 659218936</h3>
                         <a href="{{route('cours.index')}}" class="btn_1">Voir les formations</a>
                     </div>
@@ -246,7 +246,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-6">
                     <div class="motivation_content">
-                        <h2>{{$video->titre}}</h2>
+                        <h2>{{isset($video->titre) ? $video->titre : "Notre vision"}}</h2>
                         {{-- <p>Cack gormless young delinquent that bits and bobs he nicked it mush, spiffing smashing he legged it have it codswallop.</p> --}}
                         <ul class="nav nav-tabs" id="motivation_content_tab" role="tablist">
                             @foreach ($formations->take(3) as $item)
