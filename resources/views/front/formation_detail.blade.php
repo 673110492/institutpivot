@@ -9,6 +9,8 @@
                         <div class="breadcrumb_iner_link">
                             <a href="{{route('accueil.index')}}">Accueil</a>
                             <i class="arrow_carrot-right"></i>
+                            <span>Formations</span>
+                            <i class="arrow_carrot-right"></i>
                             <span>{{$formation->nom}}</span>
                         </div>
                     </div>
@@ -25,7 +27,7 @@
                             data-aos-duration="1000" class="blog_details_content">
                             <img src="{{isset($formation) ? url('name/'. $formation->photo) : '#'}}" alt="#" class="img-fluid">
                             <h2 class="text-primary">{{$formation->nom}}</h2>
-                            <p>{{$formation->description}}</p>   
+                            <p style="text-align:justify">{{$formation->description}}</p>   
                         </div>
                     </div>
                 </div>
