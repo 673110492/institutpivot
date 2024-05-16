@@ -39,20 +39,18 @@
             <div class="col-lg-12">
                 <div class="copyright_part">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-8">
+                        <div class="col-lg-6">
                             <p  style="color : white">© Copyright 2023 fait par <a href="mailto:lucrecenanfack@gmail.com">3iA</a> Tous droits réservés.</p>
                         </div>
-                        <div class="col-lg-6 col-md-4">
-                            <div class="social_icon">
-                                <a href="#"><i class="social_facebook text-primary"></i></a>
-                                <a href="#"><i class="social_twitter text-primary"></i></a>
+                        <div class="col-lg-6">
+                             <div class="social_icon">
+                                <a href="#" style="font-weight: bold;"><i class="social text-primary"></i>f</a>
                                 <a href="#"><i class="social_youtube text-danger"></i></a>
                                 <a href="#"><i class="social_linkedin text-primary"></i></a>
                                 <a href="mailto:lucrecenanfack@gmail.com">Me</a>
                                 <a href="#"><i class="social_skype text-primary"></i></a>
                                 <a href="#"><i class="social_instagram"></i></a>
-                                <a href="#"><i class="social_pinterest text-danger"></i></a>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

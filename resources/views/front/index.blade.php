@@ -7,7 +7,7 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-8">
                         <div class="banner_iner">
-                            <h5 style="font">Bienvenue Sur Notre Plateforme</h5>
+                            <h5 >Bienvenue Sur Notre Plateforme</h5>
                             <h2>Formation Intégralement Numérique</h2>
                             <a href="{{route('cours.index')}}" class="btn_2">Nos Formations</a>
                         </div>
@@ -53,25 +53,25 @@
                         data-aos-duration="1200">
                             <img src="img/icon/course_1.svg" alt="">
                             <h4>Admission</h4>
-                            <p>Admission possible et ouverte pendant toute l’année.</p>
+                            <p style="text-align:justify">Admission possible et ouverte pendant toute l’année.</p>
                         </div>
                         <div class="single_course_list" data-aos="fade-up"
                         data-aos-duration="1600">
                             <img src="img/icon/course_2.svg" alt="">
                             <h4>Cours en ligne</h4>
-                            <p>Travailler de la maison, du bureau, de n’importe où a votre rythme .</p>
+                            <p style="text-align:justify">Travailler de la maison, du bureau, de n’importe où a votre rythme .</p>
                         </div>
                         <div class="single_course_list" data-aos="fade-up"
                         data-aos-duration="2000">
                             <img src="img/icon/course_3.svg" alt="">
                             <h4>Diplômes</h4>
-                            <p>Diplômes reconnus au niveau National et International (DQP, CQP, Attestation ministérielle).</p>
+                            <p style="text-align:justify">Diplômes reconnus au niveau National et International (DQP, CQP, Attestation ministérielle).</p>
                         </div>
                         <div class="single_course_list" data-aos="fade-up"
                         data-aos-duration="2400">
                             <img src="img/icon/course_4.svg" alt="">
                             <h4>Carrières</h4>
-                            <p>Le digital s’intègre dans tout corps de métier.</p>
+                            <p style="text-align:justify">Le digital s’intègre dans tout corps de métier.</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                 data-aos-easing="linear"
                 data-aos-duration="700">
                     <div class="about_us_details">
-                        <h2>{{isset($about->titre) ? $about->titre}} : "A Propos De Nous"</h2>
+                        <h2>{{isset($about->titre) ? $about->titre : "A Propos De Nous"}}</h2>
                         <h3>20 ans d'experience</h3>
                         <p style="text-align: justify">{{isset($about->contenu) ? $about->contenu : "Notre vison"}}</p>
                             <h3><span>Conatacter nous</span> +237 659218936</h3>
@@ -193,7 +193,7 @@
                                     <span>(120 Avis)</span>
                                 </div>
                                 <a href="{{route('cours.show',$item->id)}}"><h4 class="text-primary" style="font-weight: bold">{{$item->nom}}</h4></a>
-                                <p>{!! Str::limit($item->description, 100, '...')  !!}</p>
+                                <p style="text-align:justify">{!! Str::limit($item->description, 100, '...')  !!}</p>
                                 <div class="popular_course_list">
                                     <p><i class="icon_book_alt"></i>10 leçons</p>
                                     <p><i class="icon_profile"></i>120</p>
@@ -222,7 +222,7 @@
                     <div class="student_review_iner owl-carousel">
                         @foreach ($temoignages as $item)
                         <div class="single_student_review">
-                            <p>{{$item->description}}</p>
+                            <p style="text-align:justify">{{$item->description}}</p>
                             <div class="student_review_content">
                                 <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="">
                                 <div class="student_info">
@@ -294,7 +294,7 @@
                         <div class="event_list_content">
                             <h5 class="text-primary">{{$item->fonction}}</h5>
                             <h2 class="mt-3">{{$item->nom}}</h2>
-                            <p>{{$item->description}}</p>
+                            <p style="text-align:justify">{{$item->description}}</p>
                         </div>
                     </div>
                     @endforeach

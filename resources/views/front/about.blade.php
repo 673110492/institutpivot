@@ -1,6 +1,6 @@
 @extends('front.layouts.app')
 @section('content')
-<section class="breadcrumb_part blog_grid_bg">
+<section class="breadcrumb_part blog_grid_bg" >
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 ">

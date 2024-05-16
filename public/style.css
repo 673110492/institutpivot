@@ -1667,6 +1667,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: red;
   position: relative;
   display: flex;
   align-items: center;

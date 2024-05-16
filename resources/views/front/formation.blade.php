@@ -73,16 +73,8 @@
                                 </a>
                                 <!-- START .course-content-meta --> 
                                 <div class="course-wrap-meta" bis_skin_checked="1">
-                                    <div class="meta-item meta-item-duration" bis_skin_checked="1">10 weeks</div>
-                                    <div class="meta-item meta-item-level" bis_skin_checked="1">All levels</div>
-                                    <div class="meta-item meta-item-lesson" bis_skin_checked="1">
-                                        <span class="meta-number">11 lessons</span>
-                                    </div>
-                                    <div class="meta-item meta-item-quiz" bis_skin_checked="1">
-                                        <span class="meta-number">1 quiz</span>
-                                    </div>
-                                    <div class="meta-item meta-item-student" bis_skin_checked="1">    <span class="meta-number">0 students</span>
-                                    </div>
+                                    <div class="meta-item meta-item-duration" bis_skin_checked="1"><span class="text-primary">Durée : </span>{{$item->duree}}</div>
+                                    <div class="meta-item meta-item-level" bis_skin_checked="1"><span class="text-primary">Niveau : </span>Intermediaire</div>
                                 </div> <!-- END .course-content-meta -->
                                 <div class="separator" bis_skin_checked="1"></div>
                                 <div class="course-info" bis_skin_checked="1">
