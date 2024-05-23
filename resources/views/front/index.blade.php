@@ -65,13 +65,13 @@
                         data-aos-duration="2000">
                             <img src="img/icon/course_3.svg" alt="">
                             <h4>Diplômes</h4>
-                            <p style="text-align:justify">Diplômes reconnus au niveau National et International (DQP, CQP, Attestation ministérielle).</p>
+                            <p style="text-align:justify">Diplômes reconnus au niveau National et International (DQP, CQP, Attestation ministérielle), Certifications internationales.</p>
                         </div>
                         <div class="single_course_list" data-aos="fade-up"
                         data-aos-duration="2400">
                             <img src="img/icon/course_4.svg" alt="">
                             <h4>Carrières</h4>
-                            <p style="text-align:justify">Le digital s’intègre dans tout corps de métier.</p>
+                            <p style="text-align:justify">Le digital s’intègre dans tout corps de métier (Développeur web et mobile, Administrateur réseau, ...).</p>
                         </div>
                     </div>
                 </div>

@@ -1667,7 +1667,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: red;
   position: relative;
   display: flex;
   align-items: center;
@@ -2990,7 +2989,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
 }
 .motivation_video1 span {
   max-width: 16px;
-  color: #2572ff;
+  color: #ffffff;
   text-shadow: 0px 10px 16px rgba(37, 114, 255, 0.4);
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -3009,7 +3008,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
   height: 120px;
   line-height: 120px;
   text-align: center;
-  background-color: #d90606;
+  background-color: #3107ea;
   border-radius: 50%;
   display: inline-block;
 }
@@ -3025,11 +3024,11 @@ a:focus, .button:focus, button:focus, .btn:focus {
     line-height: 80px;
   }
 }
-.motivation_video a:hover span {
-  color: #2572ff;
+.motivation_video1 a:hover span {
+  color: #ff2525;
   text-shadow: none;
 }
-.motivation_video1 a:hover span {
+.motivation_video a:hover span {
   color: #2572ff;
   text-shadow: none;
 }

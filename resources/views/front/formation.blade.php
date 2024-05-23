@@ -16,6 +16,24 @@
             </div>
         </div>
     </section>
+    <section class="course_details padding_bottom">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-xl-4 col-md-86">
+                   
+                </div>
+                <div class="col-xl-3 col-md-2" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="motivation_video1">
+                                <a href="{{isset($video) ? url('name/' . $video->video) : '#'}}" class="animated_play_button popup_youtube">
+                                <span class="flaticon-play-button"></span></a>
+                            </div>
+                </div>
+                <div class="col-xl-5 col-md-5" data-aos="fade-up" data-aos-duration="1200">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
       <!-- courses part here --> 
       <div id="content" class="site-content" bis_skin_checked="1">
         <div class="lp-archive-courses" bis_skin_checked="1">
