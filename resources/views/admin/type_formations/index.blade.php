@@ -8,8 +8,8 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Gestion des formations</h3>
-                <p class="mb-0"><a href="{{ url('/home') }}">Dashboard</a> / Liste des formations</p>
+                <h3>Gestion des types formations</h3>
+                <p class="mb-0"><a href="{{ url('/home') }}">Dashboard</a> / Liste des types formations</p>
             </div>
             <br>
             <div class="col-12">
@@ -29,10 +29,10 @@
     <div class="card-header">
         <div class="row flex-between-end">
             <div class="col-auto align-self-center">
-                <h5 class="mb-0">Liste des formations</h5>
+                <h5 class="mb-0">Liste des types de formations</h5>
             </div>
             <div class="col-auto align-self-center" style="margin-right: 20px">
-                <h5>Total : {{$formations->count()}}</h5>
+                <h5>Total : {{$type_formations->count()}}</h5>
             </div>
             <div class="card-body py-0 border-top">
                 <div class="tab-content">
@@ -43,7 +43,7 @@
                             <div class="card-body p-0 pb-3">
                                 <div class="d-flex align-items-center justify-content-end my-3">
                                     <div id="bulk-select-replace-element" style="margin-right: 20px"><a
-                                            class="btn btn-falcon-success btn-sm" href="{{route('formation.create')}}"><span class="fas fa-plus"
+                                            class="btn btn-falcon-success btn-sm" href="{{route('type_formation.create')}}"><span class="fas fa-plus"
                                                 data-fa-transform="shrink-3 down-2"></span><span
                                                 class="ms-1">Ajouter</span></a></div>
                                     <div class="d-none ms-3" id="bulk-select-actions">
@@ -68,15 +68,15 @@
                                                                 data-bulk-select='{"body":"bulk-select-body","actions":"bulk-select-actions","replacedElement":"bulk-select-replace-element"}' />
                                                         </div>
                                                     </th>
-                                                    <th class="align-middle" data-sort="nom">Nom formation</th>
-                                                    <th class="align-middle" data-sort="nom">Type </th>
+                                                    <th class="align-middle" data-sort="nom">Nom </th>
+                                                    <th class="align-middle" data-sort="duree">Durée formation</th>
                                                     {{-- <th class="align-middle" data-sort="prix">Description</th> --}}
                                                     <th class="align-middle" data-sort="prix">Statut formation</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list" id="table-orders-body">
-                                                @forelse ( $formations as $item)
+                                                @forelse ( $type_formations as $item)
                                                 <tr class="btn-reveal-trigger">
                                                     <td class="align-middle white-space-nowrap">
                                                         <div class="form-check mb-0"><input class="form-check-input"
@@ -84,7 +84,7 @@
                                                                 data-bulk-select-row="data-bulk-select-row" /></div>
                                                     </td>
                                                     <th class="align-middle nom">{{ $item->nom }}</th>
-                                                    <th class="align-middle nom">{{ $item->type }}</th>
+                                                    <td class="align-middle duree">{{$item->duree}}</td>
                                                     {{-- <td class="align-middle prix">{!! Str::limit($item->description, 20, '...')  !!}</td> --}}
                                                     <td>
                                                         @if ($item->statut == true)
@@ -97,10 +97,10 @@
                                                     </td>
                                                     <td class="align-middle mr-20">
                                                         <a class="btn btn-falcon-info me-1 mb-1"
-                                                            title="Détail d'une formation" href="{{route('formation.show',$item->id)}}"><i
+                                                            title="Détail d'un type de formation" href="{{route('type_formation.show',$item->id)}}"><i
                                                                 class="fa fa-eye"></i></a>
-                                                        <a class="btn btn-falcon-primary me-1 mb-1" href="{{route('formation.edit',$item->id)}}"
-                                                            title="Modifier une formation"><i
+                                                        <a class="btn btn-falcon-primary me-1 mb-1" href="{{route('type_formation.edit',$item->id)}}"
+                                                            title="Modifier un type de formation"><i
                                                                 class="fa fa-pen"></i></a>
                                                         <button class="btn btn-falcon-danger me-1 mb-1" title="Delete un user"
                                                             data-bs-toggle="modal"
@@ -113,11 +113,11 @@
                                                                 @endif
                                                         @include('global.delete-modal', [
                                                         'id' => $item->id,
-                                                        'url' => route('formation.delete', $item->id),
-                                                        ])
-                                                         @include('admin.formations.statut', [
+                                                        'url' => route('type_formation.delete', $item->id),
+                                                        ]),
+                                                        @include('admin.type_formations.statut', [
                                                             'formation' => $item,
-                                                            'url' => route('formation.statut', $item->id),
+                                                            'url' => route('type_formation.statut', $item->id),
                                                         ])
                                                     </td>
                                                 </tr>
