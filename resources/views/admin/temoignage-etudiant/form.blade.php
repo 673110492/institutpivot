@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <select name="formation_id" id="formation_id js-example-basic-single" class="form-select">
-                        <option value="" disabled selected>Choisir le formation de l'etudiant</option>
+                        <option value="" disabled selected>Choisir la formation de l'etudiant</option>
                         @foreach($formations as $item)
                         <option value="{{$item->id}}" @if( isset($temoignage) && $item->id == $temoignage->formation_id) selected @endif>
                             {{$item->nom}}

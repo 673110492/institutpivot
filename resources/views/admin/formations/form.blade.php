@@ -15,6 +15,18 @@
                     <span style="color: red">{!! $errors->first('photo', '<p class="help-block">:message</p>') !!}</span>
                 </div>
                 <div class="form-floating mb-3">
+                    <select name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
+                        <option value="" disabled selected>Choisir la formation de l'etudiant</option>
+                        @foreach($type_formations as $item)
+                        <option value="{{$item->id}}" @if( isset($formations) && $item->id == $formations->type_formation_id) selected @endif>
+                            {{$item->nom}}
+                        </option>
+                        @endforeach
+                    </select>
+                    <label for="type_formation_id" class="control-label">{{ 'Formateur responsable' }}<span style="color:red">*</span></label>
+                    {!! $errors->first('type_formation_id', '<p class="help-block">:message</p>') !!}
+                </div>
+                <div class="form-floating mb-3">
                     <input class="form-control" id="duree" name="duree" required type="duree"
                         value="{{ isset($formation->duree) ? $formation->duree : old('duree') }}"
                         placeholder="Dschang" />

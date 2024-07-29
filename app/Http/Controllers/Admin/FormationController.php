@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Formation;
+use App\Models\TypeFormation;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,12 @@ class FormationController extends Controller
     {
         $users = User::where('type','enseignant')->get();
         $formations = Formation::all();
+        foreach($formations as $item){
+
+            $type=typeFormation::findOrFail($item->type_formation_id);
+            $item->type = $type->nom;
+
+        }
         return view('admin.formations.index', compact('formations','users'));
     }
 
@@ -23,8 +30,9 @@ class FormationController extends Controller
      */
     public function create()
     {
+        $type_formations = TypeFormation::all();
         $users = User::where('type','enseignant')->get();
-        return view('admin.formations.create', compact('users'));
+        return view('admin.formations.create', compact('users','type_formations'));
     }
 
     /**
