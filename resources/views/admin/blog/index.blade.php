@@ -8,7 +8,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Gestion de l'actualités</h3>
+                <h3>Gestion des actualités</h3>
                 <p class="mb-0"><a href="{{ url('/home') }}">Dashboard</a> / Liste des actualités</p>
             </div>
             <br>
@@ -71,8 +71,7 @@
                                                         </div>
                                                     </th>
                                                     <th class="align-middle" data-sort="nom">Titre</th>
-                                                    <th class="align-middle" data-sort="email">Auteur</th>
-                                                    <th class="align-middle" data-sort="adresse">Message</th>
+                                                    <th class="align-middle" data-sort="adresse">Contenu</th>
                                                     <th class="align-middle" data-sort="sexe">Nombre de commentaire</th>
                                                     <th class="align-middle" data-sort="tel">Statut</th>
                                                     <th>Action</th>
@@ -87,7 +86,6 @@
                                                                 data-bulk-select-row="data-bulk-select-row" /></div>
                                                     </td>
                                                     <td class="align-middle nom">{!! Str::limit($item->titre, 15, '...')  !!}</td>
-                                                    <td class="align-middle email">{{$item->auteur}}</td>
                                                     <td class="align-middle adresse">{!! Str::limit($item->message, 15, '...')  !!}</td>
                                                     <td class="align-middle sexe"><center>{{ 0 }}</center></td>
                                                     <td class="align-middle tel">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
-use App\Models\Actualite;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class ActualiteController extends Controller
@@ -13,7 +13,7 @@ class ActualiteController extends Controller
      */
     public function index()
     {
-        $actualites = Actualite::all();
+        $actualites = Blog::all();
         return view('admin.blog.index',compact('actualites'));
     }
 
@@ -33,7 +33,6 @@ class ActualiteController extends Controller
         $request->validate([
             'titre' => 'required',
             'photo' => 'required',
-            'auteur' => 'required',
             'message' => 'required'
         ]);
         $requestData = $request->except('token');
@@ -43,14 +42,14 @@ class ActualiteController extends Controller
             ->store('uploads', 'public');
         }
         // dd($requestData);
-        $atualite = Actualite::create($requestData);
+        $atualite = Blog::create($requestData);
         return to_route('blog.index')->with('message', ' Actualité ajoutée avec succès');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Actualite $actualite)
+    public function show(Blog $actualite)
     {
         //
     }
@@ -60,7 +59,7 @@ class ActualiteController extends Controller
      */
     public function edit($id)
     {
-        $actualite = Actualite::findOrFail($id);
+        $actualite = Blog::findOrFail($id);
         return view('admin.blog.edit',compact('actualite'));
     }
 
@@ -71,10 +70,9 @@ class ActualiteController extends Controller
     {
         $request->validate([
             'titre' => 'required',
-            'message' => 'required',
-            'auteur' => 'required'
+            'message' => 'required'
         ]);
-        $actualite = Actualite::findOrFail($id);
+        $actualite = Blog::findOrFail($id);
         $requestData = $request->all();
         if ($request->hasFile('photo')) {
             $requestData['photo'] = $request->file('photo')
@@ -88,13 +86,16 @@ class ActualiteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Actualite $actualite)
+    public function destroy($id)
     {
-        //
+        $actualite = Blog::findOrFail($id);
+        $actualite->delete();
+        return back()->with('message', 'Suppression effectuée avec succes');
+    
     }
     public function statut($id)
     {
-        $actualite = Actualite::findOrFail($id);
+        $actualite = Blog::findOrFail($id);
         if($actualite->statut == true){
             $actualite->update(['statut' => false]);
             return back()->with('message', 'Actualité désactivée avec succes!');

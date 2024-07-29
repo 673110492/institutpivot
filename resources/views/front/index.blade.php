@@ -150,8 +150,7 @@
                 data-aos-easing="linear"
                 data-aos-duration="700">
                     <div class="about_us_details">
-                        <h2>{{isset($about->titre) ? $about->titre : "A Propos De Nous"}}</h2>
-                        <h3>20 ans d'experience</h3>
+                    <span style="color:black; font-size: 2.5em;"><b>{{isset($about->titre) ? $about->titre : "A Propos De Nous"}}</b></span>
                         <p style="text-align: justify">{{isset($about->contenu) ? $about->contenu : "Notre vison"}}</p>
                             <h3><span>Conatacter nous</span> +237 659218936</h3>
                         <a href="{{route('cours.index')}}" class="btn_1">Voir les formations</a>

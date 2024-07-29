@@ -10,7 +10,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Gestion de l'actualités</h3>
+                <h3>Gestion des actualités</h3>
                 <p class="mb-0"><a href="{{ url('/home') }}">Dashboard</a> / Liste des actualités</p>
             </div>
             <br>

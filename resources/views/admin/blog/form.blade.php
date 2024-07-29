@@ -14,17 +14,10 @@
                     <label for="titre">Titre de l'actualité<span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('titre', '<p class="help-block">:message</p>') !!}</span>
                 </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" required id="auteur" name="auteur" type="text"
-                        value="{{ isset($actualite->auteur) ? $actualite->auteur : old('auteur') }}"
-                        placeholder="Expert actualite" />
-                    <label for="auteur">Auteur de l'actualité<span style="color:red">*</span></label>
-                    <span style="color: red">{!! $errors->first('auteur', '<p class="help-block">:message</p>') !!}</span>
-                </div>
                 <div class="mb-3">
                     <label for="ville">{{ __('Contenu') }} <span style="color:red">*</span></label>
-                    <textarea class="form-control" id="div_editor1" required name="message" type="message" value=""
-                        placeholder="Dschang">{{ isset($actualite->message) ? $actualite->message : old('message') }}</textarea>
+                    <textarea class="form-control" rows="5" required name="message" type="message" value=""
+                        placeholder="">{{ isset($actualite->message) ? $actualite->message : old('message') }}</textarea>
                     <span style="color: red">{!! $errors->first('message', '<p class="help-block">:message</p>')
                         !!}</span>
                 </div>
