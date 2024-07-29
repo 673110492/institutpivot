@@ -78,7 +78,8 @@
                                     <li class=""><a style="color: blue" href="{{route('accueil.index')}}">Acceuil</a></li>
                                     <li><a href="{{route('propos.index')}}">A propos</a></li>
                                     <li><a href="{{route('cours.index')}}">Formations</a></li>
-                                    <li><a href="{{route('contacter.index')}}">Nous contacter</a></li>
+                                    <li><a href="{{route('actu.index')}}">Actualités</a></li>
+                                    <li><a href="{{route('contacter.index')}}">Contact</a></li>
                                     <!-- <li class="mega_menu_dropdown">
                                         <a class="mega_menu_dropdown-toggle nav-link active" href="#">Home</a>
                                         <ul>

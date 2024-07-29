@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Site\AcceuilController;
 use App\Http\Controllers\Site\AboutController;
+use App\Http\Controllers\Site\ActuController;
 use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\ContacterController;
@@ -152,10 +153,10 @@ Route::controller(CoursController::class)->name('cours.')->prefix('cours')->grou
     Route::get('/', 'index')->name('index');
     Route::get('/{id}', 'show')->name('show');
 });
-Route::controller(ContacterController::class)->name('contacter.')->prefix('contacter')->group(function () {
-    Route::get('/', 'index')->name('index');
-});
-Route::controller(BlogController::class)->name('actu.')->prefix('actu')->group(function () {
+Route::controller(ActuController::class)->name('actu.')->prefix('actu')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{id}', 'show')->name('show');
+});
+Route::controller(ContacterController::class)->name('contacter.')->prefix('contacter')->group(function () {
+    Route::get('/', 'index')->name('index');
 });
