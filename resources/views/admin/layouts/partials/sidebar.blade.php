@@ -9,7 +9,7 @@
       <div class="toggle-icon-wrapper">
         <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
       </div><a class="navbar-brand" href="index.html">
-        <div class="d-flex align-items-center py-3"><img class="me-2" src="assets/img/icons/spot-illustrations/3ia logo-01.png" alt="" width="150" /></div>
+        <div class="d-flex align-items-center py-3"><img class="me-2" src="{{asset('assets/img/icons/spot-illustrations/3ia logo-01.png')}}" alt="" width="150" /></div>
       </a>
     </div>
     <div class="collapse navbar-collapse" id="navbarVerticalCollapse">

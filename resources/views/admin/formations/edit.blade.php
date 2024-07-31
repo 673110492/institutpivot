@@ -37,7 +37,30 @@
 <form action="{{route('formation.update',$formation->id)}}" method="POST" accept-charset="UTF-8"
     class="form-horizontal" enctype="multipart/form-data">
     @csrf
- @include('admin.formations.form')
+    <div class="card-body bg-white">
+    <div class="tab-content">
+                <div class="form-floating mb-3">
+                    <input class="form-control" required id="nom" name="nom" type="text"
+                        value="{{ isset($formation->nom) ? $formation->nom : old('nom') }}"
+                        placeholder="Expert formation" />
+                    <label for="nom">{{ __('Nom de la formation') }} <span style="color:red">*</span></label>
+                    <span style="color: red">{!! $errors->first('nom', '<p class="help-block">:message</p>') !!}</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input accept=".jpeg,.png,.jpg" class="form-control" id="photo" name="photo" type="file"
+                        value="{{ isset($formation->photo) ? $formation->photo : old('photo') }}"
+                        placeholder="(237) XXX XX XX XX" />
+                    <label for="photo">Photo descriptive<span style="color:red">*</span></label>
+                    <span style="color: red">{!! $errors->first('photo', '<p class="help-block">:message</p>') !!}</span>
+                </div>
+                <div class="mb-3">
+                    <label for="ville">{{ __('Description de la formation') }} <span style="color:red">*</span></label>
+                    <textarea class="form-control" rows="10" required name="description" type="description" value="">{{ isset($formation->description) ? $formation->description : old('description') }}</textarea>
+                    <span style="color: red">{!! $errors->first('description', '<p class="help-block">:message</p>')
+                        !!}</span>
+                </div>
+    </div>
+    </div>
 
 <div class="card-footer">
     <center>

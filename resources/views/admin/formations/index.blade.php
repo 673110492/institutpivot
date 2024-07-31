@@ -84,7 +84,8 @@
                                                                 data-bulk-select-row="data-bulk-select-row" /></div>
                                                     </td>
                                                     <th class="align-middle nom">{{ $item->nom }}</th>
-                                                    <th class="align-middle nom">{{ $item->type }}</th>
+                                                    <th class="align-middle nom"><button class="btn btn-success" title="Liste des produits" data-bs-toggle="modal"
+                                                    data-bs-target="#{{'type'.$item->id}}">Types Formation</button></th>
                                                     {{-- <td class="align-middle prix">{!! Str::limit($item->description, 20, '...')  !!}</td> --}}
                                                     <td>
                                                         @if ($item->statut == true)
@@ -121,6 +122,10 @@
                                                         ])
                                                     </td>
                                                 </tr>
+                                                                @include('admin.formations.element',[
+                                                                    'formation' => $item,
+                                                                    'types' => $item->types
+                                                                ])
                                                 @empty
                                                 <tr>
                                                     <td colspan="10">

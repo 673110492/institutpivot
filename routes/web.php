@@ -66,12 +66,20 @@ Route::middleware('auth-admin')->group(function () {
 Route::controller(FormationController::class)->name('formation.')->prefix('formation')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/edittype/{id}', 'edittype')->name('edittype');
     Route::get('/show/{id}', 'show')->name('show');
     Route::get('/create', 'create')->name('create');
+    Route::get('/ajout/{id}', 'createtype')->name('ajouttype');
     Route::post('/', 'store')->name('store');
+    Route::post('/type', 'storetype')->name('storetype');
     Route::post('/update/{id}', 'update')->name('update');
+    Route::post('/updatetype/{id}', 'updatetype')->name('updatetype');
     Route::delete('/{id}', 'destroy')->name('delete');
+    Route::delete('/type/{id}', 'destroytype')->name('deletetype');
     Route::post('statut/{id}', 'statut')->name('statut');
+    Route::get('/supp_type/{supp}', 'supp_type')->name('supp_type');
+    Route::get('/search_type/{type}', 'search_type')->name('search_type');
+    Route::get('/ajout_type/{type}/{duree}/{prix}', 'ajout_type')->name('ajout_type');
 });
 
 Route::controller(EnseignantController::class)->name('formateur.')->prefix('formateur')->group(function () {
