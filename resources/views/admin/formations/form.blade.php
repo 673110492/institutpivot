@@ -14,53 +14,55 @@
                     <label for="photo">Photo descriptive<span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('photo', '<p class="help-block">:message</p>') !!}</span>
                 </div>
-                <div class="form-floating mb-3">
-                    <select name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
-                        <option value="" disabled selected>Choisir la formation de l'etudiant</option>
+                <div class="mb-3">
+                    <label for="ville">{{ __('Description de la formation') }} <span style="color:red">*</span></label>
+                    <textarea class="form-control" rows="10" required name="description" type="description" value="">{{ isset($formation->description) ? $formation->description : old('description') }}</textarea>
+                    <span style="color: red">{!! $errors->first('description', '<p class="help-block">:message</p>')
+                        !!}</span>
+                </div>
+            <div class="row">
+                <div class="form-floating mb-3 col-md-4">
+                    <select onchange="duree_change()" name="type_formation_id" id="type_formation_id" class="form-select">
+                        <option value="" disabled selected>Choisir le type de formation</option>
                         @foreach($type_formations as $item)
-                        <option value="{{$item->id}}" @if( isset($formations) && $item->id == $formations->type_formation_id) selected @endif>
+                        <option value="{{$item->id}}" @if( isset($formation) && $item->id == $formation->type_formation_id) selected @endif>
                             {{$item->nom}}
                         </option>
                         @endforeach
                     </select>
-                    <label for="type_formation_id" class="control-label">{{ 'Formateur responsable' }}<span style="color:red">*</span></label>
+                    <label for="type_formation_id" class="control-label">{{ 'Type de formation' }}<span style="color:red">*</span></label>
                     {!! $errors->first('type_formation_id', '<p class="help-block">:message</p>') !!}
                 </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="duree" name="duree" required type="duree"
-                        value="{{ isset($formation->duree) ? $formation->duree : old('duree') }}"
-                        placeholder="Dschang" />
-                    <label for="ville">{{ __('Duree de la formation') }} <span style="color:red">*</span></label>
+                <div class="form-floating mb-3 col-md-3">
+                    <input class="form-control" id="duree" name="duree" required type="duree" />
+                    <label for="ville">{{ __('Duree minimale') }} <span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('duree', '<p class="help-block">:message</p>')
                         !!}</span>
                 </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="prix" required name="prix" type="prix"
-                        value="{{ isset($formation->prix) ? $formation->prix : old('prix') }}"
-                        placeholder="Dschang" />
-                    <label for="ville">{{ __('Prix de la formation') }} <span style="color:red">*</span></label>
+                <div class="form-floating mb-3 col-md-3">
+                    <input class="form-control" id="prix" required name="prix" type="number"/>
+                    <label for="ville">{{ __('Prix en fonction du type') }} <span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('prix', '<p class="help-block">:message</p>')
                         !!}</span>
                 </div>
-                <div class="form-floating mb-3">
-                    <select name="user_id" id="user_id js-example-basic-single" class="form-select">
-                        <option value="" disabled selected>Choisir le formation responsable</option>
-                        @foreach($users as $item)
-                        <option value="{{$item->id}}" @if( isset($formation) && $item->id == $formation->user_id) selected @endif>
-                            {{$item->noms}}
-                        </option>
-                        @endforeach
-                    </select>
-                    <label for="user_id" class="control-label">{{ 'Formateur responsable' }}</label>
-                    {!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}
+                <div class=" col-md-2 end">
+                    <label for="">Ajouter</label><br>
+                    <p class="btn btn-success" onclick="soumettre()">ok</p>
                 </div>
-                <div class="mb-3">
-                    <label for="ville">{{ __('Description de la formation') }} <span style="color:red">*</span></label>
-                    <textarea class="form-control" required name="description" type="description" value=""
-                        placeholder="Dschang">{{ isset($formation->description) ? $formation->description : old('description') }}</textarea>
-                    <span style="color: red">{!! $errors->first('description', '<p class="help-block">:message</p>')
-                        !!}</span>
-                </div>
+            </div>
+            <table class="data-table table stripe hover nowrap mt-5">
+            <thead>
+                <tr>
+                    <th><b>Type formation</b></th>
+                    <th><b>prix</b></th>
+                    <th><b>Duree</b></th>
+                    <th><b>Action</b></th>
+                </tr>
+            </thead>
+            <tbody id="tet">
+                    
+            </tbody>
+        </table>
 </div>
 </div>
 

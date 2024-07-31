@@ -29,7 +29,7 @@
         <h4 class="col-md">Ajout d'un nouveau type de formation</h4>
         <div class="d-flex align-items-center justify-content-end col-md">
             <div id="bulk-select-replace-element" style="margin-right: 20px">
-                <a href="{{route('formation.index')}}" class="btn btn-secondary "><i class="fas fa-arrow-left"></i> Retour</a>
+                <a href="{{route('type_formation.index')}}" class="btn btn-secondary "><i class="fas fa-arrow-left"></i> Retour</a>
             </div>
         </div>
     </div>

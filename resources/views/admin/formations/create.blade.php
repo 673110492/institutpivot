@@ -51,5 +51,85 @@ class="form-horizontal" enctype="multipart/form-data">
 </div>
 </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script defer>
+
+    function duree_change(){
+     let duree = document.getElementById('duree');
+     let type = document.getElementById('type_formation_id').value;
+            $.ajax({
+            url:"search_type/"+type,
+            type:'GET',
+            data:[],
+            success:function(data){
+                    console.log(data)
+                    duree.value = data[0];
+            },
+            error:function(data){
+                console.log('error',data);
+            }
+
+        });
+    }
+
+
+    function soumettre(){
+        let prix = document.getElementById('prix');
+        let duree = document.getElementById('duree');
+        let type = document.getElementById('type_formation_id').value;
+        let table = document.getElementById('tet');
+        if(type != 0 && duree.value != 0 && prix.value != 0){
+            $.ajax({
+                url:"ajout_type/"+type+"/"+duree.value+"/"+prix.value,
+                type:'GET',
+                data:[],
+                success:function(data){
+                        duree.value=0;
+                        prix.value=0;
+                        let t="";
+                        console.log(data);
+                        for(i=0; i< data.length;i++){
+                            t = t +  "<tr><td>"+data[i].nom+"</td>"+
+                                                "<td>"+data[i].duree+"</td>"+
+                                                "<td>"+data[i].prix+"</td>"+
+                                                "<td><p class='btn btn-danger' onclick='supprimer("+data[i].id+")'><i class='fa fa-trash'></i></p></td>"+
+                                                "</tr>";
+
+                        }
+                        table.innerHTML = t;
+                },
+                error:function(data){
+                    console.log('error',data);
+                }
+
+            });
+     }
+    }
+    function supprimer(supp){
+        let table = document.getElementById('tet');
+        $.ajax({
+            url:"supp_type/"+supp,
+            type:'GET',
+            data:[],
+                success:function(data){
+                        let t="";
+                        for(i=0; i< data.length;i++){
+                            t = t +  "<tr><td>"+data[i].nom+"</td>"+
+                                                "<td>"+data[i].duree+"</td>"+
+                                                "<td>"+data[i].prix+"</td>"+
+                                               "<td><p class='btn btn-danger' onclick='supprimer("+data[i].id+")'><i class='fa fa-trash'></i></p></td>"+
+                                                "</tr>";
+
+                        }
+                        table.innerHTML = t;
+                },
+                error:function(data){
+                    console.log('error',data);
+                }
+
+            });
+    }
+
+</script>
 
 
