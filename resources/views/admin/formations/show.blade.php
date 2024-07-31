@@ -75,4 +75,4 @@
     'formation' => $formation,
     'types' => $formation->types
 ])
-@endsection
+@endsection 
