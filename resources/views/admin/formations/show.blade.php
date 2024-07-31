@@ -39,9 +39,9 @@
             </a>
             <div class="button-wrapper">
                 <div>
+                    <h5 class=""><span>Type de la formation : </span><button class="btn btn-success" title="Liste des produits" data-bs-toggle="modal"
+                    data-bs-target="#{{'type'.$formation->id}}">Types Formation</button></h5>
                     <h5 class=""><span>Nom de la formation : </span><b>{{ $formation->nom}}<b></h5>
-                    <h5 class=""><span>Prix de la formation : </span><b>{{ $formation->prix}} XAF<b></h5>
-                    <h5 class=""><span>Duree de la formation : </span><b>{{ $formation->duree}}<b></h5>
                 </div>
             </div>
         </div>
@@ -71,4 +71,8 @@
         </form>
     </div>
 </div>
+@include('admin.formations.element',[
+    'formation' => $formation,
+    'types' => $formation->types
+])
 @endsection

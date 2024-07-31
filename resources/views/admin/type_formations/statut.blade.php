@@ -13,9 +13,9 @@
                         <div class="">
                             <div class="pb-0">
                                 @if ($formation->statut == true)
-                                  <h5>Voulez-vous vraiment cacher cette formation ?</h5>
+                                  <h5>Voulez-vous vraiment cacher de ce type de formation ?</h5>
                                 @else
-                                  <h5>Voulez-vous vraiment afficher cette formation?</h5>
+                                  <h5>Voulez-vous vraiment afficher de ce type de formation?</h5>
                                 @endif
                             </div>
                         </div>
