@@ -120,6 +120,24 @@
               </li>
             </ul> --}}
           </li>
+
+         <!-- Inscriptions-->
+
+          <li class="nav-item">
+                <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
+                    <div class="col-auto navbar-vertical-label">Inscriptions</div>
+                    <div class="col ps-0">
+                        <hr class="mb-0 navbar-vertical-divider" />
+                    </div>
+                </div>
+                <a class="nav-link" href="{{route('pre_inscription.index')}}" role="button" aria-expanded="false">
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Pré-Inscrit</span></div>
+                </a>
+                <a class="nav-link" href="{{route('formateur.index')}}" role="button" aria-expanded="false">
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Inscrit</span></div>
+                </a>
+          </li>
+
            <!-- blog-->
            <li class="nav-item">
             <!-- label-->

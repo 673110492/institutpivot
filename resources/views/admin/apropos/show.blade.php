@@ -20,9 +20,9 @@
                     @endif</h5>
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <a href="{{ url('name/' . $apropos->photo) }}" class="glightbox2"
+                            <a href="{{ url('storage/' . $apropos->photo) }}" class="glightbox2"
                                 data-glightbox='title:Description Bottom; description: You can set the position of the description &lt;a href="http://google.com"&gt;with a link to Google&lt;/a&gt;'>
-                            <img src="{{ url('name/' . $apropos->photo) }}" alt="user-avatar" class="d-block rounded" height="100"
+                            <img src="{{ url('storage/' . $apropos->photo) }}" alt="user-avatar" class="d-block rounded" height="100"
                                 width="100" id="uploadedAvatar" />
                             </a>
                             <div class="button-wrapper">
@@ -34,9 +34,9 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <a href="{{ url('name/' . $apropos->photo2) }}" class="glightbox2"
+                            <a href="{{ url('storage/' . $apropos->photo2) }}" class="glightbox2"
                                 data-glightbox='title:Description Bottom; description: You can set the position of the description &lt;a href="http://google.com"&gt;with a link to Google&lt;/a&gt;'>
-                            <img src="{{ url('name/' . $apropos->photo2) }}" alt="user-avatar" class="d-block rounded" height="100"
+                            <img src="{{ url('storage/' . $apropos->photo2) }}" alt="user-avatar" class="d-block rounded" height="100"
                                 width="100" id="uploadedAvatar" />
                             </a>
                             <div class="button-wrapper">

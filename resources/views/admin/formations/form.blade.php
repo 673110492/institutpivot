@@ -60,7 +60,7 @@
                 </tr>
             </thead>
             <tbody id="tet">
-                    
+
             </tbody>
         </table>
 </div>

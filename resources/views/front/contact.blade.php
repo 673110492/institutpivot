@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-6 mb-2">
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
-                        <!-- <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
+                        <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
                         <i class="icon_phone text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto; font-size: 1.5em;"> <b><a href="tel:+{{isset($contact) ? $contact->tel : '+237 651541340'}}">{{isset($contact) ? $contact->tel : "651541340/651541340"}}</a></b></h5>
                         </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-6 mb-2">
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
-                        <!-- <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
+                        <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
                         <i class="icon_mail text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto; font-size: 1.5em;"> <b><a href="mailto:{{isset($contact) ? $contact->email : '3ia@institut3ia.com'}}">{{isset($contact) ? $contact->email : "institut3ia@gmail.com"}}</a></b></h5>
                         </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-6 mb-2">
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
-                        <!-- <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
+                        <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
                         <i class="icon_map text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;color:black;"> <b>{{isset($contact) ? $contact->adresse : "Dschang, Marché Foto"}}</b></h5>
                         </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-lg-6 mb-2">
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
-                        <!-- <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
+                        <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
                         <i class="icon_globe text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;"> <b><a href="http://{{isset($contact) ? $contact->site : 'institut3ia.com'}}">{{isset($contact) ? $contact->site : "institut3ia.com"}}</a></b></h5>
                         </div>
@@ -93,7 +93,7 @@
                 <input type="submit" class="btn_3" value="Envoyer">
             </form>
         </div>
-    </div>   
+    </div>
     <img src="img/icon/shape_06.png" alt="#" class="about_sharp_1 custom-animation">
         <img src="img/icon/about_shape_02.png" alt="#" class="about_sharp_2 custom-animation2">
         <img src="img/icon/about_shape_03.png" alt="#" class="about_sharp_3 custom-animation3">
