@@ -23,8 +23,8 @@
                 data-aos-easing="linear"
                 data-aos-duration="700">
                     <div class="about_us_img">
-                    <img src="{{isset($about) ? url('name/'. $about->photo) : '#'}}" alt="#" class="img-fluid">
-                    <!-- <img src="{{isset($about) ? url('name/'. $about->photo) : '#'}}" alt="#" class="img-fluid"> -->
+                    <img src="{{isset($about) ? url('storage/'. $about->photo) : '#'}}" alt="#" class="img-fluid">
+                    <!-- <img src="{{isset($about) ? url('storage/'. $about->photo) : '#'}}" alt="#" class="img-fluid"> -->
                         <div class="about_tricker">
                             <div class="tricker_iner">
                             <p>Agréée <br><b style="font-size: 1.5em;">MINEFOP</b></p>
@@ -74,7 +74,7 @@
         <div class="tab-content" id="motivation_content_tabcontent">
             <div class="tab-pane fade show active" id="Design" role="tabpanel" aria-labelledby="Design-tab">
                 <div class="motivation_video">
-                    <a href="{{isset($video) ? url('name/' . $video->video) : '#'}}" class="animated_play_button popup_youtube">
+                    <a href="{{isset($video) ? url('storage/' . $video->video) : '#'}}" class="animated_play_button popup_youtube">
                     <span class="flaticon-play-button"></span></a>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <div class="col-lg-10">
                     @foreach ($autres->take(3) as $item)
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
-                        <img src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" alt="" class="img-fluid">
+                        <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid">
                         <div class="event_list_content">
                             <h5 class="text-primary">{{$item->fonction}}</h5>
                             <h2 class="mt-3">{{$item->nom}}</h2>

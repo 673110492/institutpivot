@@ -20,21 +20,21 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xl-4 col-md-86">
-                   
+
                 </div>
                 <div class="col-xl-3 col-md-2" data-aos="fade-up" data-aos-duration="1200">
                             <div class="motivation_video1">
-                                <a href="{{isset($video) ? url('name/' . $video->video) : '#'}}" class="animated_play_button popup_youtube">
+                                <a href="{{isset($video) ? url('storage/' . $video->video) : '#'}}" class="animated_play_button popup_youtube">
                                 <span class="flaticon-play-button"></span></a>
                             </div>
                 </div>
                 <div class="col-xl-5 col-md-5" data-aos="fade-up" data-aos-duration="1200">
-                   
+
                 </div>
             </div>
         </div>
     </section>
-      <!-- courses part here --> 
+      <!-- courses part here -->
       <div id="content" class="site-content" bis_skin_checked="1">
         <div class="lp-archive-courses" bis_skin_checked="1">
             <ul class="learn-press-breadcrumb">
@@ -72,24 +72,24 @@
                                         <div class="thumbnail-preview" bis_skin_checked="1">
                                             <div class="thumbnail" bis_skin_checked="1">
                                                 <div class="centered" bis_skin_checked="1">
-                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('name/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="Software Development" loading="lazy" title="Software Development">                
+                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="Software Development" loading="lazy" title="Software Development">
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                            </div><!-- START .course-content --> 
+                            </div><!-- START .course-content -->
                             <div class="course-content" bis_skin_checked="1">
                                 <div class="course-categories" bis_skin_checked="1">
-                                    <a href="{{route('cours.show',$item->id)}}" rel="tag" bis_skin_checked="1">{{$item->nom}}</a>    
+                                    <a href="{{route('cours.show',$item->id)}}" rel="tag" bis_skin_checked="1">{{$item->nom}}</a>
                                 </div>
                                 <span class="course-instructor">
                                     <!-- <a href="my-profile.html" bis_skin_checked="1"><span>Adam Smith</span></a> -->
                                 </span>
-                                <a href="course-details.html" class="course-permalink" bis_skin_checked="1">          
+                                <a href="course-details.html" class="course-permalink" bis_skin_checked="1">
                                     <h3 class="course-title">{{$item->nom}}</h3>
                                 </a>
-                                <!-- START .course-content-meta --> 
+                                <!-- START .course-content-meta -->
                                 <div class="course-wrap-meta" bis_skin_checked="1">
                                     <div class="meta-item meta-item-duration" bis_skin_checked="1"><span class="text-primary">Durée : </span>{{$item->duree}}</div>
                                     <div class="meta-item meta-item-level" bis_skin_checked="1"><span class="text-primary">Niveau : </span>Intermediaire</div>
@@ -98,19 +98,19 @@
                                 <div class="course-info" bis_skin_checked="1">
                                     <div class="course-excerpt" bis_skin_checked="1">{!! Str::limit($item->description, 150, '...')  !!}</div>
                                     <div class="clearfix" bis_skin_checked="1"></div>
-                                    <!-- START .course-content-footer --> 
+                                    <!-- START .course-content-footer -->
                                     <div class="course-footer" bis_skin_checked="1">
                                         <div class="course-price" bis_skin_checked="1">
                                             <span class="price">{{$item->prix}}XAF</span>
                                         </div>
-                                    </div> 
-                                    <!-- END .course-content-footer -->      
+                                    </div>
+                                    <!-- END .course-content-footer -->
                                     <div class="course-readmore" bis_skin_checked="1">
                                         <a href="{{route('cours.show',$item->id)}}" bis_skin_checked="1">Voir plus</a>
-                                    </div>       
+                                    </div>
                                 </div>
-                            </div> 
-                            <!-- END .course-content --> 
+                            </div>
+                            <!-- END .course-content -->
                         </div>
                     </li>
                     @endforeach
@@ -125,6 +125,6 @@
             </div>
         </div>
     </div>
-    <!-- courses part end --> 
-    
+    <!-- courses part end -->
+
 @endsection

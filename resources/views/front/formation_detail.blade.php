@@ -25,9 +25,9 @@
                     <div class="single_blog_details">
                         <div data-aos="fade-up"
                             data-aos-duration="1000" class="blog_details_content">
-                            <img src="{{isset($formation) ? url('name/'. $formation->photo) : '#'}}" alt="#" class="img-fluid">
+                            <img src="{{isset($formation) ? url('storage/'. $formation->photo) : '#'}}" alt="#" class="img-fluid">
                             <h2 class="text-primary">{{$formation->nom}}</h2>
-                            <p style="text-align:justify">{{$formation->description}}</p>   
+                            <p style="text-align:justify">{{$formation->description}}</p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             <h3>Autres formations</h3>
                             @foreach($formations as $item)
                             <div class="single_sidebar_post">
-                                <img src="{{isset($item) ? url('name/'. $item->photo) : '#'}}" alt="">
+                                <img src="{{isset($item) ? url('storage/'. $item->photo) : '#'}}" alt="">
                                 <div class="sidebar_post_content">
                                     <h4> <a href="{{route('cours.show',$item->id)}}"  class="text-primary"> {{$item->nom}}</a></h4>
                                     <p >{{$item->prix}} XAF</p>

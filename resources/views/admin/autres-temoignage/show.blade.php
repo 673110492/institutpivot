@@ -20,7 +20,7 @@
                     @endif</h5>
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <img src="{{ url('name/' . $temoignage->photo) }}" alt="user-avatar" class="d-block rounded" height="150"
+                            <img src="{{ url('storage/' . $temoignage->photo) }}" alt="user-avatar" class="d-block rounded" height="150"
                                 width="150" id="uploadedAvatar" />
                             <div class="button-wrapper">
                                 <div>
