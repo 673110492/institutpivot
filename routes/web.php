@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TypeFormationController;
 use App\Http\Controllers\Admin\FormationController;
 use App\Http\Controllers\Admin\EnseignantController;
+use App\Http\Controllers\Admin\PreInscriptionController;
 use App\Http\Controllers\Admin\TemoignageController;
 use App\Http\Controllers\Admin\AutreTemoignageController;
 use App\Http\Controllers\Admin\TeteHomeController;
@@ -72,6 +73,7 @@ Route::controller(FormationController::class)->name('formation.')->prefix('forma
     Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
 });
+
 Route::controller(EnseignantController::class)->name('formateur.')->prefix('formateur')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/show/{id}', 'show')->name('show');
@@ -79,6 +81,18 @@ Route::controller(EnseignantController::class)->name('formateur.')->prefix('form
     Route::post('/update/{id}', 'update')->name('update');
     Route::delete('/{id}', 'destroy')->name('delete');
 });
+
+Route::controller(PreInscriptionController::class)->name('pre_inscription.')->prefix('pre_inscription')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::delete('/{id}', 'destroy')->name('delete');
+    Route::post('statut/{id}', 'statut')->name('statut');
+});
+
 Route::controller(TemoignageController::class)->name('temoignage.')->prefix('temoignage')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/show/{id}', 'show')->name('show');
