@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\TypeFormation;
+use App\Models\PreInscription;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeFormationRequest;
 use App\Http\Requests\UpdateTypeFormationRequest;
 use Illuminate\Http\Request;
+use App\Models\Formation;
+use App\Models\TypeFormation;
 
-class TypeFormationController extends Controller
+class PreInscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $type_formations = TypeFormation::all();
-        return view('admin.type_formations.index', compact('type_formations'));
+        $pre_inscriptions = PreInscription::all();
+        return view('admin.pre_inscriptions.index', compact('pre_inscriptions'));
     }
 
     /**
@@ -24,7 +26,10 @@ class TypeFormationController extends Controller
      */
     public function create()
     {
-        return view('admin.type_formations.create');
+
+        $pre_inscriptions = PreInscription::all();
+        return view('admin.pre_inscriptions.create',compact('pre_inscriptions'));
+
     }
 
     /**
@@ -34,12 +39,14 @@ class TypeFormationController extends Controller
     {
         $request->validate([
             'nom' => 'required|string|max:255',
-            'duree' => 'required',
-            'description'
+            'prenom' => 'required',
+            'email' => 'required',
+            'telephone' => 'required',
+
         ]);
         $data = $request->all();
-        TypeFormation::create($data);
-        return to_route('type_formation.index')->with('message', 'Type formation ajoutée avec succès');
+        PreInscription::create($data);
+        return to_route('pre_inscription.index')->with('message', 'Type formation ajoutée avec succès');
     }
 
     /**
@@ -47,8 +54,8 @@ class TypeFormationController extends Controller
      */
     public function show($id)
     {
-        $type_formation = TypeFormation::findOrFail($id);
-        return view('admin.type_formations.show', compact('type_formation'));
+        $pre_inscriptions = PreInscription::findOrFail($id);
+        return view('admin.pre_inscriptions.show', compact('pre_inscriptions'));
     }
 
     /**
@@ -56,39 +63,42 @@ class TypeFormationController extends Controller
      */
     public function edit($id)
     {
-        $type_formation = TypeFormation::findOrFail($id);
-        return view('admin.type_formations.edit', compact('type_formation'));
+        $pre_inscriptions = PreInscription::findOrFail($id);
+        return view('admin.pre_inscriptions.edit', compact('pre_inscriptions'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,string $id)
+    public function update(Request $request, string $id)
     {
-        $this->validate($request,[
+        $request->validate([
             'nom' => 'required|string|max:255',
-            'duree' => 'required',
-            'description'=> 'required'
+            'prenom' => 'required',
+            'email' => 'required',
+            'telephone' => 'required',
+
         ]);
         $recup = $request->all();
-        $type_formation = TypeFormation::findOrFail($id);
-        $type_formation->update($recup);
-        return to_route('type_formation.index')->with('message', 'Type formation modifier avec succès');
+        $pre_inscriptions = PreInscription::findOrFail($id);
+        $pre_inscriptions->update($recup);
+        return to_route('pre_inscription.index')->with('message', 'Etudiant modifier avec succès');
     }
 
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy($id)
     {
-        $type_formation = TypeFormation::findOrFail($id);
-        $type_formation->delete();
+        $pre_inscriptions = PreInscription::findOrFail($id);
+        $pre_inscriptions->delete();
         return back()->with('message', 'Suppressions effectuée avec succes');
     }
 
     public function statut($id)
     {
-        $formation = TypeFormation::findOrFail($id);
+        $formation = PreInscription::findOrFail($id);
         if($formation->statut == true){
             $formation->update(['statut' => false]);
             return back()->with('message', 'formation désactivée avec succes!');
