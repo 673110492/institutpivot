@@ -75,6 +75,14 @@ Version: 1.2
   z-index: 100000;
   /* Above WP toolbar. */
 }
+.cat{
+  background-color: white;
+  color: blue;
+}
+.cat:hover{
+  color:white;
+  background-color: blue;
+}
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {

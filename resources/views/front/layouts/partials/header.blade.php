@@ -54,8 +54,8 @@
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-5">
                         <div class="header_login_info">
-                            <a href="#"  class="text-white">Devenir un Formateur</a>
-                            <a href="#"  class="text-white">Mon Profil</a>
+                            <a href="#"  class="text-white">Cameroun, Ouest, Dschang</a>
+                            <a href="#"  class="text-white">Marché Foto</a>
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,14 @@
                                 <ul>
                                     <li class=""><a style="color: blue" href="{{route('accueil.index')}}">Acceuil</a></li>
                                     <li><a href="{{route('propos.index')}}">A propos</a></li>
-                                    <li><a href="{{route('cours.index')}}">Formations</a></li>
-                                    <li><a href="{{route('actu.index')}}">Actualités</a></li>
+                                    <li class="mega_menu_dropdown">
+                                        <a class="mega_menu_dropdown-toggle nav-link" href="#">Formation</a>
+                                        <ul>
+                                            <li><a class="active" href="{{route('cours.cat')}}">Catégories</a></li>
+                                            <li><a href="{{route('cours.index')}}">Formations</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="{{route('actu.index')}}">Actualités</a></li> -->
                                     <li><a href="{{route('contacter.index')}}">Contact</a></li>
                                     <!-- <li class="mega_menu_dropdown">
                                         <a class="mega_menu_dropdown-toggle nav-link active" href="#">Home</a>
@@ -134,7 +140,7 @@
                                 </ul>
                             </nav>
                             <div class="navbar_btn">
-                                <a href="#" class="btn_1">Formations En Cours</a>
+                                <a href="#" class="btn_1">Se Préinscrire</a>
                             </div>
                         </div>
                     </div>
