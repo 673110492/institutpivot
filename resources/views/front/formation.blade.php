@@ -71,7 +71,7 @@
                                         <div class="thumbnail-preview" bis_skin_checked="1">
                                             <div class="thumbnail" bis_skin_checked="1">
                                                 <div class="centered" bis_skin_checked="1">
-                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="Software Development" loading="lazy" title="Software Development">
+                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="{{$item->nom}}" loading="lazy" title="{{$item->nom}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -160,7 +160,7 @@
                                         "<div class='thumbnail-preview' bis_skin_checked='1'>"+
                                             "<div class='thumbnail' bis_skin_checked='1'>"+
                                                 "<div class='centered' bis_skin_checked='1'>"+
-                                                    "<img width='370' height='280' src='storage/"+ data[i].photo + "' class='attachment-500x300 size-500x300 wp-post-image' alt='Software Development' loading='lazy' title='Software Development'>"+
+                                                    "<img width='370' height='280' src='storage/"+ data[i].photo + "' class='attachment-500x300 size-500x300 wp-post-image' alt='"+data[i].nom+"' loading='lazy' title='"+data[i].nom+"'>"+
                                                 "</div>"+
                                             "</div>"+
                                         "</div>"+

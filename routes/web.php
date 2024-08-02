@@ -185,6 +185,7 @@ Route::controller(AboutController::class)->name('propos.')->prefix('propos')->gr
 });
 Route::controller(CoursController::class)->name('cours.')->prefix('cours')->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/cat/', 'categorie')->name('cat');
     Route::get('/{id}', 'show')->name('show');
     Route::get('/search_cours/{id}', 'search_cours')->name('search_cours');
 

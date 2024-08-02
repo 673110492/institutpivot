@@ -19,6 +19,11 @@ class CoursController extends Controller
         $types = TypeFormation::where('statut',true)->get();
         return view('front/formation',compact('formations','video','types'));
     }
+    public function categorie()
+    {
+        $types = TypeFormation::where('statut',true)->get();
+        return view('front/categories',compact('types'));
+    }
     public function show($id)
     {
        $formation = Formation::findOrFail($id);
@@ -48,4 +53,5 @@ class CoursController extends Controller
             return response()->json($results);
          }
     }
+
 }

@@ -54,8 +54,8 @@
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-5">
                         <div class="header_login_info">
-                            <a href="#"  class="text-white">Devenir un Formateur</a>
-                            <a href="#"  class="text-white">Mon Profil</a>
+                            <a href="#"  class="text-white">Cameroun, Ouest, Dschang</a>
+                            <a href="#"  class="text-white">Marché Foto</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                     <li class="mega_menu_dropdown">
                                         <a class="mega_menu_dropdown-toggle nav-link" href="#">Formation</a>
                                         <ul>
-                                            <li><a class="active" href="">Catégories</a></li>
+                                            <li><a class="active" href="{{route('cours.cat')}}">Catégories</a></li>
                                             <li><a href="{{route('cours.index')}}">Formations</a></li>
                                         </ul>
                                     </li>
@@ -140,7 +140,7 @@
                                 </ul>
                             </nav>
                             <div class="navbar_btn">
-                                <a href="#" class="btn_1">Formations En Cours</a>
+                                <a href="#" class="btn_1">Se Préinscrire</a>
                             </div>
                         </div>
                     </div>
