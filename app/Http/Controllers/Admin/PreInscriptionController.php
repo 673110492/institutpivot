@@ -8,6 +8,8 @@ use App\Http\Requests\StoreTypeFormationRequest;
 use App\Http\Requests\UpdateTypeFormationRequest;
 use Illuminate\Http\Request;
 use App\Models\Formation;
+use App\Models\Form;
+use App\Models\formation_types;
 use App\Models\TypeFormation;
 
 class PreInscriptionController extends Controller
@@ -18,6 +20,7 @@ class PreInscriptionController extends Controller
     public function index()
     {
         $pre_inscriptions = PreInscription::all();
+
         return view('admin.pre_inscriptions.index', compact('pre_inscriptions'));
     }
 
@@ -26,9 +29,21 @@ class PreInscriptionController extends Controller
      */
     public function create()
     {
+        $type_formations = TypeFormation::all();
+        $formations = Formation::all();
+        foreach($formations as $item){
 
-        $pre_inscriptions = PreInscription::all();
-        return view('admin.pre_inscriptions.create',compact('pre_inscriptions'));
+            $types=formation_types::where('formation_id',$item->id)->get();
+            // dd($types);
+            foreach($types as $it){
+                $type=typeFormation::findOrFail($it->type_formation_id);
+                $it->nom = $type->nom;
+            }
+            $item->types=$types;
+
+        }
+
+        return view('admin.pre_inscriptions.create',compact('type_formations','formations'));
 
     }
 

@@ -30,7 +30,7 @@
                         </option>
                         @endforeach
                     </select>
-                    <label for="type_formation_id" class="control-label">{{ 'Type de formation' }}<span style="color:red">*</span></label>
+                    <label for=" type_formation_id" class="control-label">{{ 'Type de formation' }}<span style="color:red">*</span></label>
                     {!! $errors->first('type_formation_id', '<p class="help-block">:message</p>') !!}
                 </div>
                 <div class="form-floating mb-3 col-md-3">

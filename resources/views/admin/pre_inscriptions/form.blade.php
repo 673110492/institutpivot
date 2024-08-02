@@ -40,10 +40,10 @@
                         !!}</span>
                 </div>
 
-                {{-- <div class="form-floating mb-3">
-                    <select name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
+                <div class="form-floating mb-3">
+                    <select onchange="formation_change(this.value)" name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
                         <option value="" disabled selected>Choisir le type de formation</option>
-                        @foreach($pre_inscriptions as $item)
+                        @foreach($type_formations as $item)
                         <option value="{{$item->id}}" @if( isset($pre_inscriptions) && $item->id == $pre_inscriptions->type_formation_id) selected @endif>
                             {{$item->nom}}
                         </option>
@@ -54,17 +54,18 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
+                    <select name="formation_id" id="formation_id js-example-basic-single" class="form-select" disabled>
                         <option value="" disabled selected>Choisir la formation</option>
-                        @foreach($pre_inscriptions as $item)
-                        <option value="{{$item->id}}" @if( isset($formations) && $item->id == $formations->type_formation_id) selected @endif>
+                        @foreach($formations as $item)
+                        <option value="{{$item->id}}" @if( isset($pre_inscriptions) && $item->id == $pre_inscriptions->formation_id) selected @endif>
                             {{$item->nom}}
                         </option>
                         @endforeach
                     </select>
-                    <label for="type_formation_id" class="control-label">{{ 'Choix de la formation ' }}<span style="color:red">*</span></label>
-                    {!! $errors->first('type_formation_id', '<p class="help-block">:message</p>') !!}
-                </div> --}}
+                    <label for="formation_id" class="control-label">{{ 'Liste formation ' }}<span style="color:red">*</span></label>
+                    {!! $errors->first('formation_id', '<p class="help-block">:message</p>') !!}
+                </div>
 
 </div>
 </div>
+
