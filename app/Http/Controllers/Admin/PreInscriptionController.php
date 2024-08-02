@@ -21,8 +21,16 @@ class PreInscriptionController extends Controller
     public function index()
     {
         $pre_inscriptions = PreInscription::all();
+        $type_formations = TypeFormation::all();
+        $formations = Formation::all();
 
-        return view('admin.pre_inscriptions.index', compact('pre_inscriptions'));
+        foreach($pre_inscriptions as $item){
+            $type = TypeFormation::findOrFail($item->type_formation_id);
+            $item->type = $type->nom;
+            $type = Formation::findOrFail($item->formation_id);
+            $item->formation = $type->nom;
+        }
+        return view('admin.pre_inscriptions.index', compact('pre_inscriptions','type_formations','formations'));
     }
 
     /**
@@ -33,7 +41,6 @@ class PreInscriptionController extends Controller
         $type_formations = TypeFormation::all();
         $formations = Formation::all();
         foreach($formations as $item){
-
             $types=formation_types::where('formation_id',$item->id)->get();
             // dd($types);
             foreach($types as $it){
@@ -41,7 +48,6 @@ class PreInscriptionController extends Controller
                 $it->nom = $type->nom;
             }
             $item->types=$types;
-
         }
 
         return view('admin.pre_inscriptions.create',compact('type_formations','formations'));
