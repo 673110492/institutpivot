@@ -32,21 +32,10 @@ class PreInscriptionController extends Controller
     {
         $type_formations = TypeFormation::all();
         $formations = Formation::all();
-        foreach($formations as $item){
-
-            $types=formation_types::where('formation_id',$item->id)->get();
-            // dd($types);
-            foreach($types as $it){
-                $type=typeFormation::findOrFail($it->type_formation_id);
-                $it->nom = $type->nom;
-            }
-            $item->types=$types;
-
-        }
-
         return view('admin.pre_inscriptions.create',compact('type_formations','formations'));
 
     }
+    
 
     /**
      * Store a newly created resource in storage.
