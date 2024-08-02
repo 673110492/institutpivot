@@ -69,9 +69,9 @@
                                                         </div>
                                                     </th>
                                                     <th class="align-middle" data-sort="nom">Nom </th>
-                                                    <th class="align-middle" data-sort="prenom">Prenom </th>
-                                                    <th class="align-middle" data-sort="email">Email </th>
                                                     <th class="align-middle" data-sort="telephone">Téléphone </th>
+                                                    <th class="align-middle" data-sort="Type de Formation">Type de Formation </th>
+                                                    <th class="align-middle" data-sort="Formation">Formation </th>
                                                     {{-- <th class="align-middle" data-sort="prix">Description</th> --}}
                                                     <th class="align-middle" data-sort="statut">Statut Apprenant</th>
                                                     <th>Action</th>
@@ -86,8 +86,8 @@
                                                                 data-bulk-select-row="data-bulk-select-row" /></div>
                                                     </td>
                                                     <th class="align-middle nom">{{ $item->nom }}</th>
-                                                    <td class="align-middle duree">{{$item->prenom}}</td>
-                                                    <td class="align-middle duree">{{$item->email}}</td>
+                                                    <td class="align-middle duree">{{$item->type_formation_id}}</td>
+                                                    <td class="align-middle duree">{{$item->formation_id}}</td>
                                                     <td class="align-middle duree">{{$item->telephone}}</td>
 
                                                     {{-- <td class="align-middle prix">{!! Str::limit($item->description, 20, '...')  !!}</td> --}}

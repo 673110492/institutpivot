@@ -41,8 +41,8 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select onchange="formation_change(this.value)" name="type_formation_id" id="type_formation_id js-example-basic-single" class="form-select">
-                        <option value="" disabled selected>Choisir le type de formation</option>
+                    <select onchange="change()" name="type_formation_id" id="type_formation_id" class="form-select">
+                        <option value="" selected>Choisir le type de formation</option>
                         @foreach($type_formations as $item)
                         <option value="{{$item->id}}" @if( isset($pre_inscriptions) && $item->id == $pre_inscriptions->type_formation_id) selected @endif>
                             {{$item->nom}}
@@ -54,13 +54,9 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="formation_id" id="formation_id js-example-basic-single" class="form-select" disabled>
+                    <select name="formation_id" id="form" class="form-select">
                         <option value="" disabled selected>Choisir la formation</option>
-                        @foreach($formations as $item)
-                        <option value="{{$item->id}}" @if( isset($pre_inscriptions) && $item->id == $pre_inscriptions->formation_id) selected @endif>
-                            {{$item->nom}}
-                        </option>
-                        @endforeach
+
                     </select>
                     <label for="formation_id" class="control-label">{{ 'Liste formation ' }}<span style="color:red">*</span></label>
                     {!! $errors->first('formation_id', '<p class="help-block">:message</p>') !!}

@@ -47,74 +47,27 @@ class="form-horizontal" >
 </form>
 </div>
 </div>
-@endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
+    function change(){
+        let type = document.getElementById('type_formation_id').value;
+        let form = document.getElementById('form');
 
-// let paysPlaceholder = document.getElementById('pays');
-// let villePlaceholder = document.getElementById('ville');
-let formationDropdown = document.getElementById('formation_id');
-console.log("ErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreur");
-
-function formation_change(){
-    console.log("ErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreurErreur")
-    // villePlaceholder.innerHTML = "";
-    // paysPlaceholder.innerHTML = "";
-
-
-    // $.ajax({
-    //         url:"search_type/"+type,
-    //         type:'GET',
-    //         data:[],
-    //         success:function(data){
-    //                 console.log(data)
-    //                 duree.value = data[0];
-    //         },
-    //         error:function(data){
-    //             console.log('error',data);
-    //         }
-
-    //     });
-
-    $.ajax({
-        url:"search_type/"+type,
-        type:'GET',
-        data:[],
-        success:function(data){
-            formations = data[]
-            let out = "";
-            out += `<option value=""> Choisir la formation </option>`;
-            for(let formationDropdown of formations){
-                out += `<option value="${formationDropdown}"> ${formationDropdown} </option>`;
+        $.ajax({
+            url:"search_formation/"+type,
+            type:'GET',
+            data:[],
+            success:function(data){
+                let out = "";
+                for(i=0; i < data.length;i++){
+                    out = out + `<option value="${data[i].id}"> ${data[i].nom} </option>`;
+                }
+                form.innerHTML = out;
+            },
+            error:function(data){
+                console.log('error',data);
             }
-            formationDropdown.innerHTML = out;
-            formationDropdown.disabled = false;
-        },
-        error:function(data){
-            console.log('error',data);
-        }
-    });
-
-//     fetch("payss.json")
-//     .then(function(responce){
-//         return responce.json();
-//     }).then(function(data){
-//         let villes = data[pays];
-//         let out = "";
-//         out += `<option value=""> Choisir la ville </option>`;
-//         for(let ville of villes){
-//             out += `<option value="${ville}"> ${ville} </option>`;
-//         }
-//         villesDropdown.innerHTML = out;
-//         villesDropdown.disabled = false;
-//         paysPlaceholder.innerHTML = pays;
-//     });
-
-}
-
-// function getVille(ville){
-//     return villePlaceholder.innerHTML = ville;
-// }
+        });
+    }
 </script>
-
-
+@endsection
