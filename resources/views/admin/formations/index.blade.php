@@ -122,10 +122,10 @@
                                                         ])
                                                     </td>
                                                 </tr>
-                                                                @include('admin.formations.element',[
-                                                                    'formation' => $item,
-                                                                    'types' => $item->types
-                                                                ])
+                                                    @include('admin.formations.element',[
+                                                        'formation' => $item,
+                                                        'types' => $item->types
+                                                    ])
                                                 @empty
                                                 <tr>
                                                     <td colspan="10">
