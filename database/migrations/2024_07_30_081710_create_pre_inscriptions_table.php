@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('sexe');
             $table->string('email')->unique();
-            $table->integer('telephone')->unique();
+            $table->string('telephone')->unique();
             $table->unsignedBigInteger('type_formation_id')->nullable();
             $table->unsignedBigInteger('formation_id')->nullable();
             $table->boolean('statut')->default(1);

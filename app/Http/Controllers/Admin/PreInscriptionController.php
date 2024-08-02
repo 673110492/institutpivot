@@ -8,7 +8,10 @@ use App\Http\Requests\StoreTypeFormationRequest;
 use App\Http\Requests\UpdateTypeFormationRequest;
 use Illuminate\Http\Request;
 use App\Models\Formation;
+use App\Models\Form;
+use App\Models\formation_types;
 use App\Models\TypeFormation;
+use Illuminate\Support\Facades\DB;
 
 class PreInscriptionController extends Controller
 {
@@ -18,6 +21,7 @@ class PreInscriptionController extends Controller
     public function index()
     {
         $pre_inscriptions = PreInscription::all();
+
         return view('admin.pre_inscriptions.index', compact('pre_inscriptions'));
     }
 
@@ -26,9 +30,21 @@ class PreInscriptionController extends Controller
      */
     public function create()
     {
+        $type_formations = TypeFormation::all();
+        $formations = Formation::all();
+        foreach($formations as $item){
 
-        $pre_inscriptions = PreInscription::all();
-        return view('admin.pre_inscriptions.create',compact('pre_inscriptions'));
+            $types=formation_types::where('formation_id',$item->id)->get();
+            // dd($types);
+            foreach($types as $it){
+                $type=typeFormation::findOrFail($it->type_formation_id);
+                $it->nom = $type->nom;
+            }
+            $item->types=$types;
+
+        }
+
+        return view('admin.pre_inscriptions.create',compact('type_formations','formations'));
 
     }
 
@@ -37,12 +53,14 @@ class PreInscriptionController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'nom' => 'required|string|max:255',
             'prenom' => 'required',
             'email' => 'required',
             'telephone' => 'required',
-
+            'type_formation_id' => 'required',
+            'formation_id' => 'required',
         ]);
         $data = $request->all();
         PreInscription::create($data);
@@ -77,6 +95,8 @@ class PreInscriptionController extends Controller
             'prenom' => 'required',
             'email' => 'required',
             'telephone' => 'required',
+            'type_formation_id' => 'required',
+            'formation_id' => 'required',
 
         ]);
         $recup = $request->all();
@@ -106,5 +126,15 @@ class PreInscriptionController extends Controller
             $formation->update(['statut' => true]);
             return back()->with('message', 'formation activée avec succes!');
         }
+    }
+    public function search_formation($id)
+    {
+        $results =   DB::table('formations')
+            ->join('formation_types', 'formations.id', '=', 'formation_types.formation_id')
+            ->join('type_formations', 'type_formations.id', '=', 'formation_types.type_formation_id')
+            ->where('formation_types.type_formation_id', '=', $id)
+            ->select('formations.*')
+            ->get();
+            return response()->json($results);
     }
 }

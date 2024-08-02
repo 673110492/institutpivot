@@ -47,6 +47,27 @@ class="form-horizontal" >
 </form>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+    function change(){
+        let type = document.getElementById('type_formation_id').value;
+        let form = document.getElementById('form');
+
+        $.ajax({
+            url:"search_formation/"+type,
+            type:'GET',
+            data:[],
+            success:function(data){
+                let out = "";
+                for(i=0; i < data.length;i++){
+                    out = out + `<option value="${data[i].id}"> ${data[i].nom} </option>`;
+                }
+                form.innerHTML = out;
+            },
+            error:function(data){
+                console.log('error',data);
+            }
+        });
+    }
+</script>
 @endsection
-
-

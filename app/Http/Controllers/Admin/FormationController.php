@@ -194,7 +194,7 @@ class FormationController extends Controller
     public function ajout_type($type,$duree,$prix)
     {
         $data['type_id'] = $type;
-        $data['duree'] = $duree; 
+        $data['duree'] = $duree;
         $data['prix'] = $prix;
         $form = Form::create($data);
         $tous = Form::all();

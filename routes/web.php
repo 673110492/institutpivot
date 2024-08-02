@@ -99,6 +99,7 @@ Route::controller(PreInscriptionController::class)->name('pre_inscription.')->pr
     Route::post('/update/{id}', 'update')->name('update');
     Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
+    Route::get('/search_formation/{type}', 'search_formation')->name('search_formation');
 });
 
 Route::controller(TemoignageController::class)->name('temoignage.')->prefix('temoignage')->group(function () {
