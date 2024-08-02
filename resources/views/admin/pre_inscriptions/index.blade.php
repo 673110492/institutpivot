@@ -69,72 +69,63 @@
                                                         </div>
                                                     </th>
                                                     <th class="align-middle" data-sort="nom">Nom </th>
-                                                    <th class="align-middle" data-sort="telephone">Téléphone </th>
-                                                    <th class="align-middle" data-sort="Type de Formation">Type de Formation </th>
-                                                    <th class="align-middle" data-sort="Formation">Formation </th>
+                                                    <th class="align-middle" data-sort="telephone">Type de Formation </th>
+                                                    <th class="align-middle" data-sort="Type de Formation"> Formation </th>
+                                                    <th class="align-middle" data-sort="Formation">Telephone </th>
                                                     {{-- <th class="align-middle" data-sort="prix">Description</th> --}}
                                                     <th class="align-middle" data-sort="statut">Statut Apprenant</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list" id="table-orders-body">
-                                                @forelse ( $pre_inscriptions as $item)
-                                                <tr class="btn-reveal-trigger">
-                                                    <td class="align-middle white-space-nowrap">
-                                                        <div class="form-check mb-0"><input class="form-check-input"
-                                                                type="checkbox" id="checkbox-1"
-                                                                data-bulk-select-row="data-bulk-select-row" /></div>
-                                                    </td>
-                                                    <th class="align-middle nom">{{ $item->nom }}</th>
-                                                    <td class="align-middle duree">{{$item->type_formation_id}}</td>
-                                                    <td class="align-middle duree">{{$item->formation_id}}</td>
-                                                    <td class="align-middle duree">{{$item->telephone}}</td>
-
-                                                    {{-- <td class="align-middle prix">{!! Str::limit($item->description, 20, '...')  !!}</td> --}}
-                                                    <td>
-                                                        @if ($item->statut == true)
-                                                        <small class="badge rounded-pill  bg-success"><i
-                                                            class='fa fa-bullseye'></i>Afficher</small>
-                                                        @else
-                                                        <small class="badge rounded-pill  bg-danger"><i
-                                                            class='fa fa-low-vision'></i>Cacher</small>
-                                                        @endif
-                                                    </td>
-                                                    <td class="align-middle mr-20">
-                                                        <a class="btn btn-falcon-info me-1 mb-1"
-                                                            title="Détail d'un Etudiant" href="{{route('pre_inscription.show',$item->id)}}"><i
-                                                                class="fa fa-eye"></i></a>
-                                                        <a class="btn btn-falcon-primary me-1 mb-1" href="{{route('pre_inscription.edit',$item->id)}}"
-                                                            title="Modifier un Etudiant"><i
-                                                                class="fa fa-pen"></i></a>
-                                                        <button class="btn btn-falcon-danger me-1 mb-1" title="Delete un Etudiant"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#{{ 'delete' . $item->id }}"><i class="fa fa-trash"
-                                                                aria-hidden="true"></i></button>
-                                                                @if ($item->statut == true)
-                                                                        <button type="button" class="btn btn-falcon-warning" data-bs-toggle="modal" data-bs-target="#{{ 'statut' . $item->id }}"><i class="fa fa-low-vision"></i> Cacher</button>
-                                                                @else
-                                                                        <button type="button" class="btn btn-falcon-success" data-bs-toggle="modal" data-bs-target="#{{ 'statut' . $item->id }}"><i class="fa fa-bullseye"></i> Afficher</button>
-                                                                @endif
-                                                        @include('global.delete-modal', [
-                                                        'id' => $item->id,
-                                                        'url' => route('pre_inscription.delete', $item->id),
-                                                        ]),
-                                                        @include('admin.pre_inscriptions.statut', [
-                                                            'formation' => $item,
-                                                            'url' => route('pre_inscription.statut', $item->id),
-                                                        ])
-                                                    </td>
-                                                </tr>
-                                                @empty
-                                                <tr>
-                                                    <td colspan="10">
-                                                        <center>
-                                                            Aucune informations...
-                                                        </center>
-                                                    </td>
-                                                </tr>
-                                                @endforelse
+                                                @foreach ( $pre_inscriptions as $item)
+                                                            <tr class="btn-reveal-trigger">
+                                                                <td class="align-middle white-space-nowrap">
+                                                                    <div class="form-check mb-0"><input class="form-check-input"
+                                                                        type="checkbox" id="checkbox-1"
+                                                                        data-bulk-select-row="data-bulk-select-row" /></div>
+                                                                </td>
+                                                                <th class="align-middle nom">{{ $item->nom }}</th>
+                                                                <td class="align-middle duree" >{{$item->type}}</td>
+                                                                <td class="align-middle duree" >{{$item->formation}}</td>
+                                                                <td class="align-middle duree">{{$item->telephone}}</td>
+                                                                {{-- <td class="align-middle prix">{!! Str::limit($item->description, 20, '...')  !!}</td> --}}
+                                                                <td>
+                                                                    @if ($item->statut == true)
+                                                                    <small class="badge rounded-pill  bg-success"><i
+                                                                        class='fa fa-bullseye'></i>Afficher</small>
+                                                                    @else
+                                                                    <small class="badge rounded-pill  bg-danger"><i
+                                                                        class='fa fa-low-vision'></i>Cacher</small>
+                                                                    @endif
+                                                                </td>
+                                                                <td class="align-middle mr-20">
+                                                                    <a class="btn btn-falcon-info me-1 mb-1"
+                                                                        title="Détail d'un Etudiant" href="{{route('pre_inscription.show',$item->id)}}"><i
+                                                                            class="fa fa-eye"></i></a>
+                                                                    <a class="btn btn-falcon-primary me-1 mb-1" href="{{route('pre_inscription.edit',$item->id)}}"
+                                                                        title="Modifier un Etudiant"><i
+                                                                            class="fa fa-pen"></i></a>
+                                                                    <button class="btn btn-falcon-danger me-1 mb-1" title="Delete un Etudiant"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#{{ 'delete' . $item->id }}"><i class="fa fa-trash"
+                                                                            aria-hidden="true"></i></button>
+                                                                            @if ($item->statut == true)
+                                                                                    <button type="button" class="btn btn-falcon-warning" data-bs-toggle="modal" data-bs-target="#{{ 'statut' . $item->id }}"><i class="fa fa-low-vision"></i> Cacher</button>
+                                                                            @else
+                                                                                    <button type="button" class="btn btn-falcon-success" data-bs-toggle="modal" data-bs-target="#{{ 'statut' . $item->id }}"><i class="fa fa-bullseye"></i> Afficher</button>
+                                                                            @endif
+                                                                    @include('global.delete-modal', [
+                                                                    'id' => $item->id,
+                                                                    'url' => route('pre_inscription.delete', $item->id),
+                                                                    ]),
+                                                                    @include('admin.pre_inscriptions.statut', [
+                                                                        'formation' => $item,
+                                                                        'url' => route('pre_inscription.statut', $item->id),
+                                                                    ])
+                                                                </td>
+                                                            </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
