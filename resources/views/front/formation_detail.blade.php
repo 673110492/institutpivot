@@ -25,7 +25,25 @@
                     <div class="single_blog_details">
                         <div data-aos="fade-up"
                             data-aos-duration="1000" class="blog_details_content">
-                            <img src="{{isset($formation) ? url('storage/'. $formation->photo) : '#'}}" alt="#" class="img-fluid">
+                            <img src="{{isset($formation) ? url('storage/'. $formation->photo) : '#'}}" alt="#" width="300" height="300" class="img-fluid">
+                            <p>
+                            <table class="table text-center">
+                                            <tr class="bg-primary">
+                                                <th class="text-white">CATEGORIE</th>
+                                                <th class="text-white">PRIX</th>
+                                                <th class="text-white">DUREE MINIMALE</th>
+                                                <th class="text-white">ACTION</th>
+                                            </tr>
+                                            @foreach($formation->types as $item)
+                                            <tr>
+                                                <th>{{$item->nom}}</th>
+                                                <th>{{$item->prix}}</th>
+                                                <th>{{$item->duree}}</th>
+                                                <th><a href="" class="btn btn-primary">Se préinscrire</a></th>
+                                            </tr>
+                                            @endforeach
+                                        </table>
+                            </p>
                             <h2 class="text-primary">{{$formation->nom}}</h2>
                             <p style="text-align:justify">{{$formation->description}}</p>
                         </div>
@@ -46,7 +64,7 @@
                                 <img src="{{isset($item) ? url('storage/'. $item->photo) : '#'}}" alt="">
                                 <div class="sidebar_post_content">
                                     <h4> <a href="{{route('cours.show',$item->id)}}"  class="text-primary"> {{$item->nom}}</a></h4>
-                                    <p >{{$item->prix}} XAF</p>
+                                    <p>{{$item->prix}}</p>
                                 </div>
                             </div>
                             @endforeach

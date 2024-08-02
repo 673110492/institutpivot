@@ -37,14 +37,13 @@
       <!-- courses part here -->
       <div id="content" class="site-content" bis_skin_checked="1">
         <div class="lp-archive-courses" bis_skin_checked="1">
-            <ul class="learn-press-breadcrumb">
-                <li><a href="index.html" bis_skin_checked="1"><span></span></a></li>
-                <li class="breadcrumb-delimiter"><i class="fas fa-chevron-right"></i></li>
-                <li><span></span></li>
-            </ul>
             <div class="lp-content-area" bis_skin_checked="1">
-                <header class="learn-press-courses-header">
+                <header class="learn-press-courses-header ml-4 mb-5">
                     <h1>Formations</h1>
+                    <button onclick="cours(0)" class="btn btn-primary" id="type_0">Toutes les formations</button>
+                     @foreach($types as $item)
+                     <button onclick="cours('{{$item->id}}')" id="{{'type_'.$item->id}}" class="btn btn-primary">{{$item->nom}}</button>
+                     @endforeach
                 </header>
                 <!-- <div class="lp-courses-bar list" bis_skin_checked="1">
                     <form class="search-courses" method="get" action="index.html">
@@ -62,7 +61,7 @@
                         <label class="switch-btn list" title="Switch to list" for="lp-switch-layout-btn-list"></label>
                     </div>
                 </div> -->
-                <ul class="learn-press-courses" data-layout="list">
+                <ul class="learn-press-courses" data-layout="list" id="tet">
                     @foreach($formations as $item)
                     <li id="post-1026" class="post-1026 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-computer-science course">
                         <div class="course-item" bis_skin_checked="1">
@@ -72,7 +71,7 @@
                                         <div class="thumbnail-preview" bis_skin_checked="1">
                                             <div class="thumbnail" bis_skin_checked="1">
                                                 <div class="centered" bis_skin_checked="1">
-                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="Software Development" loading="lazy" title="Software Development">
+                                                    <img width="370" height="280" src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" class="attachment-500x300 size-500x300 wp-post-image" alt="{{$item->nom}}" loading="lazy" title="{{$item->nom}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +90,7 @@
                                 </a>
                                 <!-- START .course-content-meta -->
                                 <div class="course-wrap-meta" bis_skin_checked="1">
-                                    <div class="meta-item meta-item-duration" bis_skin_checked="1"><span class="text-primary">Durée : </span>{{$item->duree}}</div>
+                                    <div class="meta-item meta-item-duration" bis_skin_checked="1"><span class="text-primary">Durée : </span>Aléatoire</div>
                                     <div class="meta-item meta-item-level" bis_skin_checked="1"><span class="text-primary">Niveau : </span>Intermediaire</div>
                                 </div> <!-- END .course-content-meta -->
                                 <div class="separator" bis_skin_checked="1"></div>
@@ -101,7 +100,7 @@
                                     <!-- START .course-content-footer -->
                                     <div class="course-footer" bis_skin_checked="1">
                                         <div class="course-price" bis_skin_checked="1">
-                                            <span class="price">{{$item->prix}}XAF</span>
+                                            <span class="price text-primary">Aléatoire XAF</span>
                                         </div>
                                     </div>
                                     <!-- END .course-content-footer -->
@@ -128,3 +127,86 @@
     <!-- courses part end -->
 
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script defer>
+     function cours(id){
+        let table = document.getElementById('tet');
+            $.ajax({
+                url:"/cours/search_cours/"+id,
+                type:'GET',
+                data:[],
+                success:function(data){
+                        let t="";
+                        let duree;
+                        let prix;
+                        console.log(data);
+                        for(i=0; i< data.length;i++){
+                            if (data[i].duree == undefined){
+                                duree = "Aléatoire";
+                            }else{
+                                duree = data[i].duree;
+                            }
+                            if (data[i].prix == undefined){
+                                prix = "Aléatoire";
+                            }else{
+                                prix = data[i].prix;
+                            }
+
+                            t = t +  "<li id='post-1026' class='post-1026 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-computer-science course'>"+
+                        "<div class='course-item' bis_skin_checked='1'>"+
+                            "<div class='course-wrap-thumbnail' bis_skin_checked='1'>"+
+                                "<div class='course-thumbnail' bis_skin_checked='1'>"+
+                                    "<a href='course-details.html' bis_skin_checked='1'>"+
+                                        "<div class='thumbnail-preview' bis_skin_checked='1'>"+
+                                            "<div class='thumbnail' bis_skin_checked='1'>"+
+                                                "<div class='centered' bis_skin_checked='1'>"+
+                                                    "<img width='370' height='280' src='storage/"+ data[i].photo + "' class='attachment-500x300 size-500x300 wp-post-image' alt='"+data[i].nom+"' loading='lazy' title='"+data[i].nom+"'>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+                                    "</a>"+                                "</div>"+
+                            "</div><!-- START .course-content -->"+
+                            "<div class='course-content' bis_skin_checked='1'>"+
+                                "<div class='course-categories' bis_skin_checked='1'>"+
+                                    "<a href='{{ route('cours.show', '') }}/"+data[i].id+"' rel='tag' bis_skin_checked='1'>"+data[i].nom+"</a>"+
+                                "</div>"+
+                                "<span class='course-instructor'>"+
+                                "</span>"+
+                                "<a href='course-details.html' class='course-permalink' bis_skin_checked='1'>"+
+                                    "<h3 class='course-title'>"+data[i].nom+"</h3>"+
+                                "</a>"+
+                                "<!-- START .course-content-meta -->"+
+                                "<div class='course-wrap-meta' bis_skin_checked='1'>"+
+                                    "<div class='meta-item meta-item-duration' bis_skin_checked='1'><span class='text-primary'>Durée : </span>"+duree+"</div>"+
+                                    "<div class='meta-item meta-item-level' bis_skin_checked='1'><span class='text-primary'>Niveau : </span>Intermediaire</div>"+
+                                "</div> <!-- END .course-content-meta -->"+
+                                "<div class='separator' bis_skin_checked='1'></div>"+
+                                "<div class='course-info' bis_skin_checked='1'>"+
+                                    "<div class='course-excerpt' bis_skin_checked='1'>{!! Str::limit($item->description, 150, '...')  !!}</div>"+
+                                    "<div class='clearfix' bis_skin_checked='1'></div>"+
+                                    "<!-- START .course-content-footer -->"+
+                                    "<div class='course-footer' bis_skin_checked='1'>"+
+                                        "<div class='course-price' bis_skin_checked='1'>"+
+                                            "<span class='price text-primary'>"+prix+" XAF</span>"+
+                                        "</div>"+
+                                    "</div>"+
+                                    "<!-- END .course-content-footer -->"+
+                                    "<div class='course-readmore' bis_skin_checked='1'>"+
+                                        "<a href='{{ route('cours.show', '') }}/"+data[i].id+"' bis_skin_checked='1'>Voir plus</a>"+
+                                    "</div>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+                    "</li>";
+
+                        }
+                        table.innerHTML = t;
+                },
+                error:function(data){
+                    console.log('error',data);
+                }
+
+            });
+     }
+    
+</script>
