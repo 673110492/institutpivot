@@ -21,6 +21,7 @@ use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ActuController;
 use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\BlogController;
+use App\Http\Controllers\Site\InscriptionController;
 use App\Http\Controllers\Site\ContacterController;
 
 /*
@@ -98,9 +99,9 @@ Route::controller(PreInscriptionController::class)->name('pre_inscription.')->pr
     Route::get('/create', 'create')->name('create');
     Route::post('/', 'store')->name('store');
     Route::post('/update/{id}', 'update')->name('update');
-    Route::delete('/{id}', 'destroy')->name('delete');
+    Route::delete('/{id}', 'destroy')->name('delete');  
     Route::post('statut/{id}', 'statut')->name('statut');
-    Route::get('/search_formation/{type}', 'search_formation')->name('search_formation');
+    Route::get('/preinscription/{type}', 'search_formation')->name('search_formation');
 });
 
 Route::controller(FichePreInscriptionController::class)->name('fiche.')->prefix('fiche')->group(function () {
@@ -198,9 +199,15 @@ Route::controller(AboutController::class)->name('propos.')->prefix('propos')->gr
 });
 Route::controller(CoursController::class)->name('cours.')->prefix('cours')->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/cat/', 'categorie')->name('cat');
+    Route::get('/cat', 'categorie')->name('cat');
     Route::get('/{id}', 'show')->name('show');
     Route::get('/search_cours/{id}', 'search_cours')->name('search_cours');
+
+});
+Route::controller(InscriptionController::class)->name('preinscription.')->prefix('preinscription')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'store')->name('store');
+    Route::get('search_formation/{type}', 'search_formation')->name('search_formation');
 
 });
 Route::controller(ActuController::class)->name('actu.')->prefix('actu')->group(function () {

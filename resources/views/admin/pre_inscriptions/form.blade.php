@@ -16,9 +16,11 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input class="form-control" required id="sexe" name="sexe" type="text"
-                        value="{{ isset($pre_inscriptions->sexe) ? $pre_inscriptions->sexe : old('sexe') }}"
-                        placeholder="Expert formation" />
+                    <select name="sexe" id="">
+                        <option disabled value="">Choisir votre sexe</option>
+                        <option value="F" @if( isset($pre_inscriptions) && $pre_inscriptions->sexe == "F") selected @endif>Féminin</option>
+                        <option value="M" @if( isset($pre_inscriptions) && $pre_inscriptions->sexe == "M") selected @endif>Masculin</option>
+                    </select>
                     <label for="sexe">{{ __('Sexe') }} <span style="color:red">*</span></label>
                     <span style="color: red">{!! $errors->first('sexe', '<p class="help-block">:message</p>') !!}</span>
                 </div>

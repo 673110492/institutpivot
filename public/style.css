@@ -488,7 +488,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   color: #7c8189;
   display: block;
   width: 100%;
-  text-transform: capitalize;
   padding: 0 20px;
   border-radius: 6px;
   float: inherit;
@@ -598,7 +597,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
 .cu_dropdown .dropdown-menu .dropdown-item {
   font-size: 12px;
   font-weight: 300;
-  text-transform: capitalize;
   padding: 7px 20px;
   padding: 7px 20px;
   color: #fff;
@@ -1104,7 +1102,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   color: #fff;
   display: inline-block;
   padding: 11px 23px;
-  text-transform: capitalize;
   line-height: 16px;
   font-size: 16px;
   font-weight: 500;
@@ -1125,7 +1122,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   border: 2px solid #fff;
   display: inline-block;
   padding: 14px 39px;
-  text-transform: capitalize;
   line-height: 22px;
   font-size: 16px;
   font-weight: 500;
@@ -1146,7 +1142,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   border: 2px solid #7aa8fd;
   display: inline-block;
   padding: 14px 39px;
-  text-transform: capitalize;
   line-height: 18px;
   font-size: 16px;
   font-weight: 500;
@@ -1438,7 +1433,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
 }
 .navbar_bar ul li a {
   color: #0b1c39;
-  text-transform: capitalize;
   padding: 37px 22px;
   display: inline-block;
   line-height: 16px;
@@ -1778,7 +1772,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
 .blog_breadcrumb .breadcrumb_iner span {
   background-color: #2572ff;
   padding: 3px 22px;
-  text-transform: capitalize;
   color: #fff;
   display: inline-block;
   border-radius: 50px;
@@ -2531,12 +2524,10 @@ a:focus, .button:focus, button:focus, .btn:focus {
   display: inline-block;
 }
 .courses_item_iner .author_name {
-  text-transform: capitalize;
   display: inline-block;
   margin-left: 15px;
 }
 .courses_item_iner .author_name a {
-  text-transform: capitalize;
   color: #626a77;
 }
 .courses_item_iner .courses_review {
@@ -3834,7 +3825,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
   color: #fff;
   display: inline-block;
   padding: 14px 23px;
-  text-transform: capitalize;
   line-height: 16px;
   font-size: 16px;
   font-weight: 500;
@@ -4390,7 +4380,17 @@ footer.entry-footer {
   color: #626a77;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  text-transform: capitalize;
+}
+.review_form .form_single_item select, .review_form .form_single_item textarea, .form_style .form_single_item input, .form_style .form_single_item textarea {
+  background-color: #f6f7fa;
+  padding: 17px 30px;
+  border-radius: 30px;
+  border: 1px solid #f6f7fa;
+  width: 100%;
+  font-size: 16px;
+  color: #626a77;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .review_form .form_single_item input:focus, .review_form .form_single_item textarea:focus, .form_style .form_single_item input:focus, .form_style .form_single_item textarea:focus {
   background-color: #fff;
@@ -5549,7 +5549,6 @@ input[type="text"], input[type="email"], input[type="phone"], input[type="passwo
   color: #fff;
   display: inline-block;
   padding: 11px 23px;
-  text-transform: capitalize;
   line-height: 16px;
   font-size: 16px;
   font-weight: 500;
@@ -5974,7 +5973,6 @@ html[dir="rtl"] .ltr-rtl-button {
   line-height: 1;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  text-transform: capitalize;
   position: relative;
   cursor: pointer;
   border-radius: 4px;

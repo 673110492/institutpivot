@@ -140,7 +140,7 @@
                                 </ul>
                             </nav>
                             <div class="navbar_btn">
-                                <a href="#" class="btn_1">Se Préinscrire</a>
+                                <a href="{{route('preinscription.index')}}" class="btn_1">Se Préinscrire</a>
                             </div>
                         </div>
                     </div>
