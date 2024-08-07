@@ -21,6 +21,21 @@
     <!-- Start contact us -->
     <div class="review_form contact_form section_padding">
         <div class="container">
+            <h3 data-aos="fade-up" data-aos-duration="1200" class="text-primary">Pieces constitutifs du dossier physique</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <p class="col-md-12"><b style="font-size: 1.4em;">1 - Demande d’admission adressée au directeur de 3iA mentionnant la formation sollicitée</b></p>
+                        <p class="col-md-12"><b style="font-size: 1.4em;">2 - Une fiche d’inscription durement rempli, fourni par l’administration ou <input type="submit" class="btn btn-primary" value="Telecharger ici "></b> </p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">3 - 01 photocopie de l’acte de naissance </b></p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">4 - 04 demi-cartes photo 4*4</b></p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">5 - 01 photocopie du dernier diplôme obtenu </b></p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">6 - Certificat médical</b> </p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">7 - Frais de préinscription 15000f </b></p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">7 - Frais de dépôt de dossier 3000f</b> </p>
+                    </div>
+                </div>
+            </div>
             <h3 data-aos="fade-up" data-aos-duration="1200" class="mt-5 text-primary">PREINSCRIPTION</h3>
             <form  method="POST" action="{{ route('preinscription.store') }}" accept-charset="UTF-8" class="form-horizontal container" enctype="multipart/form-data" data-aos="fade-up" style="background-color : #E3E3E3; padding-top:3%; padding-bottom:3%;" data-aos-duration="1600" method="post">
                             {{ csrf_field() }}
@@ -35,7 +50,7 @@
                             <input type="text" class="bg-white" name="prenom" placeholder="Prénom" required>
                         </div>
                     </div>
-                    <div class="">
+                    <div class=""> 
                         <div class="form_single_item">
                         <select class="bg-white" name="sexe" id="">
                             <option disabled value="" selected>Choisir votre sexe</option>
