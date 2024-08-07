@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\TypeFormationController;
 use App\Http\Controllers\Admin\FormationController;
 use App\Http\Controllers\Admin\EnseignantController;
 use App\Http\Controllers\Admin\PreInscriptionController;
+use App\Http\Controllers\FichePreInscriptionController;
 use App\Http\Controllers\Admin\TemoignageController;
 use App\Http\Controllers\Admin\AutreTemoignageController;
 use App\Http\Controllers\Admin\TeteHomeController;
@@ -100,6 +101,17 @@ Route::controller(PreInscriptionController::class)->name('pre_inscription.')->pr
     Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
     Route::get('/search_formation/{type}', 'search_formation')->name('search_formation');
+});
+
+Route::controller(FichePreInscriptionController::class)->name('fiche.')->prefix('fiche')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::delete('/{id}', 'destroy')->name('delete');
+    Route::post('statut/{id}', 'statut')->name('statut');
 });
 
 Route::controller(TemoignageController::class)->name('temoignage.')->prefix('temoignage')->group(function () {

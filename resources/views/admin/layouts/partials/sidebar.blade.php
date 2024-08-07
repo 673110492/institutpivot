@@ -133,8 +133,8 @@
                 <a class="nav-link" href="{{route('pre_inscription.index')}}" role="button" aria-expanded="false">
                     <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Pré-Inscrit</span></div>
                 </a>
-                <a class="nav-link" href="{{route('formateur.index')}}" role="button" aria-expanded="false">
-                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Inscrit</span></div>
+                <a class="nav-link" href="{{route('fiche.index')}}" role="button" aria-expanded="false">
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-calendar-alt"></span></span><span class="nav-link-text ps-1">Fiche de Pré-Inscription</span></div>
                 </a>
           </li>
 
