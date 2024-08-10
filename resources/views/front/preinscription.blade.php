@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="row">
                         <p class="col-md-12"><b style="font-size: 1.4em;">1 - Demande d’admission adressée au directeur de 3iA mentionnant la formation sollicitée</b></p>
-                        <p class="col-md-12"><b style="font-size: 1.4em;">2 - Une fiche d’inscription durement rempli, fourni par l’administration ou <a href="{{ asset('storage/' . $file->photo) }}" id="downloadLink" download="fiche_inscription.pdf" class="btn btn-primary">Telecharger ici </a></b> </p>
+                        <p class="col-md-12"><b style="font-size: 1.4em;">2 - Une fiche d’inscription durement rempli, fourni par l’administration ou <a href="{{isset($file) ? url('storage/'. $file->photo) : '#'}}" id="downloadLink" download="fiche_inscription.pdf" class="btn btn-primary">Telecharger ici </a></b> </p>
                         <p class="col-md-6"><b style="font-size: 1.4em;">3 - 01 photocopie de l’acte de naissance </b></p>
                         <p class="col-md-6"><b style="font-size: 1.4em;">4 - 04 demi-cartes photo 4*4</b></p>
                         <p class="col-md-6"><b style="font-size: 1.4em;">5 - 01 photocopie du dernier diplôme obtenu </b></p>
