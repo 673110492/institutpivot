@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
+use App\Models\FichePreInscription;
 use App\Models\Formation;
 use App\Models\PreInscription;
 use App\Models\TypeFormation;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class InscriptionController extends Controller
 {
         public function index(){
-        $type_formations = TypeFormation::all();
-        $formations = Formation::all();
-        return view('front.preinscription',compact('type_formations','formations'));
+        $formations = Formation::where('statut',true)->get();
+        $type_formations = TypeFormation::where('statut',true)->get();
+        $file = FichePreInscription::where('statut',true)->first();
+        return view('front.preinscription',compact('type_formations','formations','file'));
 
     }
     public function search_formation($id)
@@ -30,7 +33,6 @@ class InscriptionController extends Controller
     {
         $request->validate([
             'nom' => 'required|string|max:255',
-            'prenom' => 'required',
             'email' => 'required',
             'telephone' => 'required',
             'type_formation_id' => 'required',
@@ -38,6 +40,6 @@ class InscriptionController extends Controller
         ]);
         $data = $request->all();
         PreInscription::create($data);
-        return to_route('preinscription.index')->with('message', 'Preinscription ajoutée avec succès');
+        return back()->with('message', 'Preinscription ajoutée avec succès');
     }
 }

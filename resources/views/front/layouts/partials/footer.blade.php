@@ -17,10 +17,20 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="single_feature_footer footer_nav">
+                    <h4  style="color : white">Catégories</h4>
+                    <ul >
+                        @foreach(type()->take(6) as $item)
+                        <li><a href="{{route('cours.cat')}}"  style="color : white">{{$item->nom}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_footer footer_nav">
                     <h4  style="color : white">Cours Populaires</h4>
                     <ul >
                         @foreach(formation()->take(6) as $item)
-                        <li><a href="course-details.html"  style="color : white">{{$item->nom}}</a></li>
+                        <li><a href="{{route('cours.show',$item->id)}}"  style="color : white">{{$item->nom}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -64,26 +74,26 @@
 <!-- footer part end -->
 
 <!-- jquery slim -->
-<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery-3.4.1.min.js')}}"></script>
 <!-- popper js -->
-<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/popper.min.js')}}"></script>
 <!-- bootstarp js -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <!-- nice select -->
-<script src="{{asset('vendors/niceselect/js/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
 <!-- owl carousel js -->
-<script src="{{asset('vendors/owl_carousel/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 <!-- magnify popup js -->
-<script src="{{asset('vendors/magnify_popup/jquery.magnific-popup.js')}}"></script>
+<script src="{{asset('assets/js/jquery.magnific-popup.js')}}"></script>
 <!-- simplyCountdown js -->
-<script src="{{asset('vendors/countdown/js/simplyCountdown.min.js')}}"></script>
+<script src="{{asset('assets/js/simplyCountdown.min.js')}}"></script>
 <!-- counter js -->
-<script src="{{asset('vendors/counter/jquery.countTo.js')}}"></script>
+<script src="{{asset('assets/js/jquery.countTo.js')}}"></script>
 <!-- aos js -->
-<script src="{{asset('vendors/aos/aos.js')}}"></script>
+<script src="{{asset('assets/js/aos.js')}}"></script>
 <!-- custom js -->
-<script src="{{asset('js/custom.js')}}"></script>
-<script src="{{asset('js/courses.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
+<script src="{{asset('assets/js/courses.js')}}"></script>
 </body>
 
 </html>

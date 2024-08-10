@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('pre_inscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('sexe');
-            $table->string('email')->unique();
-            $table->string('telephone')->unique();
+            $table->string('nom')->nullable();
+            $table->string('prenom')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('telephone')->unique()->nullable();
             $table->unsignedBigInteger('type_formation_id')->nullable();
             $table->unsignedBigInteger('formation_id')->nullable();
             $table->boolean('statut')->default(1);

@@ -2,6 +2,7 @@
 
 use App\Models\Conctact;
 use App\Models\Formation;
+use App\Models\TypeFormation;
 
     if (!function_exists('footer')) {
         function footer()
@@ -15,8 +16,14 @@ use App\Models\Formation;
         function formation()
         {
             $formations = Formation::where('statut',true)->get();
-            // dd($formations);
             return $formations;
+        }
+    }
+    if (!function_exists('type')) {
+        function type()
+        {
+            $types = TypeFormation::where('statut',true)->get();
+            return $types;
         }
     }
 

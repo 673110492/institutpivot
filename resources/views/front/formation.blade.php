@@ -67,7 +67,7 @@
                         <div class="course-item" bis_skin_checked="1">
                             <div class="course-wrap-thumbnail" bis_skin_checked="1">
                                 <div class="course-thumbnail" bis_skin_checked="1">
-                                    <a href="course-details.html" bis_skin_checked="1">
+                                    <a href="{{route('cours.show',$item->id)}}" bis_skin_checked="1">
                                         <div class="thumbnail-preview" bis_skin_checked="1">
                                             <div class="thumbnail" bis_skin_checked="1">
                                                 <div class="centered" bis_skin_checked="1">
@@ -85,7 +85,7 @@
                                 <span class="course-instructor">
                                     <!-- <a href="my-profile.html" bis_skin_checked="1"><span>Adam Smith</span></a> -->
                                 </span>
-                                <a href="course-details.html" class="course-permalink" bis_skin_checked="1">
+                                <a href="{{route('cours.show',$item->id)}}" class="course-permalink" bis_skin_checked="1">
                                     <h3 class="course-title">{{$item->nom}}</h3>
                                 </a>
                                 <!-- START .course-content-meta -->
@@ -156,7 +156,7 @@
                         "<div class='course-item' bis_skin_checked='1'>"+
                             "<div class='course-wrap-thumbnail' bis_skin_checked='1'>"+
                                 "<div class='course-thumbnail' bis_skin_checked='1'>"+
-                                    "<a href='course-details.html' bis_skin_checked='1'>"+
+                                    "<a href='{{ route('cours.show', '') }}/"+data[i].id+"' bis_skin_checked='1'>"+
                                         "<div class='thumbnail-preview' bis_skin_checked='1'>"+
                                             "<div class='thumbnail' bis_skin_checked='1'>"+
                                                 "<div class='centered' bis_skin_checked='1'>"+
@@ -172,7 +172,7 @@
                                 "</div>"+
                                 "<span class='course-instructor'>"+
                                 "</span>"+
-                                "<a href='course-details.html' class='course-permalink' bis_skin_checked='1'>"+
+                                "<a href='{{ route('cours.show', '') }}/"+data[i].id+"' class='course-permalink' bis_skin_checked='1'>"+
                                     "<h3 class='course-title'>"+data[i].nom+"</h3>"+
                                 "</a>"+
                                 "<!-- START .course-content-meta -->"+
