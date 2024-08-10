@@ -1,5 +1,18 @@
 @extends('front.layouts.app')
 @section('content')
+<style>
+    .formation{
+        border: 1px solid #dce1e9;
+        color: #7c8189;
+        height: 50px;
+        background-color: #dce1e9;
+        padding: 0 20px;
+        border-radius: 20px;
+        float: inherit;
+        font-weight: 300;
+       
+     }
+</style>
     <!-- slider part here -->
     <section class="banner_part owl-carousel">
         <div class="single_banner_part bg_1">
@@ -96,18 +109,23 @@
                         <div class="course_registration_form">
                             <h3>Préinscription<br>
                             pour une formation</h3>
-                            <form action="#">
-                                <input type="text" name="#" placeholder="Nom complet">
-                                <input type="email" name="#" placeholder="Email">
-                                <input type="phone" name="#" placeholder="Téléphone">
-                                <select name="#" class="niceSelect">
-                                    <option disabled selected>Choisir une formation</option>
-                                    @foreach ($formations as $item)
+                            <form method="POST" action="{{ route('preinscription.store')}}" enctype="multipart/form-data" >
+                                {{ csrf_field() }}
+                                <input type="text" name="nom" placeholder="Nom complet">
+                                <input type="email" name="email" placeholder="Email">
+                                <input type="phone" name="telephone" placeholder="Téléphone">
+                                <select onchange="change()" id="type_formation_id" name="type_formation_id" class="niceSelect">
+                                    <option disabled selected>Choisir une catégorie de formation</option>
+                                    @foreach ($types as $item)
                                         <option value="{{$item->id}}">{{$item->nom}}</option>
                                     @endforeach
                                 </select>
-                                <a href="#" class="btn_1">Enrégistrer</a>
-                                <div class="countdown"  id="timer">
+                                <select name="formation_id" id="formation" class="form-control formation" >
+                                    <option disabled selected>Choisir une formation</option>
+                                    
+                                </select>
+                                <button class="btn_1" type="submit">Se préinscrire</button>
+                                <!-- <div class="countdown"  id="timer">
                                     <div class="time" id="days" data-aos="fade-up"
                                     data-aos-duration="600"></div>
                                     <div class="time" id="hours" data-aos="fade-up"
@@ -116,7 +134,7 @@
                                     data-aos-duration="1000"></div>
                                     <div class="time" id="seconds" data-aos="fade-up"
                                     data-aos-duration="1200"></div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                         <img src="img/animated_icon/cources_details_bg.png" alt="#" class="custom-animation1 cources_details_bg">
@@ -152,7 +170,7 @@
                     <div class="about_us_details">
                     <span style="color:black; font-size: 2.5em;"><b>{{isset($about->titre) ? $about->titre : "A Propos De Nous"}}</b></span>
                         <p style="text-align: justify">{{isset($about->contenu) ? $about->contenu : "Notre vison"}}</p>
-                            <h3><span>Conatacter nous</span> +237 659218936</h3>
+                        <h3><span>Conatcts </span>+237 659218936 / 3ia@institut3ia.com</h3>
                         <a href="{{route('cours.index')}}" class="btn_1">Voir les formations</a>
                     </div>
                 </div>
@@ -178,10 +196,10 @@
                     <div class="popular_courses_item owl-carousel">
                         @foreach ($formations as $item)
                         <div data-aos="fade-up" data-aos-duration="1200" class="single_courses_item">
-                            <a href="{{route('cours.show',$item->id)}}"><img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="#" class="img-fluid"></a>
+                            <a href="{{route('cours.show',$item->id)}}"><img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="#" height="250"></a>
                             <div class="courses_item_iner">
                                 <div class="courses_review">
-                                    <a class="courses_btn">{{$item->prix}}XAF</a>
+                                    <a class="courses_btn">Ouverte</a>
                                     <div class="review_icon">
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
@@ -189,13 +207,13 @@
                                         <i class="icon_star"></i>
                                         <i class="icon_star"></i>
                                     </div>
-                                    <span>(120 Avis)</span>
+                                    <span>(+100 Avis)</span>
                                 </div>
                                 <a href="{{route('cours.show',$item->id)}}"><h4 class="text-primary" style="font-weight: bold">{{$item->nom}}</h4></a>
                                 <p style="text-align:justify">{!! Str::limit($item->description, 100, '...')  !!}</p>
                                 <div class="popular_course_list">
-                                    <p><i class="icon_book_alt"></i>10 leçons</p>
-                                    <p><i class="icon_profile"></i>120</p>
+                                    <p><i class="icon_book_alt"></i>+10 Modules</p>
+                                    <p><i class="icon_profile"></i>+120</p>
                                 </div>
                             </div>
                         </div>
@@ -308,3 +326,30 @@
     </section>
     <!-- event part end -->
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+    function change(){
+        let type = document.getElementById('type_formation_id').value;
+        let form = document.getElementById('formation');
+        $.ajax({
+            url:"../preinscription/search_formation/"+type,
+            type:'GET',
+            data:[],
+            success:function(data){
+                console.log(data);
+                let out = "";
+                for(i=0; i < data.length;i++){
+                    out = out + `<option value="${data[i].id}"> ${data[i].nom} </option>`;
+                }
+                console.log(out);
+                
+                form.innerHTML = out;
+                console.log(form);
+            },
+            error:function(data){
+                console.log(data);
+                console.log('error',data);
+            }
+        });
+    }
+</script>

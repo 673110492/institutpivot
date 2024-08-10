@@ -208,6 +208,7 @@ Route::controller(InscriptionController::class)->name('preinscription.')->prefix
     Route::get('/', 'index')->name('index');
     Route::post('/', 'store')->name('store');
     Route::get('search_formation/{type}', 'search_formation')->name('search_formation');
+    Route::get('download/', 'download')->name('download');
 
 });
 Route::controller(ActuController::class)->name('actu.')->prefix('actu')->group(function () {
