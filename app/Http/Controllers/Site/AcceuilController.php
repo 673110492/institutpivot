@@ -14,19 +14,17 @@ class AcceuilController extends Controller
 {
     public function index()
     {
-        $tete = TeteHome::where('statut',true)->first();
         $video = Video::where('statut',true)->first();
         $formations = Formation::where('statut',true)->get();
         $types = TypeFormation::where('statut',true)->get();
         $autres = Temoignage::where('statut',true)->where('fonction','!=','code')->get();
         $about = Apropos::where('statut',true)->first();
         $temoignages = Temoignage::where('statut',true)->where('fonction','code')->get();
-        // dd($about);
         foreach($temoignages as $item){
             if(isset($item->formation_id)){
                 $item->formation = Formation::findOrFail($item->formation_id);
             }
         }
-           return view('front.index',compact('about','temoignages','video','tete','autres','formations','types'));
+           return view('front.index',compact('about','temoignages','video','autres','formations','types'));
     }
 }
