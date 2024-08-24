@@ -33,7 +33,7 @@
                         <p class="col-md-6"><b style="font-size: 1.4em;">6 - 02 enveloppes A4</b></p>
                         <p class="col-md-6"><b style="font-size: 1.4em;">7 - Certificat médical</b> </p>
                         <p class="col-md-6"><b style="font-size: 1.4em;">8 - Frais de dépôt de dossier <b>3000f</b></b> </p>
-                        <p class="col-md-6"><b style="font-size: 1.4em;">9 - Frais du versement des frais d'inscription <b>(30000f)</b></b></p>
+                        <p class="col-md-6"><b style="font-size: 1.4em;">9 - Reçu de versement des frais d'inscription <b>(30000f)</b></b></p>
                     </div>
                 </div>
             </div>
