@@ -40,7 +40,7 @@
                         <h2>{{isset($about->titre) ? $about->titre : "A propos de nous"}}</h2>
                         <!-- <h3>20 ans d'experience</h3> -->
                         <p style="text-align: justify">{{isset($about->titre) ? $about->titre : "Nous sommes une institut de formation spécialisée dans le domaine informatique"}}</p>
-                            <h3><span>Conatcts </span>+237 659218936 / 3ia@institut3ia.com</h3>
+                            <h3><span>Conatcts </span>+237 651673144 / pivot@gmail.com</h3>
                         <a href="{{route('cours.index')}}" class="btn_1">Voir les formations</a>
                     </div>
                 </div>

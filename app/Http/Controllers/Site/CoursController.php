@@ -17,12 +17,12 @@ class CoursController extends Controller
         $video = Video::where('statut',true)->first();
         $formations = Formation::where('statut',true)->get();
         $types = TypeFormation::where('statut',true)->get();
-        return view('front/formation',compact('formations','video','types'));
+        return view('front1/formation',compact('formations','video','types'));
     }
     public function categorie()
     {
         $types = TypeFormation::where('statut',true)->get();
-        return view('front/categories',compact('types'));
+        return view('front1/categorie',compact('types'));
     }
     public function show($id)
     {
@@ -34,12 +34,12 @@ class CoursController extends Controller
             }
             $formation->types = $types;
        $formations = Formation::where('statut',true)->where('id', '!=' ,$id)->get();
-       return view('front/formation_detail',compact('formation','formations'));
+       return view('front1/formation_detail',compact('formation','formations'));
     }
     public function search_cours($id)
     {
         if($id == 0){
-            
+
             $formations = Formation::where('statut',true)->get();
             return response()->json($formations);
         }

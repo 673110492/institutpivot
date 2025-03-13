@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\PreInscription;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTypeFormationRequest;
-use App\Http\Requests\UpdateTypeFormationRequest;
 use Illuminate\Http\Request;
 use App\Models\Formation;
 use App\Models\Form;
@@ -22,15 +20,12 @@ class PreInscriptionController extends Controller
     {
         $pre_inscriptions = PreInscription::all();
         $type_formations = TypeFormation::all();
-        $formations = Formation::all();
 
-        foreach($pre_inscriptions as $item){
+        foreach ($pre_inscriptions as $item) {
             $type = TypeFormation::findOrFail($item->type_formation_id);
             $item->type = $type->nom;
-            $type = Formation::findOrFail($item->formation_id);
-            $item->formation = $type->nom;
         }
-        return view('admin.pre_inscriptions.index', compact('pre_inscriptions','type_formations','formations'));
+        return view('admin.pre_inscriptions.index', compact('pre_inscriptions', 'type_formations'));
     }
 
     /**
@@ -39,25 +34,21 @@ class PreInscriptionController extends Controller
     public function create()
     {
         $type_formations = TypeFormation::all();
-        $formations = Formation::all();
-        return view('admin.pre_inscriptions.create',compact('type_formations','formations'));
-
+        return view('admin.pre_inscriptions.create', compact('type_formations'));
     }
-    
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        // dd($request);
         $request->validate([
             'nom' => 'required|string|max:255',
             'prenom' => 'required',
             'email' => 'required',
             'telephone' => 'required',
-            'type_formation_id' => 'required',
-            'formation_id' => 'required',
+            'type_formation_id' ,
         ]);
         $data = $request->all();
         PreInscription::create($data);
@@ -93,7 +84,6 @@ class PreInscriptionController extends Controller
             'email' => 'required',
             'telephone' => 'required',
             'type_formation_id' => 'required',
-            'formation_id' => 'required',
 
         ]);
         $recup = $request->all();
@@ -116,10 +106,10 @@ class PreInscriptionController extends Controller
     public function statut($id)
     {
         $formation = PreInscription::findOrFail($id);
-        if($formation->statut == true){
+        if ($formation->statut == true) {
             $formation->update(['statut' => false]);
             return back()->with('message', 'formation désactivée avec succes!');
-        }else{
+        } else {
             $formation->update(['statut' => true]);
             return back()->with('message', 'formation activée avec succes!');
         }
@@ -132,6 +122,6 @@ class PreInscriptionController extends Controller
             ->where('formation_types.type_formation_id', '=', $id)
             ->select('formations.*')
             ->get();
-            return response()->json($results);
+        return response()->json($results);
     }
 }

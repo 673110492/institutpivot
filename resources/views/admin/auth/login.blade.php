@@ -1,84 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
-
-<!-- Mirrored from prium.github.io/falcon/v3.4.0/pages/authentication/simple/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 May 2022 07:54:32 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>3iA Admin </title>
+    <title>LE PIVOT Admin</title>
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicons/favicon-16x16.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicons/favicon.ico') }}">
-    <link rel="manifest"
-        href="{{ asset('assets/img/favicons/manifest.json">
-                                                                                                                                                                                                                                                            <meta name="msapplication-TileImage" content="../../../assets/img/favicons/mstile-150x150.png') }}">
+    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/mstile-150x150.png') }}">
     <meta name="theme-color" content="#ffffff">
-    <script src="{{ asset('assets/js/config..js') }}"></script>
-    <script src="{{ asset('vendors/overlayscrollbars/OverlayScrollbars.min..js') }}"></script>
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
-        rel="stylesheet">
-    <link href="{{ asset('vendors/overlayscrollbars/OverlayScrollbars.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/theme-rtl.min.css') }}" rel="stylesheet" id="style-rtl">
-    <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet" id="style-default">
-    <link href="{{ asset('assets/css/user-rtl.min.css') }}" rel="stylesheet" id="user-style-rtl">
-    <link href="{{ asset('assets/css/user.min.css') }}" rel="stylesheet" id="user-style-default">
-    <script>
-        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
-        if (isRTL) {
-            var linkDefault = document.getElementById('style-default');
-            var userLinkDefault = document.getElementById('user-style-default');
-            linkDefault.setAttribute('disabled', true);
-            userLinkDefault.setAttribute('disabled', true);
-            document.querySelector('html').setAttribute('dir', 'rtl');
-        } else {
-            var linkRTL = document.getElementById('style-rtl');
-            var userLinkRTL = document.getElementById('user-style-rtl');
-            linkRTL.setAttribute('disabled', true);
-            userLinkRTL.setAttribute('disabled', true);
+    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet">
+
+    <style>
+        /* Additional styling for the layout */
+        .login-container {
+            display: flex;
+            flex-direction: row; /* Two columns: one for logo and one for form */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-    </script>
+
+        .login-logo-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form-section {
+            flex: 1;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form-section .card-body {
+            padding: 20px;
+        }
+
+        .login-form-section h5 {
+            margin-bottom: 20px;
+        }
+
+        .login-form-section .form-control {
+            margin-bottom: 15px;
+        }
+
+        /* Responsive design for mobile devices */
+        @media (max-width: 767px) {
+            .login-container {
+                flex-direction: column; /* Stack the sections on top of each other on small screens */
+                padding: 10px;
+            }
+
+            .login-logo-section {
+                margin-bottom: 20px;
+            }
+
+            .login-form-section {
+                width: 100%;
+                box-shadow: none;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
+
     <main class="main" id="top">
-        <div class="container" data-layout="container">
-            <script>
-                var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-                if (isFluid) {
-                    var container = document.querySelector('[data-layout]');
-                    container.classList.remove('container');
-                    container.classList.add('container-fluid');
-                }
-            </script>
-            <div class="row flex-center min-vh-100 py-6">
-                <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4"><a class="d-flex flex-center mb-4"
-                        href="{{ asset('#') }}"><span class="font-sans-serif fw-bolder fs-5 d-inline-block">3iA
-                            ADMIN</span></a>
+        <div class="container">
+            <div class="login-container">
+                <!-- Logo and Name Section -->
+                <div class="login-logo-section">
+                    <a class="d-flex flex-center mb-4" >
+                        <img src="{{ asset('img/logo_pivo.jpg') }}" alt="LE PIVOT Logo" style="max-width: 200px;">
+
+                        <span class="font-sans-serif fw-bolder fs-5 d-inline-block">LE PIVOT ADMIN</span>
+                    </a>
+                </div>
+
+                <!-- Login Form Section -->
+                <div class="login-form-section">
                     <div class="card">
-                        <div class="card-body p-4 p-sm-5">
+                        <div class="card-body">
                             <div class="row flex-between-center mb-2">
                                 <div class="col-auto">
                                     <h5>Log in</h5>
@@ -98,55 +115,40 @@
                                         </div>
                                     </div>
                                 @endif
+
                                 <div class="mb-3">
-                                    <input class="form-control" type="email" placeholder="email" name="email" />
+                                    <input class="form-control" type="email" placeholder="Email" name="email" />
                                 </div>
                                 <div class="mb-3">
-                                    <input class="form-control" type="password" placeholder="Password"
-                                        name="password" />
+                                    <input class="form-control" type="password" placeholder="Password" name="password" />
                                 </div>
                                 <div class="row flex-between-center">
                                     <div class="col-auto">
-                                        <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                id="basic-checkbox"  name="remember" /><label
-                                                class="form-check-label mb-0" for="basic-checkbox">Remember me</label>
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input" type="checkbox" id="basic-checkbox" name="remember" />
+                                            <label class="form-check-label mb-0" for="basic-checkbox">Remember me</label>
                                         </div>
                                     </div>
-                                    <div class="col-auto"><a class="fs--1" href="forgot-password.html')}}">Forgot
-                                            Password?</a></div>
+                                    <div class="col-auto">
+                                        <a class="fs--1" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
                                 </div>
 
-                                <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3"
-                                        type="submit">Log in</button></div>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary d-block w-100 mt-3" type="submit">Log in</button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main><!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
+    </main>
 
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="{{asset('vendors/bootstrap/bootstrap.min.js')}}"></script>
-    <script src="{{asset('vendors/anchorjs/anchor.min.js')}}"></script>
-    <script src="{{asset('vendors/is/is.min.js')}}"></script>
-    <script src="{{asset('vendors/prism/prism.js')}}"></script>
-    <script src="{{asset('vendors/echarts/echarts.min.js')}}"></script>
-    <script src="{{asset('vendors/fontawesome/all.min.js')}}"></script>
-    <script src="{{asset('vendors/lodash/lodash.min.js')}}"></script>
-    <script src="../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
-    <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
-    <script src="{{asset('assets/js/theme.js')}}"></script>
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-    <script src="{{ asset('assets/js/toast.js') }}"></script>
-    <script src="{{ asset('assets/js/search.js') }}"></script>
+    <!-- JS Files -->
+    <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+
 </body>
-
-
-<!-- Mirrored from prium.github.io/falcon/v3.4.0/pages/authentication/simple/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 May 2022 07:54:32 GMT -->
 
 </html>

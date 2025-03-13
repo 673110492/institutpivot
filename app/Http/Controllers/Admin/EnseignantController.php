@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ class EnseignantController extends Controller
      */
     public function index()
     {
-        $formateurs = User::where('type','enseignant')->get();
+        $formateurs = User::where('type', 'enseignant')->get();
         return view('admin.formateurs.index', compact('formateurs'));
     }
 
@@ -39,15 +40,15 @@ class EnseignantController extends Controller
         $requestData['password'] = '12345';
         if ($request->hasFile('cv')) {
             $requestData['cv'] = $request->file('cv')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         if ($request->hasFile('photocopie_cni')) {
             $requestData['photocopie_cni'] = $request->file('photocopie_cni')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         if ($request->hasFile('avatar')) {
             $requestData['avatar'] = $request->file('avatar')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         // dd($requestData);
         $enseignant = User::create($requestData);
@@ -57,10 +58,7 @@ class EnseignantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Enseignant $enseignant)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -68,7 +66,7 @@ class EnseignantController extends Controller
     public function edit()
     {
         $formateur = User::findOrFail(1);
-        return view('admin.formateurs.edit',compact('formateur'));
+        return view('admin.formateurs.edit', compact('formateur'));
     }
 
     /**
@@ -80,15 +78,15 @@ class EnseignantController extends Controller
         $requestData = $request->all();
         if ($request->hasFile('cv')) {
             $requestData['cv'] = $request->file('cv')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         if ($request->hasFile('avatar')) {
             $requestData['avatar'] = $request->file('avatar')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         if ($request->hasFile('photocopie_cni')) {
             $requestData['photocopie_cni'] = $request->file('photocopie_cni')
-            ->store('uploads', 'public');
+                ->store('uploads', 'public');
         }
         $enseignant->update($requestData);
 

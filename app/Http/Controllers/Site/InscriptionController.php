@@ -16,7 +16,7 @@ class InscriptionController extends Controller
         $formations = Formation::where('statut',true)->get();
         $type_formations = TypeFormation::where('statut',true)->get();
         $file = FichePreInscription::where('statut',true)->first();
-        return view('front.preinscription',compact('type_formations','formations','file'));
+        return view('front1.preinscription',compact('type_formations','formations','file'));
 
     }
     public function search_formation($id)
@@ -36,7 +36,6 @@ class InscriptionController extends Controller
             'email' => 'required',
             'telephone' => 'required',
             'type_formation_id' => 'required',
-            'formation_id' => 'required',
         ]);
         $data = $request->all();
         PreInscription::create($data);

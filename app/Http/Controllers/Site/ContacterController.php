@@ -10,7 +10,6 @@ class ContacterController extends Controller
     public function index()
     {
         $contact = Conctact::where('statut',true)->first();
-        // dd($contact);
-        return view('front.contact',compact('contact'));
+        return view('front1.contact',compact('contact'));
     }
 }

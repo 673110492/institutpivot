@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('telephone')->unique()->nullable();
             $table->unsignedBigInteger('type_formation_id')->nullable();
-            $table->unsignedBigInteger('formation_id')->nullable();
             $table->boolean('statut')->default(1);
             $table->timestamps();
         });

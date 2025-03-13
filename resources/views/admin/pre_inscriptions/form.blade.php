@@ -55,14 +55,14 @@
                     {!! $errors->first('type_formation_id', '<p class="help-block">:message</p>') !!}
                 </div>
 
-                <div class="form-floating mb-3">
+                {{-- <div class="form-floating mb-3">
                     <select name="formation_id" id="form" class="form-select">
                         <option value="" disabled selected>Choisir la formation</option>
 
                     </select>
                     <label for="formation_id" class="control-label">{{ 'Liste formation ' }}<span style="color:red">*</span></label>
                     {!! $errors->first('formation_id', '<p class="help-block">:message</p>') !!}
-                </div>
+                </div> --}}
 
 </div>
 </div>

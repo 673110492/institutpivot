@@ -37,7 +37,7 @@
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
                         <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
-                        <i class="icon_mail text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto; font-size: 1.5em;"> <b><a href="mailto:{{isset($contact) ? $contact->email : '3ia@institut3ia.com'}}">{{isset($contact) ? $contact->email : "institut3ia@gmail.com"}}</a></b></h5>
+                        <i class="icon_mail text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto; font-size: 1.5em;"> <b><a href="mailto:{{isset($contact) ? $contact->email : 'pivot@gmail.com'}}">{{isset($contact) ? $contact->email : "gmail@gmail.com"}}</a></b></h5>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
                         <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
-                        <i class="icon_map text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;color:black;"> <b>{{isset($contact) ? $contact->adresse : "Dschang, Marché Foto"}}</b></h5>
+                        <i class="icon_map text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;color:black;"> <b>{{isset($contact) ? $contact->adresse : "Dschang, Mobile immeuble CCA"}}</b></h5>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="single_event_list bg-white" data-aos="fade-up" data-aos-duration="1200">
                         <!-- <img src="{{isset($item->photo) ? url('storage/' . $item->photo) : '#'}}" alt="" class="img-fluid"> -->
                         <div class="event_list_content row">
-                        <i class="icon_globe text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;"> <b><a href="http://{{isset($contact) ? $contact->site : 'institut3ia.com'}}">{{isset($contact) ? $contact->site : "institut3ia.com"}}</a></b></h5>
+                        <i class="icon_globe text-primary col-md-4" style="font-size:4em"></i><h5 class="col-md-8" style="margin:auto;font-size: 1.5em;"> <b><a href="http://{{isset($contact) ? $contact->site : 'institutpivot.com'}}">{{isset($contact) ? $contact->site : "institutpivot.com"}}</a></b></h5>
                         </div>
                     </div>
                 </div>

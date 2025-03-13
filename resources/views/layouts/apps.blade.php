@@ -4,10 +4,9 @@
 
 <!-- Mirrored from preview.colorlib.com/theme/genius/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Aug 2023 15:31:04 GMT -->
 <head>
-<title>Institut de formation 3iA</title>
+<title>Institut de formation IFPM</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/open-iconic-bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
@@ -82,5 +81,4 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f7ab87b8e3c24d2","version":"2023.8.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
 </body>
 
-<!-- Mirrored from preview.colorlib.com/theme/genius/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Aug 2023 15:31:04 GMT -->
 </html>

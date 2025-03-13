@@ -1,4 +1,4 @@
-@extends('front.layouts.app')
+@extends('front1.layouts.app')
 @section('content')
 <section class="breadcrumb_part blog_grid_bg">
         <div class="container">

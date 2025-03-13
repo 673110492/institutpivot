@@ -10,22 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Template</title>
+    <title>Institut le pivot</title>
+<!-- Import Material Icons from Google CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicons/3iA logo-10.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicons/3iA logo-10')}}">
-    <link rel="manifest" href="{{asset('assets/img/favicons/manifest.json')}}">
+
+
     <link rel="stylesheet" href="{{asset('assets/richtexteditor/rte_theme_default.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/glightbox.css') }}" />
-    <meta name="msapplication-TileImage" content="{{asset('assets/img/favicons/mstile-150x150.png')}}">
     <meta name="theme-color" content="#ffffff">
     <script src="{{asset('assets/js/config.js')}}"></script>
     <script src="{{asset('assets/vendors/overlayscrollbars/OverlayScrollbars.min.js')}}"></script>

@@ -9,4 +9,9 @@ class PreInscription extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function formation_type()
+    {
+        return $this->belongsTo(TypeFormation::class);
+    }
 }

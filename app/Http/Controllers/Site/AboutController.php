@@ -17,6 +17,6 @@ class AboutController extends Controller
         $about = Apropos::where('statut',true)->first();
         $video = Video::where('statut',true)->first();
         // dd($video);
-        return view('front.about',compact('about','video','autres','formations'));
+        return view('front1.about',compact('about','video','autres','formations'));
     }
 }

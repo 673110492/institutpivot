@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ConctactController;
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PartenaireController;
 use App\Http\Controllers\Site\AcceuilController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ActuController;
@@ -99,7 +100,7 @@ Route::controller(PreInscriptionController::class)->name('pre_inscription.')->pr
     Route::get('/create', 'create')->name('create');
     Route::post('/', 'store')->name('store');
     Route::post('/update/{id}', 'update')->name('update');
-    Route::delete('/{id}', 'destroy')->name('delete');  
+    Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
     Route::get('/preinscription/{type}', 'search_formation')->name('search_formation');
 });
@@ -170,6 +171,18 @@ Route::controller(ConctactController::class)->name('contact.')->prefix('contact'
     Route::delete('/{id}', 'destroy')->name('delete');
     Route::post('statut/{id}', 'statut')->name('statut');
 });
+
+Route::controller(PartenaireController::class)->name('partenaire.')->prefix('partenaire')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::post('/', 'store')->name('store');
+    Route::get('/create', 'create')->name('create');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::delete('/{id}', 'destroy')->name('delete');
+    Route::post('statut/{id}', 'statut')->name('statut');
+});
+
 Route::controller(ActualiteController::class)->name('blog.')->prefix('blog')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/show/{id}', 'show')->name('show');
