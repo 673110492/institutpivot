@@ -90,7 +90,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <p><b>1. Demande d’admission adressée au directeur du Pivot</b></p>
+                        <p><b>1. Demande d’admission adressée au directeur du pivot</b></p>
                         <p><b>2. Fiche d'inscription dûment remplie</b> <a href="{{ isset($file) ? url('storage/' . $file->photo) : '#' }}" download="fiche_inscription.pdf" class="btn btn-primary">Télécharger ici</a></p>
                         <p><b>3. 01 photocopie de l'acte de naissance</b></p>
                         <p><b>4. 04 demi-cartes photo 4*4</b></p>

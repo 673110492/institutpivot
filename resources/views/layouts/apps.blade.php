@@ -4,7 +4,7 @@
 
 <!-- Mirrored from preview.colorlib.com/theme/genius/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Aug 2023 15:31:04 GMT -->
 <head>
-<title>Institut de formation IFPM</title>
+<title>Institut de formation LE PIVOT</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="{{asset('css/open-iconic-bootstrap.min.css')}}">

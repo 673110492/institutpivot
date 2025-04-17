@@ -24,17 +24,29 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="carousel-overlay">
-                <img src="{{ asset('assets1/img/dfdf.jpeg') }}" class="d-block w-100" alt="Banner 1">
+                <img src="{{ asset('assets1/img/dfdf.jpg') }}" class="d-block w-100" alt="Banner 1">
+                <div class="carousel-caption">
+                    <h3 style="color: white">Formation en développement web</h3>
+                    <p>Apprenez à développer des applications web performantes et sécurisées.</p>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="carousel-overlay">
                 <img src="{{ asset('assets1/img/IMG_6086.jpg') }}" class="d-block w-100" alt="Banner 2">
+                <div class="carousel-caption">
+                    <h3 style="color: white">Formation en gestion de base de données</h3>
+                    <p>Maîtrisez la gestion et l'optimisation des bases de données.</p>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="carousel-overlay">
                 <img src="{{ asset('assets1/img/IMG_5601.jpg') }}" class="d-block w-100" alt="Banner 3">
+                <div class="carousel-caption">
+                    <h3 style="color: white">Formation en cybersécurité</h3>
+                    <p>Apprenez à protéger les systèmes informatiques contre les menaces.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -50,7 +62,7 @@
 
 <style>
     .banner-carousel .carousel-item img {
-        max-height: 500px; /* Ajuste la hauteur de la bannière */
+        max-height: 700px; /* Augmente la hauteur de la bannière */
         object-fit: cover;
     }
 
@@ -74,131 +86,166 @@
         position: relative;
         z-index: 0;
     }
+
+    /* Style pour les messages */
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .carousel-caption h3 {
+        font-size: 3rem; /* Augmenter la taille du texte */
+        font-weight: bold; /* Mettre en gras */
+    }
+
+    .carousel-caption p {
+        font-size: 1.5rem; /* Augmenter la taille du texte */
+        font-weight: bold; /* Mettre en gras */
+    }
 </style>
+
+
 
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
+                <!-- Formations certifiantes -->
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <i class="fa fa-3x fa-certificate text-primary mb-4"></i>
+                            <h5 class="mb-3">Formations Certifiantes</h5>
+                            <p>Obtenez des certifications reconnues dans des domaines clés de l’informatique comme le développement web, la bureautique et le design graphique.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Développement web -->
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <i class="fa fa-3x fa-code text-primary mb-4"></i>
+                            <h5 class="mb-3">Développement Web</h5>
+                            <p>Apprenez à créer des sites et applications web dynamiques avec HTML, CSS, JavaScript, PHP, Laravel, et bien plus.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Infographie et design -->
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <i class="fa fa-3x fa-paint-brush text-primary mb-4"></i>
+                            <h5 class="mb-3">Infographie & Design</h5>
+                            <p>Maîtrisez les outils de création visuelle comme Photoshop, Illustrator et InDesign pour produire des visuels professionnels.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Maintenance informatique -->
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <i class="fa fa-3x fa-tools text-primary mb-4"></i>
+                            <h5 class="mb-3">Maintenance Informatique</h5>
+                            <p>Acquérez des compétences pratiques en réparation, installation de logiciels, assemblage et gestion de parcs informatiques.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Service End -->
 
 
-    <section id="pourquoi-nous-choisir" class="section" style="padding: 50px 0; background: #f9f9f9;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 class="section-title" style="font-size: 36px; font-weight: bold; color: #2c3e50; margin-bottom: 40px;">
-                Pourquoi nous choisir ?
-            </h2>
-            <div class="cards-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+<!-- Ajoute cette ligne dans ton <head> -->
 
-                <!-- Carte 1 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="img/logo_pivo.jpg" alt="Bibliothèque moderne" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Bibliothèque moderne</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Notre bibliothèque est équipée de milliers de livres, de revues spécialisées et d'outils numériques pour enrichir vos connaissances.
-                    </p>
-                </div>
+    <section id="pourquoi-nous-choisir" class="section" style="padding: 60px 0; background: #f0f4f8;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 36px; font-weight: bold; color: #1e3a8a; margin-bottom: 50px;">
+          Pourquoi nous choisir ?
+        </h2>
+        <div class="cards-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
 
-                <!-- Carte 2 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="avatar2.jpg" alt="Plateforme de E-learning" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Plateforme de E-learning</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Accédez à des cours interactifs et un suivi personnalisé via notre plateforme moderne d'apprentissage en ligne.
-                    </p>
-                </div>
-
-                <!-- Carte 3 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="avatar3.jpg" alt="Encadrement personnalisé" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Encadrement personnalisé</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Bénéficiez d'un suivi personnalisé avec des séances de tutorat et de coaching adaptées à vos besoins académiques.
-                    </p>
-                </div>
-
-                <!-- Carte 4 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="avatar4.jpg" alt="Séminaires et Formations" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Séminaires et Formations</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Participez à des séminaires et des ateliers dirigés par des experts pour acquérir des compétences pratiques.
-                    </p>
-                </div>
-
-                <!-- Carte 5 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="avatar5.jpg" alt="Sport - Culture - Loisir" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Sport - Culture - Loisir</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Équilibrez vos études avec des activités sportives et culturelles pour un développement global et harmonieux.
-                    </p>
-                </div>
-
-                <!-- Carte 6 -->
-                <div class="card" style="background: #fff; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 350px; padding: 30px; transition: transform 0.3s;">
-                    <div class="card-avatar" style="margin-bottom: 20px;">
-                        <img src="avatar6.jpg" alt="Réseautage Professionnel" style="width: 100px; height: 100px; border-radius: 50%;">
-                    </div>
-                    <h3 class="card-title" style="font-size: 24px; color: #34495e; margin-bottom: 15px;">Réseautage Professionnel</h3>
-                    <p class="card-description" style="font-size: 16px; color: #7f8c8d; line-height: 1.6;">
-                        Connectez-vous avec des professionnels et participez à des événements pour booster votre carrière.
-                    </p>
-                </div>
-
+          <!-- Carte 1 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-book-reader"></i>
             </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Bibliothèque moderne</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Accédez à des milliers de livres, revues et ressources numériques pour enrichir vos connaissances.
+            </p>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Plateforme de E-learning</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Suivez vos cours en ligne à votre rythme grâce à une plateforme intuitive et interactive.
+            </p>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Encadrement personnalisé</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Profitez d’un suivi sur mesure avec des tuteurs engagés dans votre réussite.
+            </p>
+          </div>
+
+          <!-- Carte 4 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Séminaires et formations</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Renforcez vos compétences avec des sessions pratiques animées par des experts.
+            </p>
+          </div>
+
+          <!-- Carte 5 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-futbol"></i>
+            </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Sport - Culture - Loisir</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Épanouissez-vous à travers des activités sportives, culturelles et récréatives.
+            </p>
+          </div>
+
+          <!-- Carte 6 -->
+          <div class="card" style="background: #fff; border-radius: 20px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); max-width: 340px; padding: 30px;">
+            <div style="margin-bottom: 20px; font-size: 48px; color: #1e3a8a;">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 style="font-size: 22px; color: #1e293b; margin-bottom: 10px;">Réseautage professionnel</h3>
+            <p style="font-size: 15px; color: #475569;">
+              Développez votre réseau en rencontrant des professionnels et des anciens diplômés.
+            </p>
+          </div>
+
         </div>
+      </div>
     </section>
+
+
 
 
 
@@ -210,32 +257,35 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{{ isset($about) ? url('storage/' . $about->photo) : 'img/about.jpg' }}" alt="About Us" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{{ isset($about) ? url('storage/' . $about->photo) : 'img/about.jpg' }}" alt="Formation Professionnelle" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">{{ isset($about) ? $about->titre : 'Welcome to eLEARNING' }}</h1>
-                    <p class="mb-4">{{ isset($about) ? $about->contenu : 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.' }}</p>
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Formation Professionnelle</h6>
+                    <h1 class="mb-4">{{ isset($about) ? $about->titre : 'Construisez votre avenir avec la formation professionnelle' }}</h1>
+                    <p class="mb-4">
+                        {{ isset($about) ? $about->contenu : 'Notre centre offre des formations professionnelles pratiques et adaptées aux besoins du marché. Que vous soyez jeune diplômé, en reconversion ou en quête de perfectionnement, nous vous accompagnons vers une insertion professionnelle réussie.' }}
+                    </p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Formateurs expérimentés</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Formations certifiantes</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Stages en entreprise</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Flexible Learning</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Accompagnement à l’insertion</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="#">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="#">En savoir plus</a>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- About End -->
 
 
@@ -402,7 +452,7 @@
                 </div>
                 @endforeach
 
-               
+
             </div>
         </div>
     </div>
@@ -413,45 +463,30 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Témoignages</h6>
+                <h1 class="mb-5">Ce que disent nos apprenants !</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets1/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets1/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="iassets1/imgmg/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets1/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
+                @foreach ($temoignages as $temoignage)
+                    @if($temoignage->statut)
+                        <div class="testimonial-item text-center">
+                            <img class="border rounded-circle p-2 mx-auto mb-3"
+                                 src="{{ asset('storage/' . $temoignage->photo) }}"
+                                 alt="{{ $temoignage->nom }}"
+                                 style="width: 80px; height: 80px;">
+                            <h5 class="mb-0">{{ $temoignage->nom }}</h5>
+                            <p>{{ $temoignage->fonction }}</p>
+                            <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0">{{ $temoignage->description }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
+
+
     <!-- Testimonial End -->
 
 @endsection

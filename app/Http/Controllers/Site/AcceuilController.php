@@ -19,6 +19,7 @@ class AcceuilController extends Controller
     public function index()
     {
         $formateurs = User::all();
+        $temoignages = Temoignage::all();
         $partenaire = Partenaire::where('statut', true)->get();
         $video = Video::where('statut', true)->first();
         $formations = Formation::where('statut', true)->get();

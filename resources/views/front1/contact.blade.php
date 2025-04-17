@@ -56,7 +56,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Email</h5>
-                            <p class="mb-0"><a href="mailto:{{ isset($contact) ? $contact->email : 'pivot@gmail.com' }}">{{ isset($contact) ? $contact->email : "gmail@gmail.com" }}</a></p>
+                            <p class="mb-0"><a href="mailto:{{ isset($contact) ? $contact->email : 'institutpivot@gmail.com' }}">{{ isset($contact) ? $contact->email : "gmail@gmail.com" }}</a></p>
                         </div>
                     </div>
                 </div>
