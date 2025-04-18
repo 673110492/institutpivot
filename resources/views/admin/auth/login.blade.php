@@ -19,6 +19,8 @@
     <!-- External CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
         /* General styling */
@@ -76,11 +78,20 @@
             font-size: 1rem;
             margin-bottom: 20px;
             transition: border-color 0.3s ease-in-out;
+            padding-left: 40px; /* Adjust for icon */
         }
 
         .form-control:focus {
             border-color: #007bff;
             outline: none;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
         }
 
         .btn-primary {
@@ -100,6 +111,8 @@
         .form-check-label {
             font-size: 0.9rem;
         }
+
+
 
         /* Responsive design for mobile devices */
         @media (max-width: 767px) {
@@ -122,9 +135,22 @@
             transition: opacity 0.3s ease;
         }
     </style>
+
+
 </head>
 
 <body>
+
+    <style>
+        /* Arrière-plan dégradé */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé de couleurs */
+            color: #333;
+            margin: 0;
+        }
+    </style>
+
 
     <main class="main" id="top">
         <div class="container">
@@ -156,10 +182,20 @@
                     <form action="{{ route('auth.login') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <input class="form-control" type="email" placeholder="Email" name="email" required />
+                            <div class="input-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <input class="form-control" type="email" placeholder="Email" name="email" required />
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <input class="form-control" type="password" placeholder="Password" name="password" required />
+                            <div class="input-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <input class="form-control" type="password" placeholder="Password" name="password" required />
+                            </div>
                         </div>
 
                         <div class="row flex-between-center mb-4">
@@ -175,7 +211,9 @@
                         </div>
 
                         <div class="mb-3">
-                            <button class="btn btn-primary d-block w-100 mt-3" type="submit">Log in</button>
+                            <button class="btn btn-primary d-block w-100 mt-3" type="submit">
+                                <i class="fas fa-sign-in-alt"></i> Log in
+                            </button>
                         </div>
                     </form>
                 </div>
