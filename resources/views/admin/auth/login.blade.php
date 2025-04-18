@@ -21,59 +21,105 @@
     <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet">
 
     <style>
-        /* Additional styling for the layout */
+        /* General styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+        }
+
         .login-container {
             display: flex;
-            flex-direction: row; /* Two columns: one for logo and one for form */
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-
-        .login-logo-section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
         }
 
         .login-form-section {
-            flex: 1;
+            width: 100%;
             max-width: 400px;
-            padding: 20px;
-            background-color: #f8f9fa;
+            padding: 30px;
+            background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
         }
 
-        .login-form-section .card-body {
-            padding: 20px;
+        .login-form-section:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
         }
 
-        .login-form-section h5 {
+        .login-logo-section {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .login-form-section .form-control {
-            margin-bottom: 15px;
+        .login-logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2a2a2a;
+            text-align: center;
+        }
+
+        .form-control {
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 50px;
+            padding: 12px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .form-check-label {
+            font-size: 0.9rem;
         }
 
         /* Responsive design for mobile devices */
         @media (max-width: 767px) {
-            .login-container {
-                flex-direction: column; /* Stack the sections on top of each other on small screens */
-                padding: 10px;
-            }
-
-            .login-logo-section {
-                margin-bottom: 20px;
-            }
-
             .login-form-section {
-                width: 100%;
-                box-shadow: none;
-                padding: 15px;
+                width: 90%;
+                padding: 20px;
             }
+
+            .login-logo {
+                max-width: 100px;
+            }
+
+            h5 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Toast styling */
+        .toast {
+            transition: opacity 0.3s ease;
         }
     </style>
 </head>
@@ -83,63 +129,55 @@
     <main class="main" id="top">
         <div class="container">
             <div class="login-container">
-                <!-- Logo and Name Section -->
-                <div class="login-logo-section">
-                    <a class="d-flex flex-center mb-4" >
-                        <img src="{{ asset('img/logo_pivo.jpg') }}" alt="LE PIVOT Logo" style="max-width: 200px;">
-
-                        <span class="font-sans-serif fw-bolder fs-5 d-inline-block">LE PIVOT ADMIN</span>
-                    </a>
-                </div>
-
                 <!-- Login Form Section -->
                 <div class="login-form-section">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row flex-between-center mb-2">
-                                <div class="col-auto">
-                                    <h5>Log in</h5>
+                    <div class="login-logo-section">
+                        <a class="d-flex flex-center mb-4">
+                            <img src="{{ asset('img/logo_pivo.jpg') }}" alt="LE PIVOT Logo" class="login-logo">
+                        </a>
+                    </div>
+
+                    <!-- Displaying session messages -->
+                    @if (Session::get('message'))
+                        <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
+                            <div class="toast show" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header bg-danger text-white">
+                                    <strong class="me-auto">Notification</strong>
+                                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body bg-danger text-white">{{ Session::get('message') }}</div>
+                            </div>
+                        </div>
+                    @endif
+
+                    <!-- Login Form -->
+                    <h5>Log in</h5>
+                    <form action="{{ route('auth.login') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <input class="form-control" type="email" placeholder="Email" name="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="password" placeholder="Password" name="password" required />
+                        </div>
+
+                        <div class="row flex-between-center mb-4">
+                            <div class="col-auto">
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input" type="checkbox" id="basic-checkbox" name="remember" />
+                                    <label class="form-check-label mb-0" for="basic-checkbox">Remember me</label>
                                 </div>
                             </div>
-                            <form action="{{ route('auth.login') }}" method="POST">
-                                @csrf
-
-                                @if (Session::get('message'))
-                                    <div class="position-fixed top-5 end-0 p-3" style="z-index: 5">
-                                        <div class="toast hide" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-                                            <div class="toast-header bg-danger text-white"><strong
-                                                    class="me-auto">Notification</strong><small>1 S ago</small><button
-                                                    class="btn-close btn-close-white" type="button" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button></div>
-                                            <div class="toast-body bg-danger text-white">{{ Session::get('message') }}</div>
-                                        </div>
-                                    </div>
-                                @endif
-
-                                <div class="mb-3">
-                                    <input class="form-control" type="email" placeholder="Email" name="email" />
-                                </div>
-                                <div class="mb-3">
-                                    <input class="form-control" type="password" placeholder="Password" name="password" />
-                                </div>
-                                <div class="row flex-between-center">
-                                    <div class="col-auto">
-                                        <div class="form-check mb-0">
-                                            <input class="form-check-input" type="checkbox" id="basic-checkbox" name="remember" />
-                                            <label class="form-check-label mb-0" for="basic-checkbox">Remember me</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a class="fs--1" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <button class="btn btn-primary d-block w-100 mt-3" type="submit">Log in</button>
-                                </div>
-                            </form>
+                            <div class="col-auto">
+                                <a class="fs--1" href="forgot-password.html">Forgot Password?</a>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-block w-100 mt-3" type="submit">Log in</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
