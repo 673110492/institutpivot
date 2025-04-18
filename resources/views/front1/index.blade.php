@@ -24,10 +24,10 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="carousel-overlay">
-                <img src="{{ asset('assets1/img/dfdf.jpg') }}" class="d-block w-100" alt="Banner 1">
+                <img src="{{ asset('assets1/img/IMG_5580.jpg') }}" class="d-block w-100" alt="Banner 1">
                 <div class="carousel-caption">
-                    <h3 style="color: white">Formation en développement web</h3>
-                    <p>Apprenez à développer des applications web performantes et sécurisées.</p>
+                    <h3 class="text-white banner-heading">Formation en développement web</h3>
+                    <p class="banner-description">Apprenez à développer des applications web performantes et sécurisées.</p>
                 </div>
             </div>
         </div>
@@ -35,17 +35,17 @@
             <div class="carousel-overlay">
                 <img src="{{ asset('assets1/img/IMG_6086.jpg') }}" class="d-block w-100" alt="Banner 2">
                 <div class="carousel-caption">
-                    <h3 style="color: white">Formation en gestion de base de données</h3>
-                    <p>Maîtrisez la gestion et l'optimisation des bases de données.</p>
+                    <h3 class="text-white banner-heading">Formation en gestion de base de données</h3>
+                    <p class="banner-description">Maîtrisez la gestion et l'optimisation des bases de données.</p>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="carousel-overlay">
-                <img src="{{ asset('assets1/img/IMG_5601.jpg') }}" class="d-block w-100" alt="Banner 3">
+                <img src="{{ asset('assets1/img/IMG_5601.jpeg') }}" class="d-block w-100" alt="Banner 3">
                 <div class="carousel-caption">
-                    <h3 style="color: white">Formation en cybersécurité</h3>
-                    <p>Apprenez à protéger les systèmes informatiques contre les menaces.</p>
+                    <h3 class="text-white banner-heading">Formation en cybersécurité</h3>
+                    <p class="banner-description">Apprenez à protéger les systèmes informatiques contre les menaces.</p>
                 </div>
             </div>
         </div>
@@ -59,6 +59,64 @@
         <span class="visually-hidden">Suivant</span>
     </button>
 </div>
+
+<style>
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        color: white;
+        padding: 0 15px;
+    }
+
+    .banner-heading {
+        font-size: 2rem; /* taille de police par défaut */
+    }
+
+    .banner-description {
+        font-size: 1rem; /* taille de police par défaut */
+    }
+
+    @media (max-width: 1200px) {
+        .banner-heading {
+            font-size: 1.75rem;
+        }
+        .banner-description {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .banner-heading {
+            font-size: 1.5rem;
+        }
+        .banner-description {
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .banner-heading {
+            font-size: 1.25rem;
+        }
+        .banner-description {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .banner-heading {
+            font-size: 1rem;
+        }
+        .banner-description {
+            font-size: 0.75rem;
+        }
+    }
+</style>
+
 
 <style>
     .banner-carousel .carousel-item img {

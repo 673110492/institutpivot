@@ -38,7 +38,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Office</h5>
-                            <p class="mb-0">{{ isset($contact) ? $contact->adresse : "Dschang, Mobile immeuble CCA" }}</p>
+                            <p class="mb-0">{{ isset($contact) ? $contact->adresse : "Dschang, Marché A" }}</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Mobile</h5>
-                            <p class="mb-0"><a href="tel:+{{ isset($contact) ? $contact->tel : '+237 651541340' }}">{{ isset($contact) ? $contact->tel : "651541340/651541340" }}</a></p>
+                            <p class="mb-0"><a href="tel:+{{ isset($contact) ? $contact->tel : '+237 675 37 52 61' }}">{{ isset($contact) ? $contact->tel : "+237 675 37 52 61" }}</a></p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -106,7 +106,7 @@
         <a href="https://www.youtube.com" target="_blank" class="mx-2">
             <i class="fab fa-youtube" style="font-size: 40px; color: #ff0000;"></i>
         </a>
-        <a href="https://wa.me/237651541340" target="_blank" class="mx-2">
+        <a href="https://wa.me/237675375261" target="_blank" class="mx-2">
             <i class="fab fa-whatsapp" style="font-size: 40px; color: #25d366;"></i>
         </a>
     </div>
